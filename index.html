@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>高雄榮民總醫院 表後儲能系統建置及節能技術服務 ｜ 無雜訊顧問決策簡報</title>
-  <meta name="description" content="高雄榮民總醫院 ENG-1150058 4.38億元表後儲能巨額採購案決策分析、招標重點摘要、六大隱藏風險疑慮與投標必勝五維戰略">
+  <title>高雄榮民總醫院 表後儲能系統建置及節能技術服務 ｜ 無雜訊顧問決策簡報與招標修正對照</title>
+  <meta name="description" content="高雄榮民總醫院 ENG-1150058 4.38億元表後儲能巨額採購案決策分析、招標文件15大細節修正對照表、釋疑公文草案與投標必勝五維戰略">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
@@ -58,6 +58,20 @@
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
       background: rgba(148, 163, 184, 0.8);
     }
+    .diff-del {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+      text-decoration: line-through;
+      padding: 0 4px;
+      border-radius: 2px;
+    }
+    .diff-add {
+      background-color: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      font-weight: 600;
+      padding: 0 4px;
+      border-radius: 2px;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
@@ -76,40 +90,45 @@
           <span class="text-xs text-slate-400 hidden sm:inline">進金生能源 投標決策專用</span>
         </div>
         <h1 class="text-sm sm:text-base font-bold text-slate-100 tracking-tight">
-          高雄榮總 表後儲能系統建置及節能技術服務 ｜ 無雜訊顧問簡報
+          高雄榮總 表後儲能系統建置及節能技術服務 ｜ 無雜訊顧問決策與條款修正對照
         </h1>
       </div>
     </div>
 
     <!-- Controls -->
     <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Nav Tabs -->
+      <button onclick="switchView('slides')" id="tab-btn-slides" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs sm:text-sm font-bold flex items-center gap-1.5 transition">
+        <i data-lucide="presentation" class="w-4 h-4"></i>
+        <span>顧問簡報</span>
+      </button>
+
+      <button onclick="switchView('revisions')" id="tab-btn-revisions" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
+        <i data-lucide="file-diff" class="w-4 h-4 text-rose-400"></i>
+        <span>15大條款修正對照</span>
+      </button>
+
+      <button onclick="switchView('letter')" id="tab-btn-letter" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
+        <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i>
+        <span>釋疑公文函稿</span>
+      </button>
+
       <!-- Calculator Modal Trigger -->
       <button onclick="toggleModal('calc-modal')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
         <i data-lucide="calculator" class="w-4 h-4 text-emerald-400"></i>
-        <span class="hidden md:inline">收益拆分試算</span>
-      </button>
-
-      <!-- Toggle Speaker Notes -->
-      <button id="toggle-notes-btn" onclick="toggleNotes()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
-        <i data-lucide="message-square" class="w-4 h-4 text-blue-400"></i>
-        <span class="hidden md:inline">備忘講稿</span>
+        <span class="hidden xl:inline">收益試算</span>
       </button>
 
       <!-- Download PPTX -->
-      <a href="vghks_bess_zero_noise_consulting.pptx" download class="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-md shadow-amber-500/20 transition">
+      <a href="vghks_bess_zero_noise_consulting.pptx" download class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-md shadow-amber-500/20 transition">
         <i data-lucide="download" class="w-4 h-4"></i>
-        <span>下載 PPTX</span>
+        <span class="hidden sm:inline">下載 PPTX</span>
       </a>
-
-      <!-- Fullscreen Toggle -->
-      <button onclick="toggleFullScreen()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition border border-slate-700">
-        <i data-lucide="maximize" class="w-4 h-4"></i>
-      </button>
     </div>
   </header>
 
-  <!-- Main Slide Viewport -->
-  <main class="flex-1 flex flex-col items-center justify-center p-3 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
+  <!-- VIEW 1: Slides View -->
+  <main id="view-slides" class="flex-1 flex flex-col items-center justify-center p-3 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
 
     <!-- Slide Container (16:9 ratio card) -->
     <div id="slide-viewport" class="w-full bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden relative flex flex-col slide-card">
@@ -185,13 +204,13 @@
     </div>
 
     <!-- Speaker Notes Drawer (Toggled) -->
-    <div id="notes-drawer" class="w-full mt-4 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl hidden transition-all">
+    <div id="notes-drawer" class="w-full mt-4 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl transition-all">
       <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
         <div class="flex items-center gap-2">
           <i data-lucide="mic" class="w-4 h-4 text-amber-400"></i>
           <span class="text-sm font-bold text-slate-200">顧問報告備忘錄 (Speaker Notes)</span>
         </div>
-        <span class="text-xs text-slate-400">按三段式講稿：結論 ➔ 證據細節 ➔ 下頁轉場</span>
+        <span class="text-xs text-slate-400">三段式講稿：① 本頁結論 ➔ ② 補充說明 ➔ ③ 下頁轉場</span>
       </div>
       <div id="notes-content" class="text-sm text-slate-300 whitespace-pre-line leading-relaxed font-sans bg-slate-950 p-4 rounded-lg border border-slate-800/80">
         <!-- Notes here -->
@@ -212,6 +231,99 @@
       </div>
     </div>
 
+  </main>
+
+  <!-- VIEW 2: 15-Item Revisions Matrix View -->
+  <main id="view-revisions" class="flex-1 hidden p-4 sm:p-8 max-w-7xl mx-auto w-full">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl mb-8">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-rose-950 text-rose-400 border border-rose-500/30">
+              法規與條款勘誤審查
+            </span>
+            <span class="text-xs font-mono text-slate-400">ENG-1150058 原招標文件細節修正</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-100">
+            原招標文件 15 大關鍵細節修正對照表
+          </h2>
+          <p class="text-sm text-slate-400 mt-1">
+            針對契約編號筆誤、240天 vs 300天工期矛盾、逾期違約金盲區、防逆送收益矛盾與收益計算公式提出完整紅字修訂版
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="filterRevisions('all')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition" data-filter="all">全部 (15)</button>
+          <button onclick="filterRevisions('legal')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="legal">法律與工期</button>
+          <button onclick="filterRevisions('commercial')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="commercial">財務與收益</button>
+          <button onclick="filterRevisions('technical')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="technical">工程與技術</button>
+        </div>
+      </div>
+
+      <!-- Revisions Grid -->
+      <div id="revisions-list" class="space-y-6 mt-6">
+        <!-- Revisions items generated by JS -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- VIEW 3: Clarification Letter Draft View -->
+  <main id="view-letter" class="flex-1 hidden p-4 sm:p-8 max-w-5xl mx-auto w-full">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800 mb-6">
+        <div>
+          <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-950 text-blue-400 border border-blue-500/30">
+            政府採購法第 41 條法定程序
+          </span>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-100 mt-2">
+            招標文件疑義請求釋疑與修正建議公文（函稿）
+          </h2>
+          <p class="text-sm text-slate-400 mt-1">
+            發文單位：進金生能源服務股份有限公司 ｜ 受文者：高雄榮民總醫院
+          </p>
+        </div>
+
+        <button onclick="copyLetter()" class="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-md shadow-blue-500/20 transition shrink-0">
+          <i data-lucide="copy" class="w-4 h-4"></i>
+          <span id="copy-btn-text">複製公文全文</span>
+        </button>
+      </div>
+
+      <!-- Letter Content Display -->
+      <div id="letter-content" class="bg-slate-950 border border-slate-800 rounded-xl p-6 sm:p-8 text-slate-200 text-sm font-sans leading-relaxed whitespace-pre-line select-text">
+進金生能源服務股份有限公司　函（稿）
+
+受文者：高雄榮民總醫院
+發文日期：中華民國115年○月○日
+發文字號：進能字第11500○○○○號
+速別：最速件
+密等及解密條件或保密期限：普通
+附件：招標文件條款疑義與修正建議對照表一份
+
+主旨：貴院辦理「表後儲能系統建置及節能技術服務」（案號：ENG-1150058）採購案，本公司就招標文件內容存有疑義事項，特依政府採購法第41條第1項及同法施行細則第43條規定，檢送疑義說明與修正建議對照表，敬請　查照並惠予書面釋疑更正。
+
+說明：
+一、依政府採購法第41條第1項、政府採購法施行細則第43條暨本採購案投標須知第20點規定辦理。
+二、貴院本採購案為提升全院能源韌性與節能效益之指標性巨額採購專案，本公司深感感佩並積極備標。惟經詳研全卷招標文件，發現部分條款內容存有未盡周延、數據矛盾及執行疑義，為使本採購案符合公平合理原則並利後續順利推動履約，謹提請釋疑要點如下：
+  (一) 契約編號筆誤：招標投標及契約文件第3頁決標簽約欄誤植為「ENG-1140043」，建請更正為本案案號「ENG-1150058」。
+  (二) 履約工期矛盾：契約首頁載明「240日曆天完工」，惟契約第七條載明「300日內設置完成」，兩者牴觸。考量本案須經台電內線併聯審查、消防局設計審查及標準檢驗局案場驗證等法定程序，建請統一載明工期為決標次日起「300日曆天」，並明定非可歸責於廠商之外審時間得核實扣除工期。
+  (三) 遲延履約違約金計罰標準：契約第十三條未載明每日違約金比率，依法將按全案契約總價（4.38億元）之1‰計罰（每日高達43.8萬元），顯失衡平。建請修正為按「未完成建置容量部分之建置金額」計罰。
+  (四) 防逆送運轉與收益定義：需求書規定「正常併網嚴禁逆送電」，建請釐清電力交易平台輔助服務收益於防逆送限制下之具體核算機制。
+  (五) 收益公式完整性：契約第八條第二十四款削峰填谷公式漏列「超約附加費節省」與「調降契約容量基本電費節省」，建請惠予納入以真實反映節能貢獻。
+  (六) 地質與地下管網圖資：建請補發污水處理場預定地之地下管網結構圖與土壤鑽探數據，以利基礎安全設計。
+三、檢附「招標文件條款疑義與修正建議對照表」一份如附件，敬請　貴院卓參並辦理補充釋疑及必要之更正公告，俾利廠商完善投標規劃，共創優質儲能示範案場。
+
+正本：高雄榮民總醫院
+副本：國軍退除役官兵輔導委員會、本公司業務部、法務室
+
+進金生能源服務股份有限公司
+負責人：○○○
+      </div>
+
+    </div>
   </main>
 
   <!-- Interactive Calculator Modal -->
@@ -295,12 +407,13 @@
       <span>•</span>
       <span>高雄榮民總醫院 表後儲能系統建置及節能技術服務 (ENG-1150058)</span>
       <span>•</span>
-      <span>8 種無雜訊顧問版型 × 三大顧問視覺系統</span>
+      <span>8 種無雜訊顧問版型 × 15大條款修正對照</span>
     </div>
   </footer>
 
-  <!-- Interactive Presentation Script -->
+  <!-- Scripts -->
   <script>
+    // 12 Slides Data
     const slidesData = [
       {
         num: 1,
@@ -316,7 +429,7 @@
           { bold: "商業模式：", text: "純 ESCO / BOO（廠商全額投資建置與維運，按月實際效益分成）" },
           { bold: "核心要求：", text: "中斷供電供應普通電源≧2小時、充放電效率≧85%、嚴格防逆送" }
         ],
-        notes: "【採用版型】：封面頁 ｜ 視覺風格：McKinsey Deep Navy\n① 本頁結論：高雄榮總表後儲能案為 4.38 億之巨額純 ESCO 標案，投標決勝在於控制工期與醫療供電安全。\n② 補充說明：本報告提供招標重點摘要、6大隱藏風險疑慮，以及確保奪標的五維準備方案。\n③ 下一頁轉場：首先呈現全案的核心決策總覽。"
+        notes: "【採用版型】：封面頁 ｜ 視覺風格：McKinsey Deep Navy\n① 本頁結論：高雄榮總表後儲能案為 4.38 億之巨額純 ESCO 標案，投標決勝在於控制工期與醫療供電安全。\n② 補充說明：本報告提供招標重點摘要、15項條款細節修正對照，以及確保奪標的五維準備方案。\n③ 下一頁轉場：首先呈現全案的核心決策總覽。"
       },
       {
         num: 2,
@@ -412,23 +525,23 @@
           { bold: "平時調度 ➔ 最低 SOC 護欄：", text: "EMS 平時調度鎖定最低備援荷電量 ≧ 30%，保證隨時有 2 小時電量" },
           { bold: "發電機協同 ➔ 防反充保護：", text: "儲能系統與既設柴發並聯時增設逆功率防護電驛，防止發電機反充跳脫" }
         ],
-        notes: "【採用版型】：版型 4：連鎖論法 ｜ 視覺風格：Accenture Core Purple\n① 本頁結論：微電網孤島切換與防發電機逆功率反充是醫療韌性技術關鍵。\n② 補充說明：重症 ICU 與手術室有專屬 UPS 支撐，儲能專責普通電源備援至少 2 小時。\n③ 下一頁轉場：看似完整的方案背後，招標文件實則存在 6 大潛在疑慮。"
+        notes: "【採用版型】：版型 4：連鎖論法 ｜ 視覺風格：Accenture Core Purple\n① 本頁結論：微電網孤島切換與防發電機逆功率反充是醫療韌性技術關鍵。\n② 補充說明：重症 ICU 與手術室有專屬 UPS 支撐，儲能專責普通電源備援至少 2 小時。\n③ 下一頁轉場：看似完整的方案背後，招標文件實則存在 6 大潛在疑慮與 15 項細節衝突。"
       },
       {
         num: 8,
         tag: "RISK DIAGNOSIS ｜ 招標文件風險診斷",
         archetype: "BCG Forest Green ｜ 版型 8：BCG 2×2 矩陣 (BCG 2x2 Matrix)",
         badgeColor: "bg-emerald-950/80 text-emerald-400 border-emerald-500/30",
-        actionTitle: "影響度 × 發生機率象限診斷：防逆送限制、工期衝突與無保底收益為致命痛點",
+        actionTitle: "影響度 × 發生機率象限診斷：防逆送限制、工期衝突與每日 43.8 萬罰金為致命痛點",
         subTitle: "以四象限策略矩陣，深度診斷招標文件中的 6 大潛在法律、營運與工程風險",
         img: "assets/images/slide_08_risk_fire_matrix.jpg",
         bullets: [
-          { bold: "第一象限（致命衝擊 × 高機率）：", text: "① 防逆送限制阻礙電力交易大額收益；② 240/300 天工期衝突面臨逾期違約金" },
-          { bold: "第二象限（重大衝擊 × 中機率）：", text: "③ 純按實際收益分成，無保底付款；④ 附記條款嚴格排陸，供應鏈穿透查核風險" },
-          { bold: "第三象限（長期必然 × 中等衝擊）：", text: "⑤ 第 13 年需達 85% RTE，第 8~10 年需投入數千萬電芯置換 CAPEX" },
-          { bold: "第四象限（合約退場 × 中等衝擊）：", text: "⑥ 契約期滿未續約時，廠商須全自費將儲能系統拆除清運、回復原狀" }
+          { bold: "第一象限（致命衝擊 × 高機率）：", text: "① 240/300 天工期衝突 ＋ 違約金 1‰ 每日高達 43.8 萬元；② 防逆送限制阻礙電力交易" },
+          { bold: "第二象限（重大衝擊 × 中機率）：", text: "③ 純實際收益分成無保底；④ 附記條款排陸，需釐清模組從控採樣與主控 BMS 界限" },
+          { bold: "第三象限（長期必然 × 中等衝擊）：", text: "⑤ 第 13 年需達 85% RTE，需在中期第 8~11 年規劃電芯置換（Augmentation）" },
+          { bold: "第四象限（合約退場 × 中等衝擊）：", text: "⑥ 期滿回復原狀應爭取保留地下混凝土基礎與管溝，避免敲除破壞污水廠地坪" }
         ],
-        notes: "【採用版型】：版型 8：BCG 2×2 矩陣 ｜ 視覺風格：BCG Forest Green\n① 本頁結論：工期矛盾、防逆送限制與無保底機制是投標團隊的三大致命風險。\n② 補充說明：必須透過投標前正式釋疑與建議書避險設計，化解這 6 大疑慮。\n③ 下一頁轉場：其中最急迫的法律衝突，是招標文件中寫死的工期矛盾。"
+        notes: "【採用版型】：版型 8：BCG 2×2 矩陣 ｜ 視覺風格：BCG Forest Green\n① 本頁結論：工期矛盾、每日43.8萬違約金與防逆送限制是投標團隊的三大致命風險。\n② 補充說明：必須透過投標前正式釋疑公文與建議書避險設計，化解這 15 大細節疑慮。\n③ 下一頁轉場：其中最急迫的法律衝突，是招標文件中寫死的工期矛盾與外部審查期程。"
       },
       {
         num: 9,
@@ -441,7 +554,7 @@
         bullets: [
           { bold: "文件條款直接矛盾：", text: "契約首頁載明 240 日曆天完工，但契約第 7 條卻載明決標起 300 日內設置" },
           { bold: "關鍵路徑 CPM 耗時 280 天：", text: "台電內線審查 (60-90天) ＋ 消防審查 (45天) ＋ 標檢局確證 (60天) ＋ 設備交期與試車 (90天)" },
-          { bold: "行政審查不可控：", text: "台電與標檢局審查屬於外部公權力，240 天工期若遇審查延宕，每日遭罰千分之一" },
+          { bold: "行政審查不可控：", text: "台電與標檢局審查屬於外部公權力，240 天工期若遇審查延宕，每日遭罰千分之一 (43.8萬元)" },
           { bold: "法律行動建議：", text: "於等標期內依採購法正式行文請求機關「釋疑」，爭取以 300 天為準且扣除外審時間" }
         ],
         notes: "【採用版型】：版型 4：連鎖論法 ｜ 視覺風格：Accenture Core Purple\n① 本頁結論：240 天與 300 天的矛盾關係到每日數十萬的違約金，必須於投標前發文釋疑。\n② 補充說明：建議釋疑要求「台電外審及標檢局文件審查期間，非可歸責廠商者，應不計入工期」。\n③ 下一頁轉場：在價格評選上，招標文件藏有一個精確的博弈滿分密碼。"
@@ -496,8 +609,284 @@
       }
     ];
 
+    // 15 Revisions Data
+    const revisionsData = [
+      {
+        id: 1,
+        cat: "legal",
+        catName: "契約案號",
+        badgeColor: "bg-blue-950 text-blue-400 border-blue-500/30",
+        loc: "招標投標及契約文件 第 3 頁 第一條",
+        title: "決標簽約欄誤植舊案契約編號",
+        orig: "一、契約編號：ENG-1140043",
+        rev: "一、契約編號：ENG-1150058",
+        reason: "全份招標文件案號皆為 ENG-1150058，第 3 頁誤植為 ENG-1140043 屬明顯筆誤，應予更正避免履約標的與編號不一致之法律爭議。"
+      },
+      {
+        id: 2,
+        cat: "legal",
+        catName: "履約工期",
+        badgeColor: "bg-rose-950 text-rose-400 border-rose-500/30",
+        loc: "第 3 頁 vs 第 38 頁 第七條",
+        title: "完工工期 240 日曆天 vs 300 日曆天嚴重矛盾",
+        orig: "第 3 頁：自決標次日起 240 日完成建置；第 38 頁第七條：廠商於決標之日起 300 日內需完成設置容量。",
+        rev: "統一修正為：「廠商應自決標次日起 300 日曆天內完成設備建置、現場安全驗證及性能驗收測試。但涉及台電公司內線審查、消防局審查及標準檢驗局案場驗證之文件審查期間（非可歸責於廠商者），經檢具佐證資料核實扣除，不計入履約工期。」",
+        reason: "消除 240 天與 300 天衝突；戶外儲能案場外審曠日廢時（6~9個月），增列外審扣除工期但書，避免不可抗力導致鉅額違約金。"
+      },
+      {
+        id: 3,
+        cat: "legal",
+        catName: "違約罰則",
+        badgeColor: "bg-rose-950 text-rose-400 border-rose-500/30",
+        loc: "第 56 頁 第十三條 第一款",
+        title: "每日逾期違約金比率空白，預設 1‰ 每日高達 43.8 萬元過苛",
+        orig: "每日依契約價金總額 ‰(未載明者為 1‰)計算逾期違約金...（空白未填，以 4.38 億元計算每日罰 43.8 萬元）",
+        rev: "修正為：「逾期違約金，以日為單位，按逾期日數，每日依未完成設置容量占承諾設置容量之比例，換算該部分工程建置預估金額之 1‰ 計算；逾期違約金總額以該未完成部分建置金額之 10% 為上限。」",
+        reason: "純 ESCO 模式由廠商全額出資，若以 12 年總收益 4.38 億元作為每日 1‰ 罰款基準，10天罰滿 438 萬元，顯失公平合理原則。"
+      },
+      {
+        id: 4,
+        cat: "commercial",
+        catName: "收益定義",
+        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
+        loc: "第 31 頁 vs 第 86/91 頁",
+        title: "防逆送保護限制與電力交易輔助服務收益衝突",
+        orig: "第 31 頁列入電力交易與市場參與收益；但第 86/91 頁明定正常併網嚴禁向台電電網逆送電力。",
+        rev: "第 31 頁增訂：「電力交易或市場參與收益，於本院嚴格防逆送運轉條件下，指儲能系統配合台電調度以『減少本院電網受電需量』或『於院內負載吸收範圍內放電』所取得之輔助服務、需量反應或容量收益；若後續台電審查核准部分時段逆送，依核定結果辦理。」",
+        reason: "明確定義防逆送限制下電力交易之落實機制，避免日後因無法向台電電網逆送電而產生輔助服務履約爭議與計價糾紛。"
+      },
+      {
+        id: 5,
+        cat: "commercial",
+        catName: "計算公式",
+        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
+        loc: "第 49 頁 第八條 第二十四款",
+        title: "削峰填谷公式漏列「超約附加費節省」與「調降契約容量基本電費」",
+        orig: "依每日尖峰或半尖峰電價×雙方責任分界點供電量減掉每日離峰電價×雙方責任分界點用電量。",
+        rev: "修正擴充公式為：「每月實際效益總額 E_total = E_電價差 + E_超約節省 + E_容量節省 + E_市場參與。其中 E_超約節省為當月因儲能削峰避免之超約附加費節省額；E_容量節省為使本院調降契約容量節省之基本電費。」",
+        reason: "高榮夏月超約附加費達 31 萬元，儲能抑低超約與降低契約容量是醫院最直接的利益，應明文納入收益公式，真實反映節能貢獻。"
+      },
+      {
+        id: 6,
+        cat: "technical",
+        catName: "性能驗證",
+        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
+        loc: "第 86 頁、第 93 頁",
+        title: "充放電效率 RTE 85% 缺少環境溫度、C-rate 與輔助耗電判定規範",
+        orig: "全案充放電循環效率（RTE）應達 85% 以上。RTE＝放電輸出電量÷充電輸入電量×100%。（未明定測試條件）",
+        rev: "增訂測試基準：「充放電循環效率（RTE）驗收測試，應依 CNS 62933-2-1 及標檢局規範，於環境溫度 25±5°C 下，以額定功率 0.5C 充放電倍率進行 AC 端至 AC 端量測；儲能空調自耗電計入方式依核定測試計畫辦理，容許量測誤差為 ±1.5%。」",
+        reason: "避免因極端高溫空調全載運轉或非額定倍率充放電導致 RTE 爭議，明訂國際標準與環境條件，確保驗收標準具備客觀科學性。"
+      },
+      {
+        id: 7,
+        cat: "commercial",
+        catName: "續約擴充",
+        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
+        loc: "第 18 頁 第 62 點、第 40 頁",
+        title: "第 13~20 年後續擴充門檻未明訂電芯置換（Augmentation）機制",
+        orig: "第 13~16 年續約 RTE 仍須 85% 以上。電池運轉 12 年必衰退，無電芯置換條款無法達標。",
+        rev: "第七條之一增訂：「廠商為維持長年期性能並滿足後續擴充 RTE 85% 要求，得於營運期第 8 至 11 年間自費提出『儲能系統電池模組抽換與延壽計畫（Augmentation Plan）』，經機關審查同意後實施，更換作業期間之停機不計罰則。」",
+        reason: "明確賦予廠商於合約中期進行電芯翻新之合法性與程序，確保 12~20 年全生命週期皆能維持高效率運轉，醫院與廠商雙贏。"
+      },
+      {
+        id: 8,
+        cat: "technical",
+        catName: "退場回復",
+        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
+        loc: "第 40 頁 第七條之一 第四款",
+        title: "期滿回復原狀要求過於籠統，若敲除地下混凝土基座將破壞污水廠地坪",
+        orig: "廠商將建置範圍內之儲能系統設備拆除、清運、處理完畢，並將建置地點回復原狀...",
+        rev: "第七條之一增訂：「本契約回復原狀指拆除清運地上儲能集裝箱、變流器、變壓器及配電箱；其地下鋼筋混凝土基座、管溝及暗管等土建基礎，若經機關評估無妨礙後續使用者，得經機關同意保留現況無償返還，廠商無需敲除地下基礎。」",
+        reason: "避免期滿無謂破壞污水廠地坪與地下集水槽結構，節省數百萬土建敲除清運費用，落實綠色循環與公共安全。"
+      },
+      {
+        id: 9,
+        cat: "technical",
+        catName: "工程地質",
+        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
+        loc: "第 90 頁 第二條 第一款",
+        title: "污水處理場 660 m² 欠缺地下管網結構圖與土壤鑽探數據",
+        orig: "本院提供污水處理場區域作為設置地點，面積約 660 平方公尺...未提供地下管網結構圖與地質報告。",
+        rev: "補充招標附件：「機關於招標文件補附『污水處理場現況地下管網與水槽結構套疊圖』及『基地土壤鑽探報告書』；廠商細部設計時若因不可預見之地下既有暗管障礙需調整基礎型式，得向機關申請設計變更及工期展延。」",
+        reason: "儲能櫃重達數十噸，若無地下結構圖資，投標廠商無法精確評估微型樁、管溝避讓與地質沉陷風險。"
+      },
+      {
+        id: 10,
+        cat: "legal",
+        catName: "資安排陸",
+        badgeColor: "bg-blue-950 text-blue-400 border-blue-500/30",
+        loc: "第 79 頁 特別聲明 第六條",
+        title: "排陸條款中「不具通訊功能電池」與「模組內部採樣板」界限需釐清",
+        orig: "不允許使用大陸地區製造或大陸廠牌之零組件，不具備通訊功能之電池除外。營運商不得使用大陸廠牌資通訊產品...",
+        rev: "第六條第三項增訂：「所稱『不具備通訊功能之電池』，係指電芯（Cell）本體及僅具備模組內部電壓/溫度類比採樣之從控單元（CSC/Slave BMS）；具備連網傳輸、遠端控制之主控單元（Master BMS）、EMS 伺服器、PCS 及網通交換機，嚴禁大陸廠牌與產地。」",
+        reason: "符合國際鋰電大廠製造架構，避免驗收時因模組內部微型採樣板之產地認定爭議導致卡關，同時 100% 確保資通訊安全。"
+      },
+      {
+        id: 11,
+        cat: "commercial",
+        catName: "評選公式",
+        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
+        loc: "第 144 頁、第 146 頁 評選須知",
+        title: "收益分享比率評分級距澄清，確認 81.70% 滿分封頂原則",
+        orig: "廠商承諾收益分享比率上限 85.7%。基本分為 12 分，每降 0.5% 給 1 分，最高評分 20 分。（未達 0.5% 級距不給分）",
+        rev: "評選說明補充：「評分以 85.70% 為基準：每降 0.50% 加 1 分，降至 81.70% 即達滿分 20 分；投標比率若低於 81.70%（例如 80.00%），得分均以最高 20 分計，不另加分亦不扣分；比率填寫至小數點後兩位，級距未滿 0.50% 之餘數不計分。」",
+        reason: "杜絕評選委員對公式解釋不一之爭議，使全體投標廠商在公平透明之數學規則下競標。"
+      },
+      {
+        id: 12,
+        cat: "technical",
+        catName: "停電協調",
+        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
+        loc: "第 90 頁、第 94 頁",
+        title: "總1變電站高壓引接未載明醫院配合停電時數與責任",
+        orig: "廠商應負責管路電纜開關施工...影響院區供電作業，應事先提出計畫並經本院核准。（未明定院方配合義務）",
+        rev: "需求書增訂：「為配合總 1 變電站高壓引接盤體施工、保護協調測試及併網送電，機關同意配合排定計畫性停電作業至少 2 次（每次連續 4~8 小時），由廠商於預定停電日前 30 日提出停電備援計畫，經核准後實施；非可歸責廠商之停電推遲，工期相應順延。」",
+        reason: "醫院高壓停電極度敏感，明文化停電配合原則，可保障統包工程引接施工時程，避免驗收切換卡關。"
+      },
+      {
+        id: 13,
+        cat: "legal",
+        catName: "保險條件",
+        badgeColor: "bg-blue-950 text-blue-400 border-blue-500/30",
+        loc: "第 51 頁 第十條",
+        title: "商業綜合責任險 2 萬元自負額不符國內高壓電力產險實務",
+        orig: "商業綜合責任險廠商每一事故自負額上限：2 萬元。（財損保額達 2,000 萬元，2 萬元自負額產險市場難以承保）",
+        rev: "修正為：「商業綜合責任險廠商每一事故自負額上限：新臺幣 10 萬元，或損失金額之 10%（取其高者）。」",
+        reason: "符合國內大型產險公司對高壓電池儲能設施之標準承保條件，降低不合理保費支出。"
+      },
+      {
+        id: 14,
+        cat: "commercial",
+        catName: "審查時效",
+        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
+        loc: "第 32 頁、第 49 頁、第 55 頁",
+        title: "未明定機關每月收益審核天數與爭議款項分流撥付機制",
+        orig: "機關於收到廠商提供每月收益明細表及證明文件後計算價金...（未明訂審查天數）",
+        rev: "第五條增訂：「廠商於次月 10 日前提報上月收益明細表及電錶數據，機關應於 10 工作天內完成審查確認。若部分項目有疑義，機關應先就無爭議部分於 15 工作天內辦理撥付；有爭議部分限期 15 日內協商釐清，不得全案暫停給付。」",
+        reason: "保障 ESCO 廠商 144 個月按月收款穩定性，避免單一計量微小爭議凍結全額技術服務費。"
+      },
+      {
+        id: 15,
+        cat: "technical",
+        catName: "人員查核",
+        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
+        loc: "第 47~48 頁、第 78 頁",
+        title: "關鍵基礎設施派駐人員適任性查核未訂定機關審查回覆時限",
+        orig: "履約人員進場前，應配合機關要求辦理適任性查核經機關審核同意後始得進場...（無審核時效規定）",
+        rev: "附記特別聲明增訂：「廠商提報派駐及施工人員適任性與忠誠查核名冊後，機關應於 7 工作天內完成查核並書面通知結果；逾期未通知且無具體國安疑慮者，得先行核發臨時施工證進場施作。」",
+        reason: "落實關鍵基礎設施人員管制之同時，確保醫院行政審核具備合理時效性，防止現場工期受阻。"
+      }
+    ];
+
     let currentSlide = 0;
 
+    // View Switching Logic
+    function switchView(viewName) {
+      document.getElementById("view-slides").classList.add("hidden");
+      document.getElementById("view-revisions").classList.add("hidden");
+      document.getElementById("view-letter").classList.add("hidden");
+
+      document.getElementById("tab-btn-slides").className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700";
+      document.getElementById("tab-btn-revisions").className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700";
+      document.getElementById("tab-btn-letter").className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700";
+
+      if (viewName === "slides") {
+        document.getElementById("view-slides").classList.remove("hidden");
+        document.getElementById("tab-btn-slides").className = "px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs sm:text-sm font-bold flex items-center gap-1.5 transition";
+      } else if (viewName === "revisions") {
+        document.getElementById("view-revisions").classList.remove("hidden");
+        document.getElementById("tab-btn-revisions").className = "px-3 py-1.5 rounded-lg bg-rose-600 text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 transition shadow-md shadow-rose-600/30";
+      } else if (viewName === "letter") {
+        document.getElementById("view-letter").classList.remove("hidden");
+        document.getElementById("tab-btn-letter").className = "px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 transition shadow-md shadow-blue-600/30";
+      }
+    }
+
+    // Render Revisions
+    function renderRevisions(filter = "all") {
+      const container = document.getElementById("revisions-list");
+      container.innerHTML = "";
+
+      const filtered = filter === "all" ? revisionsData : revisionsData.filter(d => d.cat === filter);
+
+      filtered.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-xl p-5 sm:p-6 transition shadow-lg";
+        div.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800/80 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center font-bold font-mono text-amber-400 text-xs">
+                ${String(item.id).padStart(2, '0')}
+              </span>
+              <span class="px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider ${item.badgeColor}">
+                ${item.catName}
+              </span>
+              <h3 class="text-base font-bold text-slate-100">${item.title}</h3>
+            </div>
+            <span class="text-xs font-mono text-slate-400 flex items-center gap-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-500"></i>
+              ${item.loc}
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-red-950/20 border border-red-500/20 rounded-lg p-3.5">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1 mb-1.5">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                原招標文件條文（現狀疑義）
+              </span>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                ${item.orig}
+              </p>
+            </div>
+
+            <div class="bg-emerald-950/20 border border-emerald-500/20 rounded-lg p-3.5">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1 mb-1.5">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                建議修正後條文（紅字修訂內容）
+              </span>
+              <p class="text-xs sm:text-sm text-emerald-200 leading-relaxed font-sans font-medium">
+                ${item.rev}
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-3.5 pt-3 border-t border-slate-800/60 flex items-start gap-2">
+            <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              <strong class="text-slate-200">修正理由與效益：</strong>${item.reason}
+            </p>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+
+      lucide.createIcons();
+    }
+
+    function filterRevisions(cat) {
+      document.querySelectorAll(".rev-filter-btn").forEach(b => {
+        b.className = "rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
+        if (b.dataset.filter === cat) {
+          b.className = "rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition";
+        }
+      });
+      renderRevisions(cat);
+    }
+
+    // Copy Official Letter
+    function copyLetter() {
+      const text = document.getElementById("letter-content").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById("copy-btn-text");
+        btn.textContent = "已成功複製公文！";
+        setTimeout(() => {
+          btn.textContent = "複製公文全文";
+        }, 2000);
+      });
+    }
+
+    // Render Single Slide
     function renderSlide(index) {
       if (index < 0) index = 0;
       if (index >= slidesData.length) index = slidesData.length - 1;
@@ -505,22 +894,15 @@
 
       const slide = slidesData[currentSlide];
 
-      // Archetype Badge
       const badge = document.getElementById("slide-archetype-badge");
       badge.textContent = `${slide.tag} ｜ ${slide.archetype}`;
       badge.className = `px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider ${slide.badgeColor}`;
 
-      // Counter Badge
       document.getElementById("slide-counter-badge").textContent = `${String(slide.num).padStart(2, '0')} / 12`;
-
-      // Titles
       document.getElementById("slide-action-title").textContent = slide.actionTitle;
       document.getElementById("slide-sub-title").textContent = slide.subTitle;
-
-      // Image
       document.getElementById("slide-img").src = slide.img;
 
-      // Evidence Bullets
       const container = document.getElementById("slide-evidence-container");
       container.innerHTML = "";
       slide.bullets.forEach(item => {
@@ -536,12 +918,9 @@
         container.appendChild(div);
       });
 
-      // Notes
       document.getElementById("notes-content").textContent = slide.notes;
 
-      // Update Dots
       renderDots();
-      // Update Thumbnails
       renderThumbnails();
     }
 
@@ -579,11 +958,6 @@
       if (currentSlide < slidesData.length - 1) renderSlide(currentSlide + 1);
     }
 
-    function toggleNotes() {
-      const drawer = document.getElementById("notes-drawer");
-      drawer.classList.toggle("hidden");
-    }
-
     function toggleModal(id) {
       const modal = document.getElementById(id);
       modal.classList.toggle("hidden");
@@ -598,22 +972,16 @@
       document.getElementById("lightbox-modal").classList.add("hidden");
     }
 
-    function toggleFullScreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
-    }
-
     // Keyboard navigation
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") {
-        nextSlide();
+        if (!document.getElementById("view-slides").classList.contains("hidden")) {
+          nextSlide();
+        }
       } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
-        prevSlide();
+        if (!document.getElementById("view-slides").classList.contains("hidden")) {
+          prevSlide();
+        }
       } else if (e.key === "Escape") {
         closeLightbox();
         document.getElementById("calc-modal").classList.add("hidden");
@@ -625,9 +993,6 @@
       val = parseFloat(val);
       document.getElementById("calc-pct-label").textContent = val.toFixed(2) + "%";
 
-      // Score calculation:
-      // Base: 85.7% -> 12 points
-      // Each 0.5% lower -> +1 point, max 20 points
       const diff = 85.7 - val;
       const steps = Math.floor((diff + 0.0001) / 0.5);
       let score = 12 + steps;
@@ -649,7 +1014,6 @@
         scoreSubEl.className = "text-[11px] text-rose-400";
       }
 
-      // Money calculations (Monthly estimated revenue: 3.55M NTD)
       const monthlyRev = 3550000 * (val / 100);
       document.getElementById("calc-monthly").textContent = (monthlyRev / 10000).toFixed(1) + " 萬元";
 
@@ -671,6 +1035,7 @@
     window.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
       renderSlide(0);
+      renderRevisions("all");
       updateCalculator(81.7);
     });
   </script>
