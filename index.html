@@ -1,1043 +1,2078 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+<!doctype html>
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>高雄榮民總醫院 表後儲能系統建置及節能技術服務 ｜ 無雜訊顧問決策簡報與招標修正對照</title>
-  <meta name="description" content="高雄榮民總醫院 ENG-1150058 4.38億元表後儲能巨額採購案決策分析、招標文件15大細節修正對照表、釋疑公文草案與投標必勝五維戰略">
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              navy: '#051C2C',
-              royal: '#1E3A8A',
-              gold: '#D97706',
-              forest: '#004F32',
-              lime: '#29BA74',
-              purple: '#A100FF',
-              cyan: '#06B6D4'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body {
-      font-family: 'Inter', 'Noto Sans TC', sans-serif;
-      background-color: #0b1120;
-      color: #f1f5f9;
-    }
-    .slide-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: rgba(15, 23, 42, 0.6);
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: rgba(100, 116, 139, 0.5);
-      border-radius: 4px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-      background: rgba(148, 163, 184, 0.8);
-    }
-    .diff-del {
-      background-color: rgba(239, 68, 68, 0.15);
-      color: #fca5a5;
-      text-decoration: line-through;
-      padding: 0 4px;
-      border-radius: 2px;
-    }
-    .diff-add {
-      background-color: rgba(16, 185, 129, 0.2);
-      color: #6ee7b7;
-      font-weight: 600;
-      padding: 0 4px;
-      border-radius: 2px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>ACMEPOINT 進金生能源｜高雄榮總表後儲能（ENG-1150058）麥肯錫顧問簡報與決策平台</title>
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{
+  /* McKinsey Executive Navy × ACMEPOINT Corporate Identity (Aligned with oss-site-portal) */
+  --navy:#051C2C;
+  --navy-2:#102A43;
+  --acme-deep:#1D3B60;
+  --acme-blue:#548ABF;
+  --acme-blue-dark:#36699C;
+  --acme-sky:#EBF3FA;
+  --acme-lime:#A1CE39;
+  --acme-lime-dark:#7DA622;
+  --acme-emerald:#0C7A43;
+  --ink:#1A202C;
+  --ink-2:#3F4B5B;
+  --mute:#64748B;
+  --rule:#D4DCE6;
+  --rule-light:#E8EDF3;
+  --canvas:#FFFFFF;
+  --surface:#F6F8FB;
+  --surface-alt:#F0F4F8;
+  --t-danger:#B42318;
+  --t-warning:#C26B0A;
+  --t-normal:#0C7A43;
+  --serif:Georgia,"Noto Serif TC","Times New Roman",serif;
+  --sans:"Inter","Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--canvas);color:var(--ink);font:14.5px/1.62 var(--sans);-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--acme-blue-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:var(--mono);font-size:12.5px;background:var(--surface-alt);padding:1px 5px;border-radius:2px;color:var(--navy)}
+
+/* ── Top Brand Accent Strip ── */
+.brand-stripe{height:4px;background:linear-gradient(90deg,var(--navy) 0%,var(--acme-blue) 68%,var(--acme-lime) 100%);width:100%}
+
+/* ── Executive Sticky Header (oss-site-portal style) ── */
+.hdr-wrap{position:sticky;top:0;z-index:1000;background:var(--canvas);border-bottom:1px solid var(--rule);box-shadow:0 2px 10px rgba(5,28,44,.04)}
+.top{max-width:1440px;margin:0 auto;padding:0 32px;min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand-lockup{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.brand-lockup img{height:34px;width:auto;display:block}
+.brand-sep{width:1px;height:28px;background:var(--rule)}
+.brand-titles{line-height:1.22}
+.brand-titles b{display:block;font:600 15px var(--serif);color:var(--navy)}
+.brand-titles small{display:block;font-size:11px;color:var(--mute);letter-spacing:.05em;text-transform:uppercase}
+
+.top nav{display:flex;align-items:stretch;gap:2px;margin:0 auto 0 10px;height:66px;overflow-x:auto}
+.tab{
+  position:relative;display:inline-flex;align-items:center;gap:6px;
+  background:none;border:0;border-bottom:3px solid transparent;
+  color:var(--ink-2);padding:0 15px;cursor:pointer;font-size:13.5px;font-weight:500;
+  white-space:nowrap;transition:color .15s,background .15s
+}
+.tab:hover{color:var(--navy);background:var(--surface)}
+.tab[aria-current=page]{color:var(--navy);font-weight:700}
+.tab[aria-current=page]::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(90deg,var(--navy),var(--acme-blue) 75%,var(--acme-lime))}
+
+.user-bar{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.hdr-chip{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 10px;
+  background:var(--surface);border:1px solid var(--rule);font-size:12px;color:var(--navy);font-weight:600
+}
+.hdr-dot{width:8px;height:8px;border-radius:50%;background:var(--acme-emerald)}
+.hdr-btn{background:var(--canvas);border:1px solid var(--rule);color:var(--navy);cursor:pointer;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:2px}
+.hdr-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ── Navy Notice Strip ── */
+.notice-bar{background:var(--navy);color:#DCE7F2;font-size:12.5px;padding:8px 32px;border-bottom:2px solid var(--acme-lime)}
+.notice-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.notice-tag{color:var(--acme-lime);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-right:8px;font-size:11px}
+
+/* ── Main Workspace ── */
+main{max-width:1440px;margin:0 auto;padding:24px 32px 56px}
+.exhibit{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acme-blue-dark);font-weight:700;margin:0 0 6px;display:flex;align-items:center;gap:9px}
+.exhibit::before{content:"";display:inline-block;width:18px;height:3px;background:var(--acme-lime)}
+.title{font:600 28px/1.28 var(--serif);color:var(--navy);margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0 0 20px;font-size:14px}
+
+/* ── McKinsey HTML Presentation Controls & 16:9 Stage ── */
+.deck-toolbar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--acme-blue);
+  padding:10px 16px;margin-bottom:16px
+}
+.deck-nav{display:flex;align-items:center;gap:8px}
+.deck-btn{
+  background:var(--canvas);border:1px solid var(--navy);color:var(--navy);
+  padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;border-radius:2px;transition:all .15s
+}
+.deck-btn:hover:not(:disabled){background:var(--navy);color:#fff}
+.deck-btn:disabled{opacity:.35;cursor:default}
+.deck-btn.active{background:var(--navy);color:#fff}
+.deck-counter{font:700 13px var(--mono);color:var(--navy);padding:0 6px}
+.deck-title-ind{font-size:13px;color:var(--ink-2);font-weight:600}
+
+.deck-stage-wrap{
+  background:#E8EDF3;padding:18px;border:1px solid var(--rule);
+  display:flex;justify-content:center;align-items:center
+}
+.deck-stage{
+  width:100%;max-width:1280px;background:var(--canvas);
+  border:1px solid var(--rule);box-shadow:0 12px 32px rgba(5,28,44,.12);
+  position:relative;overflow:hidden
+}
+.slide{display:none;min-height:660px;background:var(--canvas)}
+.slide.active{display:block}
+.deck-stage.scroll-mode{box-shadow:none;background:transparent;border:0}
+.deck-stage.scroll-mode .slide{
+  display:block;margin-bottom:28px;border:1px solid var(--rule);
+  box-shadow:0 6px 20px rgba(5,28,44,.08)
+}
+
+/* Slide Cover */
+.slide-cover{
+  min-height:660px;background:var(--navy);color:#fff;padding:40px 48px 32px;
+  display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;
+  border-bottom:5px solid var(--acme-lime)
+}
+.cover-grid-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(84,138,191,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(84,138,191,.09) 1px,transparent 1px);
+  background-size:44px 44px
+}
+.cover-top,.cover-body,.cover-foot{position:relative;z-index:1}
+.cover-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.15)}
+.cover-logo{height:38px;width:auto}
+.cover-pill{font-size:11px;letter-spacing:.1em;color:var(--acme-lime);border:1px solid rgba(161,206,57,.5);padding:4px 12px;font-weight:700}
+.cover-body{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center;padding:24px 0}
+.cover-kicker{font-size:11.5px;letter-spacing:.16em;color:var(--acme-lime);font-weight:700;margin-bottom:12px}
+.cover-left h1{font:600 36px/1.24 var(--serif);margin:0 0 16px;color:#fff}
+.cover-sub{color:#C5D3E0;font-size:15px;line-height:1.7;margin:0 0 24px}
+.cover-meta-row{display:grid;grid-template-columns:1fr;gap:10px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px}
+.cover-meta-row small{display:block;font-size:10.5px;color:#8FA8BF;text-transform:uppercase;letter-spacing:.06em}
+.cover-meta-row b{font-size:13px;color:#fff;font-weight:600}
+.cover-foot{display:flex;justify-content:space-between;font-size:11px;color:#8FA8BF;border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+
+/* Interior Slide Layout */
+.slide-inner{padding:28px 36px 26px;min-height:660px;display:flex;flex-direction:column;justify-content:space-between}
+.s-head{border-bottom:2px solid var(--navy);padding-bottom:12px;margin-bottom:18px}
+.s-title{font:600 22px/1.32 var(--serif);color:var(--navy);margin:0;letter-spacing:-.01em}
+.s-grid-2{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;align-items:start;flex:1}
+.s-grid-2-map{display:grid;grid-template-columns:1.12fr 1fr;gap:20px;align-items:start;flex:1}
+.s-grid-2-wide{display:grid;grid-template-columns:1.45fr .9fr;gap:20px;align-items:start;flex:1}
+
+.s-visual-card{background:var(--canvas);border:1px solid var(--rule);padding:14px 16px}
+.card-cap{font-size:11.5px;font-weight:700;color:var(--acme-deep);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--rule-light)}
+.slide-svg{width:100%;height:auto;display:block}
+
+.s-points{display:flex;flex-direction:column;gap:13px}
+.kpis-mini{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--navy);border-bottom:1px solid var(--rule);background:var(--surface);margin-bottom:4px}
+.km{padding:10px 12px}
+.km+.km{border-left:1px solid var(--rule-light)}
+.km strong{display:block;font:700 20px/1.15 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+.km span{display:block;font-size:11px;color:var(--mute);margin-top:2px}
+
+.mini-kpi-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--rule-light)}
+.mini-kpi-bar small{display:block;font-size:10.5px;color:var(--mute)}
+.mini-kpi-bar b{font-size:13px;color:var(--navy);font-variant-numeric:tabular-nums}
+
+.pt-item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;background:var(--surface);border:1px solid var(--rule-light);border-left:3px solid var(--acme-blue)}
+.pt-num{
+  flex-shrink:0;min-width:30px;height:24px;padding:0 6px;background:var(--navy);color:#fff;
+  font:700 11px var(--mono);display:inline-flex;align-items:center;justify-content:center;border-radius:2px
+}
+.pt-item h4{margin:0 0 4px;font-size:13.5px;font-weight:700;color:var(--navy)}
+.pt-item p{margin:0;font-size:12.5px;color:var(--ink-2);line-height:1.55}
+
+.kpis-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.k3{background:var(--surface);border:1px solid var(--rule);border-top:2.5px solid var(--navy);padding:12px 14px}
+.k3 b{display:block;font-size:13px;color:var(--navy);margin-bottom:4px}
+.k3 span{font-size:12px;color:var(--ink-2)}
+
+.exec-cta{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  background:var(--navy);color:#fff;padding:16px 22px;border-left:4px solid var(--acme-lime)
+}
+.exec-cta b{display:block;font:600 15px var(--serif);color:#fff;margin-bottom:2px}
+.exec-cta span{font-size:12px;color:#C5D3E0}
+.btn-pri{background:var(--acme-lime);color:var(--navy);border:0;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;border-radius:2px}
+.btn-pri:hover{background:#b5e04d}
+.btn-sec{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;border-radius:2px}
+.btn-sec:hover{background:rgba(255,255,255,.1)}
+.btn-inline{background:none;border:0;color:var(--acme-blue-dark);font-weight:700;cursor:pointer;padding:0;text-decoration:underline;font-size:inherit}
+
+/* Speaker Notes & Thumbnail Strip */
+.notes-bar{
+  margin-top:12px;background:#FEF9E7;border:1px solid #F5CBA7;border-left:4px solid var(--t-warning);
+  padding:12px 18px;font-size:13px;color:#5C3A00
+}
+.notes-bar b{color:var(--navy);margin-right:8px}
+.thumb-strip{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:14px
+}
+.thumb{
+  background:var(--canvas);border:1px solid var(--rule);padding:8px 10px;text-align:left;cursor:pointer;
+  transition:all .15s;border-radius:2px
+}
+.thumb:hover{background:var(--acme-sky);border-color:var(--acme-blue)}
+.thumb.active{background:var(--navy);color:#fff;border-color:var(--navy);border-bottom:3px solid var(--acme-lime)}
+.thumb small{display:block;font:700 10px var(--mono);color:var(--acme-blue-dark)}
+.thumb.active small{color:var(--acme-lime)}
+.thumb span{display:block;font-size:11.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+
+/* ── McKinsey KPI Strip (for Portal Views) ── */
+.kpis{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--canvas);border-top:2.5px solid var(--navy);border-bottom:1px solid var(--rule);margin:0 0 24px
+}
+.kpi{padding:18px 22px 18px 0}
+.kpi+.kpi{border-left:1px solid var(--rule-light);padding-left:22px}
+.kpi strong{display:block;font:600 30px/1.18 var(--serif);color:var(--navy);font-variant-numeric:tabular-nums;margin-bottom:4px}
+.kpi span{display:block;font-size:12px;color:var(--mute);font-weight:500}
+.kpi:first-child strong{color:var(--acme-blue-dark)}
+
+/* ── Map View ── */
+.map-layout{display:grid;grid-template-columns:1.65fr 1fr;gap:20px;align-items:start}
+#full-map{width:100%;height:560px;border:1px solid var(--rule);border-top:2.5px solid var(--navy)}
+.map-side{display:flex;flex-direction:column;gap:14px}
+.info-box{background:var(--surface);border:1px solid var(--rule);border-top:2.5px solid var(--navy);padding:16px 18px}
+.info-box h3{margin:0 0 10px;font:600 16px var(--serif);color:var(--navy)}
+.info-dl{display:grid;grid-template-columns:110px 1fr;gap:6px 10px;margin:0;font-size:13px}
+.info-dl dt{color:var(--mute);font-weight:600}
+.info-dl dd{margin:0;color:var(--ink);font-weight:500}
+.pin-btn{
+  display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;
+  background:var(--canvas);border:1px solid var(--rule);padding:9px 12px;margin-top:8px;cursor:pointer;font-size:12.5px
+}
+.pin-btn:hover{background:var(--acme-sky);border-color:var(--acme-blue)}
+.pin-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px}
+
+/* ── Crisp McKinsey Tables & Filters ── */
+.filters{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;
+  background:var(--surface);border:1px solid var(--rule-light);border-left:3px solid var(--acme-blue);
+  padding:14px 18px;margin-bottom:16px
+}
+.filters label{display:block;font-size:11.5px;font-weight:700;color:var(--navy);letter-spacing:.03em}
+.filters input,.filters select{display:block;width:100%;margin-top:5px;padding:8px 10px;border:1px solid var(--rule);background:var(--canvas);font-size:13.5px;border-radius:2px}
+.tw{overflow-x:auto;border-top:2px solid var(--navy);border-bottom:1px solid var(--rule);background:var(--canvas)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+thead{background:var(--surface)}
+th{font-weight:700;color:var(--navy);text-align:left;padding:11px 12px;border-bottom:1px solid var(--navy);white-space:nowrap;font-size:12px}
+td{padding:11px 12px;border-bottom:1px solid var(--rule-light);vertical-align:top;color:var(--ink);line-height:1.55}
+tbody tr:hover{background:var(--acme-sky)}
+.sev{display:inline-block;padding:2px 8px;border-radius:2px;font-size:11px;font-weight:700;color:#fff}
+.sev-高{background:var(--t-danger)}
+.sev-中{background:var(--t-warning)}
+.sev-低{background:var(--acme-blue-dark)}
+.rev-text{color:var(--acme-emerald);font-weight:600}
+.orig-text{color:var(--ink-2)}
+
+/* ── Formal Letter Box ── */
+.letter-wrap{background:var(--surface);border:1px solid var(--rule);border-top:2.5px solid var(--navy);padding:24px 28px}
+.letter-pre{
+  background:var(--canvas);border:1px solid var(--rule);padding:28px 32px;
+  font:14px/1.85 "Noto Serif TC",Georgia,serif;color:var(--ink);white-space:pre-wrap;margin:14px 0 0
+}
+
+/* ── Financial Calculator ── */
+.calc-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:start}
+.calc-card{background:var(--surface);border:1px solid var(--rule);border-top:2.5px solid var(--navy);padding:20px 24px}
+.calc-row{margin-bottom:16px}
+.calc-row label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.calc-row input[type=range]{width:100%;accent-color:var(--navy)}
+.calc-res{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cr-box{background:var(--canvas);border:1px solid var(--rule);padding:16px;border-left:3px solid var(--acme-blue)}
+.cr-box.hi{border-left-color:var(--acme-emerald);background:#EFF8DF}
+.cr-box small{display:block;font-size:11.5px;color:var(--mute);margin-bottom:4px}
+.cr-box strong{font:700 24px var(--serif);color:var(--navy);font-variant-numeric:tabular-nums}
+
+.foot{margin-top:32px;font-size:12px;color:var(--mute);border-top:1px solid var(--rule);padding-top:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media(max-width:1024px){
+  .top{padding:0 16px}.notice-bar,main{padding-left:16px;padding-right:16px}
+  .cover-body,.s-grid-2,.s-grid-2-map,.s-grid-2-wide,.map-layout,.calc-grid{grid-template-columns:1fr}
+  .kpis,.kpis-3{grid-template-columns:1fr 1fr}
+  .thumb-strip{grid-template-columns:repeat(3,1fr)}
+  .filters{grid-template-columns:1fr}
+}
+@media print{
+  .brand-stripe,.hdr-wrap,.notice-bar,.deck-toolbar,.notes-bar,.thumb-strip,.foot{display:none!important}
+  .deck-stage-wrap{padding:0;border:0;background:#fff}
+  .slide{display:block!important;page-break-after:always;border:0!important;box-shadow:none!important}
+}
+</style>
 </head>
-<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950">
+<body>
+<div class="brand-stripe"></div>
 
-  <!-- Top Navigation Bar -->
-  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 lg:px-8 py-3 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center font-black text-slate-950 shadow-lg shadow-blue-500/20">
-        6692
+<!-- Executive Sticky Header (oss-site-portal Corporate Identity) -->
+<header class="hdr-wrap">
+  <div class="top">
+    <div class="brand-lockup">
+      <img src="./assets/acmepoint-logo.png" alt="ACMEPOINT 進金生能源">
+      <div class="brand-sep"></div>
+      <div class="brand-titles">
+        <b>高雄榮總表後儲能決策平台</b>
+        <small>ENG-1150058 · McKinsey Executive Deck</small>
       </div>
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/60 border border-amber-500/30 px-2 py-0.5 rounded-full">
-            巨額採購案 ｜ ENG-1150058
-          </span>
-          <span class="text-xs text-slate-400 hidden sm:inline">進金生能源 投標決策專用</span>
-        </div>
-        <h1 class="text-sm sm:text-base font-bold text-slate-100 tracking-tight">
-          高雄榮總 表後儲能系統建置及節能技術服務 ｜ 無雜訊顧問決策與條款修正對照
-        </h1>
+    </div>
+    <nav aria-label="主要導覽">
+      <button class="tab" id="tab-slides" aria-current="page" onclick="switchView('slides')">顧問簡報（12 頁 SVG）</button>
+      <button class="tab" id="tab-map" onclick="switchView('map')">案場地圖與配置</button>
+      <button class="tab" id="tab-revisions" onclick="switchView('revisions')">15 大條款修正對照</button>
+      <button class="tab" id="tab-letter" onclick="switchView('letter')">釋疑公文函稿</button>
+      <button class="tab" id="tab-calc" onclick="switchView('calc')">81.70% 收益試算</button>
+    </nav>
+    <div class="user-bar">
+      <span class="hdr-chip"><i class="hdr-dot"></i>4.38 億 ｜ 黃金出價 81.70%</span>
+      <a class="hdr-btn" href="./vghks_bess_zero_noise_consulting.pptx" download>下載 PPTX</a>
+    </div>
+  </div>
+</header>
+
+<div class="notice-bar">
+  <div class="notice-inner">
+    <div><span class="notice-tag">BIDDING BRIEF</span>高雄榮民總醫院「表後儲能系統建置及節能技術服務」（高雄市左營區大中一路 386 號 · 電號 11-44-7700-10-9 · 契約容量 8,300 kW）</div>
+    <div>鍵盤 <kbd>←</kbd> <kbd>→</kbd> 切換簡報頁 ｜ 風格對齊 ACMEPOINT × McKinsey</div>
+  </div>
+</div>
+
+<main>
+  <!-- ==================== VIEW 1: 12-SLIDE MCKINSEY HTML DECK ==================== -->
+  <div id="view-slides">
+    <div class="deck-toolbar">
+      <div class="deck-nav">
+        <button class="deck-btn" id="btn-prev" onclick="stepSlide(-1)">← 上一頁</button>
+        <span class="deck-counter" id="slide-counter">01 / 12</span>
+        <button class="deck-btn" id="btn-next" onclick="stepSlide(1)">下一頁 →</button>
+        <span class="deck-title-ind" id="slide-title-ind">專案決策總覽｜封面</span>
+      </div>
+      <div class="deck-nav">
+        <button class="deck-btn" id="btn-notes" onclick="toggleNotes()">演講備忘錄</button>
+        <button class="deck-btn" id="btn-mode" onclick="toggleScrollMode()">全頁捲動瀏覽</button>
+        <button class="deck-btn" onclick="window.print()">列印 / 存成 PDF</button>
       </div>
     </div>
 
-    <!-- Controls -->
-    <div class="flex items-center gap-2 sm:gap-3">
-      <!-- Nav Tabs -->
-      <button onclick="switchView('slides')" id="tab-btn-slides" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs sm:text-sm font-bold flex items-center gap-1.5 transition">
-        <i data-lucide="presentation" class="w-4 h-4"></i>
-        <span>顧問簡報</span>
-      </button>
-
-      <button onclick="switchView('revisions')" id="tab-btn-revisions" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
-        <i data-lucide="file-diff" class="w-4 h-4 text-rose-400"></i>
-        <span>15大條款修正對照</span>
-      </button>
-
-      <button onclick="switchView('letter')" id="tab-btn-letter" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
-        <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i>
-        <span>釋疑公文函稿</span>
-      </button>
-
-      <!-- Calculator Modal Trigger -->
-      <button onclick="toggleModal('calc-modal')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
-        <i data-lucide="calculator" class="w-4 h-4 text-emerald-400"></i>
-        <span class="hidden xl:inline">收益試算</span>
-      </button>
-
-      <!-- Download PPTX -->
-      <a href="vghks_bess_zero_noise_consulting.pptx" download class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-md shadow-amber-500/20 transition">
-        <i data-lucide="download" class="w-4 h-4"></i>
-        <span class="hidden sm:inline">下載 PPTX</span>
-      </a>
-    </div>
-  </header>
-
-  <!-- VIEW 1: Slides View -->
-  <main id="view-slides" class="flex-1 flex flex-col items-center justify-center p-3 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
-
-    <!-- Slide Container (16:9 ratio card) -->
-    <div id="slide-viewport" class="w-full bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden relative flex flex-col slide-card">
-      
-      <!-- Slide Top Banner -->
-      <div class="px-6 py-4 bg-slate-900 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
-        <div class="flex items-center gap-2">
-          <span id="slide-archetype-badge" class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-950/80 text-blue-400 border border-blue-500/30">
-            McKinsey Deep Navy ｜ 封面頁
-          </span>
-          <span id="slide-counter-badge" class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">
-            01 / 12
-          </span>
-        </div>
-        <div class="flex items-center gap-4 text-xs text-slate-400 font-mono">
-          <span>Source: 高雄榮民總醫院 ENG-1150058</span>
-          <span class="hidden sm:inline">16:9 Zero-Noise Architecture</span>
-        </div>
-      </div>
-
-      <!-- Slide Main Body -->
-      <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+    <div class="deck-stage-wrap">
+      <div class="deck-stage" id="deck-stage">
         
-        <!-- Header Zone: Action Title & Sub -->
-        <div class="mb-6">
-          <h2 id="slide-action-title" class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-100 tracking-tight leading-snug">
-            高雄榮民總醫院「表後儲能系統建置及節能技術服務」
-          </h2>
-          <p id="slide-sub-title" class="mt-2 text-sm sm:text-base text-slate-300 font-normal">
-            採購案號：ENG-1150058 ｜ 4.38 億元巨額採購案決策分析與投標必勝攻略
-          </p>
+<!-- ==================== SLIDE 1: COVER ==================== -->
+<section class="slide active" data-slide="1" data-title="專案決策總覽｜封面" data-note="【開場白】各位長官與同仁大家好。今天向各位簡報高雄榮民總醫院「表後儲能系統建置及節能技術服務（ENG-1150058）」之全維度投標決策分析。【核心訴求】本案為 12 年期 4.38 億元、含兩次擴充上看 7.30 億元的國內指標性醫療機構純 ESCO 表後儲能案。我們將以麥肯錫金字塔架構，從院區空間定位、真實用電數據、總1變電站單線圖、81.70% 評選博弈密碼到 15 大條款修正，完整呈現必勝藍圖。">
+  <div class="slide-cover">
+    <div class="cover-grid-bg"></div>
+    <div class="cover-top">
+      <img src="./assets/acmepoint-logo-white.png" alt="ACMEPOINT 進金生能源" class="cover-logo">
+      <span class="cover-pill">ENG-1150058 ｜ 巨額採購案投標決策簡報</span>
+    </div>
+    <div class="cover-body">
+      <div class="cover-left">
+        <div class="cover-kicker">EXECUTIVE BIDDING STRATEGY &amp; TECHNICAL ADVISORY</div>
+        <h1>高雄榮民總醫院<br>表後儲能系統建置及節能技術服務</h1>
+        <p class="cover-sub">以「81.70% 滿分出價博弈 × 總 1 變電站防逆送高韌性併網 × 15 大招標條款風險防禦」搶下 20 年上看 7.30 億元之國家級醫療儲能示範標案</p>
+        <div class="cover-meta-row">
+          <div><small>招標機關</small><b>高雄榮民總醫院（左營區大中一路 386 號）</b></div>
+          <div><small>預定案場</small><b>院區污水處理場（約 660 m²）→ 總 1 變電站</b></div>
+          <div><small>編製單位</small><b>進金生能源服務股份有限公司（6692）</b></div>
         </div>
+      </div>
+      <div class="cover-right">
+        <!-- SVG Architectural Isometric BESS & KPI Visual -->
+        <svg viewBox="0 0 420 340" class="slide-svg" role="img" aria-label="專案核心規模架構圖">
+          <defs>
+            <linearGradient id="covGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1D3B60"/>
+              <stop offset="100%" stop-color="#051C2C"/>
+            </linearGradient>
+          </defs>
+          <rect x="8" y="8" width="404" height="324" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(84,138,191,0.35)" stroke-width="1"/>
+          <!-- Header bar -->
+          <text x="26" y="36" fill="#A1CE39" font-size="11" font-weight="700" letter-spacing="1.4">PROJECT SNAPSHOT · KEY METRICS</text>
+          <line x1="26" y1="46" x2="394" y2="46" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <!-- 4 Metric Boxes -->
+          <rect x="26" y="60" width="176" height="82" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(161,206,57,0.5)" stroke-width="1"/>
+          <text x="40" y="84" fill="#9FB6CC" font-size="11">12 年基準契約預算</text>
+          <text x="40" y="114" fill="#FFFFFF" font-size="25" font-weight="700" font-family="Georgia, serif">4.38 億元</text>
+          <text x="40" y="132" fill="#A1CE39" font-size="10.5">144 個月純 ESCO 分成模式</text>
 
-        <!-- Evidence Zone: Left Cards & Right Image -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch flex-1">
-          
-          <!-- Left: Evidence & Analysis Card (7 cols) -->
-          <div id="slide-evidence-container" class="lg:col-span-7 bg-slate-950/60 border border-slate-800 rounded-xl p-5 sm:p-6 flex flex-col justify-center space-y-3.5">
-            <!-- Dynamic Bullets -->
+          <rect x="218" y="60" width="176" height="82" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(84,138,191,0.45)" stroke-width="1"/>
+          <text x="232" y="84" fill="#9FB6CC" font-size="11">20 年含兩次擴充總值</text>
+          <text x="232" y="114" fill="#A1CE39" font-size="25" font-weight="700" font-family="Georgia, serif">7.30 億元</text>
+          <text x="232" y="132" fill="#C5D3E0" font-size="10.5">+1.46 億 (Y13–16) +1.46 億 (Y17–20)</text>
+
+          <rect x="26" y="156" width="176" height="82" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(84,138,191,0.45)" stroke-width="1"/>
+          <text x="40" y="180" fill="#9FB6CC" font-size="11">評選滿分黃金出價</text>
+          <text x="40" y="210" fill="#FFFFFF" font-size="25" font-weight="700" font-family="Georgia, serif">81.70 %</text>
+          <text x="40" y="228" fill="#A1CE39" font-size="10.5">降 4.0% 恰取 20/20 滿分封頂</text>
+
+          <rect x="218" y="156" width="176" height="82" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(84,138,191,0.45)" stroke-width="1"/>
+          <text x="232" y="180" fill="#9FB6CC" font-size="11">契約容量 ／ 備援需求</text>
+          <text x="232" y="210" fill="#FFFFFF" font-size="25" font-weight="700" font-family="Georgia, serif">8,300 kW</text>
+          <text x="232" y="228" fill="#C5D3E0" font-size="10.5">普通電源 ≥2hr 備援 · RTE ≥85%</text>
+
+          <!-- Bottom Flow Bar -->
+          <rect x="26" y="254" width="368" height="62" rx="3" fill="rgba(84,138,191,0.14)" stroke="rgba(84,138,191,0.4)" stroke-width="1"/>
+          <text x="40" y="276" fill="#A1CE39" font-size="11" font-weight="700">四大核心勝出支柱</text>
+          <text x="40" y="298" fill="#E2ECF5" font-size="11.5">① 釋疑修約降險　② 81.70% 精準定價　③ 22.8/11.4kV 零逆送設計　④ 消防與資安滿配</text>
+        </svg>
+      </div>
+    </div>
+    <div class="cover-foot">
+      <span>CONFIDENTIAL · ACMEPOINT ENERGY SERVICES (6692.TW)</span>
+      <span>McKinsey Zero-Noise Consulting Format · 12 Exhibits</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 2: EXECUTIVE SUMMARY & PYRAMID ==================== -->
+<section class="slide" data-slide="2" data-title="核心結論｜金字塔決策架構" data-note="【核心觀點】本案表面上是一份 4.38 億元的純 ESCO 節能服務標案，實質上是一場『資本效率、法規防禦與醫院電力韌性』的三重考驗。【數據證據】醫院零出資（無保底），廠商全額承擔 CAPEX 與 12 年維運；但只要透過採購法第 41 條釋疑消除工期與罰款陷阱，並鎖定 81.70% 滿分出價，即可打造進金生在國家級醫學中心的指標實績。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 01 · EXECUTIVE SUMMARY</div>
+      <h2 class="s-title">本案屬「廠商全額出資、醫院零保底」之純 ESCO 巨額標案，須以條款防禦與 81.70% 精準定價鎖定勝局</h2>
+    </div>
+    <div class="s-grid-2">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 1｜麥肯錫金字塔決策架構（Governing Thought &amp; 3 Pillars）</div>
+        <svg viewBox="0 0 560 360" class="slide-svg">
+          <!-- Top Pyramid Box -->
+          <rect x="80" y="14" width="400" height="68" rx="3" fill="#051C2C"/>
+          <rect x="80" y="14" width="6" height="68" fill="#A1CE39"/>
+          <text x="102" y="38" fill="#A1CE39" font-size="11" font-weight="700" letter-spacing="1">GOVERNING THOUGHT · 頂層決策主張</text>
+          <text x="102" y="60" fill="#FFFFFF" font-size="14" font-weight="700">積極備標拿下 7.3 億醫療儲能燈塔案，但須先透過釋疑修約排除致命風險</text>
+
+          <!-- Connector Lines -->
+          <line x1="280" y1="82" x2="280" y2="108" stroke="#051C2C" stroke-width="2"/>
+          <line x1="95" y1="108" x2="465" y2="108" stroke="#051C2C" stroke-width="2"/>
+          <line x1="95" y1="108" x2="95" y2="128" stroke="#051C2C" stroke-width="2"/>
+          <line x1="280" y1="108" x2="280" y2="128" stroke="#051C2C" stroke-width="2"/>
+          <line x1="465" y1="108" x2="465" y2="128" stroke="#051C2C" stroke-width="2"/>
+
+          <!-- Pillar 1 -->
+          <rect x="16" y="128" width="164" height="214" rx="3" fill="#F6F8FB" stroke="#D4DCE6" stroke-width="1.2"/>
+          <rect x="16" y="128" width="164" height="34" fill="#1D3B60"/>
+          <text x="98" y="150" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">一、商業與定價博弈</text>
+          <text x="28" y="184" fill="#051C2C" font-size="11.5" font-weight="700">• 12 年預算 4.38 億元</text>
+          <text x="34" y="201" fill="#3F4B5B" font-size="10.5">月均預估效益 355 萬元</text>
+          <text x="28" y="226" fill="#051C2C" font-size="11.5" font-weight="700">• 81.70% 黃金出價</text>
+          <text x="34" y="243" fill="#3F4B5B" font-size="10.5">恰好奪 20/20 價格滿分</text>
+          <text x="28" y="268" fill="#051C2C" font-size="11.5" font-weight="700">• 20 年總值 7.30 億元</text>
+          <text x="34" y="285" fill="#3F4B5B" font-size="10.5">需預列 Y9-11 電芯置換費</text>
+          <rect x="28" y="304" width="140" height="24" rx="2" fill="#EBF3FA"/>
+          <text x="98" y="320" text-anchor="middle" fill="#1D3B60" font-size="10.5" font-weight="700">無保底 · 採實績分成</text>
+
+          <!-- Pillar 2 -->
+          <rect x="198" y="128" width="164" height="214" rx="3" fill="#F6F8FB" stroke="#D4DCE6" stroke-width="1.2"/>
+          <rect x="198" y="128" width="164" height="34" fill="#548ABF"/>
+          <text x="280" y="150" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">二、工程與法規門檻</text>
+          <text x="210" y="184" fill="#051C2C" font-size="11.5" font-weight="700">• 660 m² 污水廠空間</text>
+          <text x="216" y="201" fill="#3F4B5B" font-size="10.5">地下水槽荷重與防洪墊高</text>
+          <text x="210" y="226" fill="#051C2C" font-size="11.5" font-weight="700">• 22.8/11.4kV 總1變電站</text>
+          <text x="216" y="243" fill="#3F4B5B" font-size="10.5">嚴格防逆送 + 2hr 備援</text>
+          <text x="210" y="268" fill="#051C2C" font-size="11.5" font-weight="700">• 三大外審與非陸資安</text>
+          <text x="216" y="285" fill="#3F4B5B" font-size="10.5">台電 · 消防 · 標檢局確證</text>
+          <rect x="210" y="304" width="140" height="24" rx="2" fill="#EFF8DF"/>
+          <text x="280" y="320" text-anchor="middle" fill="#0C7A43" font-size="10.5" font-weight="700">RTE ≥ 85% 全案驗收</text>
+
+          <!-- Pillar 3 -->
+          <rect x="380" y="128" width="164" height="214" rx="3" fill="#F6F8FB" stroke="#D4DCE6" stroke-width="1.2"/>
+          <rect x="380" y="128" width="164" height="34" fill="#B42318"/>
+          <text x="462" y="150" text-anchor="middle" fill="#FFFFFF" font-size="12.5" font-weight="700">三、招標條款排雷</text>
+          <text x="392" y="184" fill="#051C2C" font-size="11.5" font-weight="700">• 工期矛盾 240 vs 300天</text>
+          <text x="398" y="201" fill="#3F4B5B" font-size="10.5">須統一 300 天且扣除外審</text>
+          <text x="392" y="226" fill="#051C2C" font-size="11.5" font-weight="700">• 天價日罰 43.8 萬元</text>
+          <text x="398" y="243" fill="#3F4B5B" font-size="10.5">應改按未完工建置額 1‰</text>
+          <text x="392" y="268" fill="#051C2C" font-size="11.5" font-weight="700">• 收益公式補齊超約</text>
+          <text x="398" y="285" fill="#3F4B5B" font-size="10.5">納入超約與契約容量節費</text>
+          <rect x="392" y="304" width="140" height="24" rx="2" fill="#FEF3F2"/>
+          <text x="462" y="320" text-anchor="middle" fill="#B42318" font-size="10.5" font-weight="700">已備妥 15 項釋疑函稿</text>
+        </svg>
+      </div>
+      <div class="s-points">
+        <div class="kpis-mini">
+          <div class="km"><strong>4.38 億</strong><span>12 年基準總預算</span></div>
+          <div class="km"><strong>3.07 億</strong><span>19 個月實付電費</span></div>
+          <div class="km"><strong>15 項</strong><span>招標瑕疵修正點</span></div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">01</div>
+          <div>
+            <h4>商業結構：純 ESCO 模式，零保底但現金流清晰</h4>
+            <p>醫院提供污水處理場約 660 m² 土地，不支付任何建置資本支出；廠商全額投資並按月依「實際節電與輔助服務收益 × 投標分成比率」請款，合約期滿 12 年可延伸 4+4 年至 20 年。</p>
           </div>
-
-          <!-- Right: Visual Diagram / Image (5 cols) -->
-          <div class="lg:col-span-5 bg-slate-950/80 border border-slate-800 rounded-xl p-2.5 flex flex-col items-center justify-center relative group overflow-hidden">
-            <img id="slide-img" src="assets/images/slide_01_cover_campus.jpg" alt="簡報圖像" class="w-full h-full object-cover rounded-lg shadow-md cursor-zoom-in transition duration-300 group-hover:scale-[1.02]" onclick="openLightbox(this.src)">
-            <div class="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur-md border border-slate-700 text-[11px] font-mono px-2 py-1 rounded text-slate-300 pointer-events-none flex items-center gap-1">
-              <i data-lucide="zoom-in" class="w-3 h-3 text-amber-400"></i>
-              點擊放大檢視
-            </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">02</div>
+          <div>
+            <h4>用電基本盤：高榮年電費近 2 億元，削峰套利空間厚實</h4>
+            <p>依據招標文件表 1-1，電號 <code>11-44-7700-10-9</code> 契約容量 8,300 kW，114/01–115/07 共用電 7,435 萬度、平均電價 4.12 元/度，夏月尖峰單價達 4.73 元/度且屢生超約罰款。</p>
           </div>
-
         </div>
-
-      </div>
-
-      <!-- Slide Bottom Control Bar -->
-      <div class="px-6 py-3 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between">
-        <button onclick="prevSlide()" class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
-          <i data-lucide="chevron-left" class="w-4 h-4"></i>
-          <span>上一頁 (Prev)</span>
-        </button>
-
-        <!-- Slide Indicators Dots -->
-        <div id="slide-dots" class="hidden sm:flex items-center gap-1.5">
-          <!-- Populated by JS -->
-        </div>
-
-        <button onclick="nextSlide()" class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700">
-          <span>下一頁 (Next)</span>
-          <i data-lucide="chevron-right" class="w-4 h-4"></i>
-        </button>
-      </div>
-
-    </div>
-
-    <!-- Speaker Notes Drawer (Toggled) -->
-    <div id="notes-drawer" class="w-full mt-4 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl transition-all">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
-        <div class="flex items-center gap-2">
-          <i data-lucide="mic" class="w-4 h-4 text-amber-400"></i>
-          <span class="text-sm font-bold text-slate-200">顧問報告備忘錄 (Speaker Notes)</span>
-        </div>
-        <span class="text-xs text-slate-400">三段式講稿：① 本頁結論 ➔ ② 補充說明 ➔ ③ 下頁轉場</span>
-      </div>
-      <div id="notes-content" class="text-sm text-slate-300 whitespace-pre-line leading-relaxed font-sans bg-slate-950 p-4 rounded-lg border border-slate-800/80">
-        <!-- Notes here -->
-      </div>
-    </div>
-
-    <!-- Thumbnails Strip -->
-    <div class="w-full mt-6">
-      <div class="flex items-center justify-between mb-2">
-        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-          <i data-lucide="layers" class="w-3.5 h-3.5 text-blue-400"></i>
-          全頁目錄速覽 (12 Slides Index)
-        </h3>
-        <span class="text-xs text-slate-400 font-mono">支援鍵盤 ◀ ▶ 箭頭翻頁</span>
-      </div>
-      <div id="thumbnails-container" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-12 gap-2 overflow-x-auto pb-2 custom-scrollbar">
-        <!-- Thumbnails populated by JS -->
-      </div>
-    </div>
-
-  </main>
-
-  <!-- VIEW 2: 15-Item Revisions Matrix View -->
-  <main id="view-revisions" class="flex-1 hidden p-4 sm:p-8 max-w-7xl mx-auto w-full">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl mb-8">
-      
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
-        <div>
-          <div class="flex items-center gap-2 mb-2">
-            <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-rose-950 text-rose-400 border border-rose-500/30">
-              法規與條款勘誤審查
-            </span>
-            <span class="text-xs font-mono text-slate-400">ENG-1150058 原招標文件細節修正</span>
+        <div class="pt-item">
+          <div class="pt-num">03</div>
+          <div>
+            <h4>立即行動：依採購法第 41 條發函釋疑是獲利前提</h4>
+            <p>原招標文件存在案號誤植（ENG-1140043）、工期衝突（240/300 天）與逾期罰則未填（預設 1‰ = 日罰 43.8 萬）等 15 項瑕疵，必須於等標期內正式行文更正。</p>
           </div>
-          <h2 class="text-xl sm:text-2xl font-black text-slate-100">
-            原招標文件 15 大關鍵細節修正對照表
-          </h2>
-          <p class="text-sm text-slate-400 mt-1">
-            針對契約編號筆誤、240天 vs 300天工期矛盾、逾期違約金盲區、防逆送收益矛盾與收益計算公式提出完整紅字修訂版
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <button onclick="filterRevisions('all')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition" data-filter="all">全部 (15)</button>
-          <button onclick="filterRevisions('legal')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="legal">法律與工期</button>
-          <button onclick="filterRevisions('commercial')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="commercial">財務與收益</button>
-          <button onclick="filterRevisions('technical')" class="rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="technical">工程與技術</button>
         </div>
       </div>
-
-      <!-- Revisions Grid -->
-      <div id="revisions-list" class="space-y-6 mt-6">
-        <!-- Revisions items generated by JS -->
-      </div>
-
     </div>
-  </main>
+  </div>
+</section>
 
-  <!-- VIEW 3: Clarification Letter Draft View -->
-  <main id="view-letter" class="flex-1 hidden p-4 sm:p-8 max-w-5xl mx-auto w-full">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
-      
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800 mb-6">
-        <div>
-          <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-blue-950 text-blue-400 border border-blue-500/30">
-            政府採購法第 41 條法定程序
-          </span>
-          <h2 class="text-xl sm:text-2xl font-black text-slate-100 mt-2">
-            招標文件疑義請求釋疑與修正建議公文（函稿）
-          </h2>
-          <p class="text-sm text-slate-400 mt-1">
-            發文單位：進金生能源服務股份有限公司 ｜ 受文者：高雄榮民總醫院
-          </p>
+<!-- ==================== SLIDE 3: SITE LOCATION & CAMPUS MAP ==================== -->
+<section class="slide" data-slide="3" data-title="案場地圖｜高雄榮總院區定位" data-note="【空間定位】高雄榮民總醫院座落於高雄市左營區大中一路 386 號（22.6777°N, 120.3227°E），緊鄰國道 1 號與國道 10 號鼎金系統交流道，交通吊裝動線優越。【關鍵介面】本案預定設置點位於院區後側之「污水處理場區域（約 660 m²）」，高壓引接點則為「總 1 變電站」，兩者間的地下電纜管溝路徑、既有污水槽載重與醫療動線隔離，是現勘第一優先查核項目。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 02 · SITE LOCATION &amp; SPATIAL LAYOUT</div>
+      <h2 class="s-title">案場位於左營區大中一路 386 號高雄榮總院區，儲能設於污水處理場（660 m²）並引接總 1 變電站</h2>
+    </div>
+    <div class="s-grid-2-map">
+      <!-- Embedded Interactive Leaflet Map right inside Slide 3! -->
+      <div class="s-visual-card" style="padding:12px">
+        <div class="card-cap" style="display:flex;justify-content:space-between;align-items:center">
+          <span>互動地理定位圖｜高雄榮總（22.6777°N, 120.3227°E）</span>
+          <button class="btn-inline" onclick="switchView('map')">放大檢視全螢幕衛星圖 ↗</button>
         </div>
-
-        <button onclick="copyLetter()" class="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-md shadow-blue-500/20 transition shrink-0">
-          <i data-lucide="copy" class="w-4 h-4"></i>
-          <span id="copy-btn-text">複製公文全文</span>
-        </button>
+        <div id="slide-map" style="width:100%;height:345px;border:1px solid var(--rule);border-radius:2px"></div>
       </div>
+      <!-- Bespoke SVG Campus Schematic Overlay -->
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 2｜高榮院區空間關係與 11.4kV 引接路徑示意圖（SVG）</div>
+        <svg viewBox="0 0 460 355" class="slide-svg">
+          <!-- Roads -->
+          <rect x="0" y="0" width="460" height="355" fill="#F8FAFC"/>
+          <!-- Dazhong 1st Rd (Top / North) -->
+          <rect x="0" y="16" width="460" height="24" fill="#E2E8F0"/>
+          <text x="230" y="32" text-anchor="middle" fill="#3F4B5B" font-size="10.5" font-weight="700">大中一路（台 1 線 / 國道 10 號高架段）← 吊裝重車進場幹道 →</text>
+          <!-- Rongzong Rd (Left / West) -->
+          <rect x="14" y="40" width="22" height="315" fill="#E2E8F0"/>
+          <text x="25" y="195" text-anchor="middle" fill="#3F4B5B" font-size="10" font-weight="700" transform="rotate(-90 25 195)">榮總路（西側聯外道路）</text>
+          <!-- Highway 1 (Right / East) -->
+          <rect x="424" y="40" width="24" height="315" fill="#CBD5E1"/>
+          <text x="436" y="195" text-anchor="middle" fill="#1D3B60" font-size="10" font-weight="700" transform="rotate(90 436 195)">國道 1 號中山高（鼎金系統）</text>
 
-      <!-- Letter Content Display -->
-      <div id="letter-content" class="bg-slate-950 border border-slate-800 rounded-xl p-6 sm:p-8 text-slate-200 text-sm font-sans leading-relaxed whitespace-pre-line select-text">
-進金生能源服務股份有限公司　函（稿）
+          <!-- Campus Boundary -->
+          <rect x="46" y="50" width="368" height="292" rx="4" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.8" stroke-dasharray="6,3"/>
+          <text x="58" y="68" fill="#64748B" font-size="10" font-weight="700">高雄榮民總醫院院區界線（左營區大中一路 386 號）</text>
+
+          <!-- Main Buildings -->
+          <rect x="64" y="82" width="118" height="58" rx="2" fill="#EBF3FA" stroke="#548ABF" stroke-width="1.2"/>
+          <text x="123" y="108" text-anchor="middle" fill="#051C2C" font-size="11.5" font-weight="700">門診大樓</text>
+          <text x="123" y="124" text-anchor="middle" fill="#64748B" font-size="9.5">高密度就醫區（主入口）</text>
+
+          <rect x="196" y="82" width="112" height="58" rx="2" fill="#FEF3F2" stroke="#B42318" stroke-width="1.2"/>
+          <text x="252" y="108" text-anchor="middle" fill="#B42318" font-size="11.5" font-weight="700">急診大樓</text>
+          <text x="252" y="124" text-anchor="middle" fill="#7F1D1D" font-size="9.5">MGCBF-1/2 關鍵迴路</text>
+
+          <rect x="320" y="82" width="82" height="58" rx="2" fill="#EBF3FA" stroke="#548ABF" stroke-width="1.2"/>
+          <text x="361" y="108" text-anchor="middle" fill="#051C2C" font-size="11" font-weight="700">高齡醫學</text>
+          <text x="361" y="124" text-anchor="middle" fill="#64748B" font-size="9.5">醫療大樓群</text>
+
+          <rect x="64" y="156" width="166" height="62" rx="2" fill="#F0F4F8" stroke="#94A3B8" stroke-width="1.2"/>
+          <text x="147" y="184" text-anchor="middle" fill="#051C2C" font-size="12" font-weight="700">核心醫療大樓 ／ 住院部</text>
+          <text x="147" y="201" text-anchor="middle" fill="#64748B" font-size="9.5">空調佔全院能耗 54.0% · 需 2hr 普通備援</text>
+
+          <!-- Substation 1 (Target Tie-in) -->
+          <rect x="250" y="156" width="152" height="62" rx="3" fill="#051C2C" stroke="#548ABF" stroke-width="2"/>
+          <text x="326" y="180" text-anchor="middle" fill="#A1CE39" font-size="11" font-weight="700">★ 高壓引接點：總 1 變電站</text>
+          <text x="326" y="197" text-anchor="middle" fill="#FFFFFF" font-size="10">22.8kV 雙饋線 → 11.4kV 匯流排</text>
+          <text x="326" y="211" text-anchor="middle" fill="#9FB6CC" font-size="9">契約容量 8,300 kW · 設防逆送點</text>
+
+          <!-- Wastewater Treatment Plant (BESS Site) -->
+          <rect x="64" y="246" width="194" height="82" rx="3" fill="#EFF8DF" stroke="#0C7A43" stroke-width="2.2"/>
+          <text x="161" y="270" text-anchor="middle" fill="#0C7A43" font-size="11.5" font-weight="700">★ 儲能預定地：污水處理場區域</text>
+          <text x="161" y="288" text-anchor="middle" fill="#051C2C" font-size="10.5" font-weight="600">可評估面積約 660 m²（後勤管制區）</text>
+          <text x="161" y="305" text-anchor="middle" fill="#3F4B5B" font-size="9.5">須避開地下蓄水槽 · 留設維修通道</text>
+          <text x="161" y="319" text-anchor="middle" fill="#B42318" font-size="9.5" font-weight="700">※ 須申請補發地下管網與地質鑽探圖</text>
+
+          <!-- HV Cable Route Arrow -->
+          <path d="M 258 286 L 326 286 L 326 222" fill="none" stroke="#B42318" stroke-width="2.6" stroke-dasharray="5,3"/>
+          <polygon points="326,218 321,227 331,227" fill="#B42318"/>
+          <rect x="270" y="254" width="128" height="36" rx="2" fill="#FEF3F2" stroke="#B42318" stroke-width="1"/>
+          <text x="334" y="269" text-anchor="middle" fill="#B42318" font-size="9.5" font-weight="700">11.4kV 地下電纜管溝</text>
+          <text x="334" y="282" text-anchor="middle" fill="#7F1D1D" font-size="9">雙迴路引接 + 光纖通訊</text>
+
+          <!-- Compass -->
+          <circle cx="394" cy="322" r="14" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.2"/>
+          <text x="394" y="319" text-anchor="middle" fill="#051C2C" font-size="9" font-weight="700">N</text>
+          <polygon points="394,309 391,314 397,314" fill="#B42318"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 4: REAL LOAD & BILLING DATA ==================== -->
+<section class="slide" data-slide="4" data-title="用電診斷｜19 個月真實電費分析" data-note="【數據實證】這張圖表完全根據招標文件第 90 頁表 1-1 之真實電費帳單繪製。高榮 114 年 1 月至 115 年 7 月共耗電 7,435 萬度、電費 3.065 億元。【削峰價值】夏月（5–10月）月用電飆升至 440–479 萬度，平均電價跳升至 4.62–4.73 元/度，且 114/05–07 連續三個月發生超約罰款合計 31.4 萬元，證明表後儲能削峰填谷與抑低需量的經濟價值極高。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 03 · HISTORICAL LOAD &amp; COST DIAGNOSTIC</div>
+      <h2 class="s-title">高榮 19 個月實付電費達 3.065 億元，夏月尖峰單價攀至 4.73 元且屢生超約，具絕佳削峰套利條件</h2>
+    </div>
+    <div class="s-grid-2">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 3｜114/01–115/07 逐月電費與平均電價趨勢（資料來源：招標文件表 1-1）</div>
+        <svg viewBox="0 0 560 350" class="slide-svg">
+          <!-- Plot area: x 52..520, y 42..280 -->
+          <!-- Grid lines -->
+          <line x1="52" y1="280" x2="525" y2="280" stroke="#051C2C" stroke-width="1.5"/>
+          <line x1="52" y1="220" x2="525" y2="220" stroke="#E8EDF3" stroke-width="1"/>
+          <line x1="52" y1="160" x2="525" y2="160" stroke="#E8EDF3" stroke-width="1"/>
+          <line x1="52" y1="100" x2="525" y2="100" stroke="#E8EDF3" stroke-width="1"/>
+          <line x1="52" y1="45" x2="525" y2="45" stroke="#E8EDF3" stroke-width="1"/>
+
+          <!-- Y-axis labels (Left: Million NTD 0..25) -->
+          <text x="46" y="284" text-anchor="end" fill="#64748B" font-size="9.5">0</text>
+          <text x="46" y="224" text-anchor="end" fill="#64748B" font-size="9.5">6M</text>
+          <text x="46" y="164" text-anchor="end" fill="#64748B" font-size="9.5">12M</text>
+          <text x="46" y="104" text-anchor="end" fill="#64748B" font-size="9.5">18M</text>
+          <text x="46" y="49" text-anchor="end" fill="#64748B" font-size="9.5">24M</text>
+          <text x="16" y="34" fill="#051C2C" font-size="10" font-weight="700">月電費 (NT$)</text>
+
+          <!-- Summer Highlight Band 1 (114/05-114/10: bars 5..10) -->
+          <rect x="150" y="45" width="148" height="235" fill="#FEF9E7" opacity="0.65"/>
+          <text x="224" y="60" text-anchor="middle" fill="#C26B0A" font-size="9.5" font-weight="700">114 夏月尖峰＋超約 31.4 萬</text>
+          <!-- Summer Highlight Band 2 (115/05-07: bars 17..19) -->
+          <rect x="444" y="45" width="76" height="235" fill="#FEF3F2" opacity="0.65"/>
+          <text x="482" y="60" text-anchor="middle" fill="#B42318" font-size="9.5" font-weight="700">115 夏月新高</text>
+
+          <!-- 19 Bars (Monthly Bill in Millions, scale 1M = 9.8px from y=280) -->
+          <!-- Values: 10.85, 10.64, 12.96, 13.76, 18.98*, 20.99*, 21.76*, 20.45, 20.70, 17.91, 13.28, 12.95, 11.90, 10.44, 13.68, 14.79, 17.38, 20.46, 22.66* -->
+          <g fill="#548ABF">
+            <rect x="58"  y="174" width="16" height="106"/>
+            <rect x="82"  y="176" width="16" height="104"/>
+            <rect x="106" y="153" width="16" height="127"/>
+            <rect x="130" y="145" width="16" height="135"/>
+            <rect x="154" y="94"  width="16" height="186" fill="#B42318"/>
+            <rect x="178" y="74"  width="16" height="206" fill="#B42318"/>
+            <rect x="202" y="67"  width="16" height="213" fill="#B42318"/>
+            <rect x="226" y="80"  width="16" height="200" fill="#1D3B60"/>
+            <rect x="250" y="77"  width="16" height="203" fill="#1D3B60"/>
+            <rect x="274" y="104" width="16" height="176" fill="#1D3B60"/>
+            <rect x="298" y="150" width="16" height="130"/>
+            <rect x="322" y="153" width="16" height="127"/>
+            <rect x="346" y="163" width="16" height="117"/>
+            <rect x="370" y="178" width="16" height="102"/>
+            <rect x="394" y="146" width="16" height="134"/>
+            <rect x="418" y="135" width="16" height="145"/>
+            <rect x="442" y="110" width="16" height="170" fill="#1D3B60"/>
+            <rect x="466" y="79"  width="16" height="201" fill="#1D3B60"/>
+            <rect x="490" y="58"  width="16" height="222" fill="#B42318"/>
+          </g>
+
+          <!-- Value Callouts on Peak Bars -->
+          <text x="186" y="69" text-anchor="middle" fill="#B42318" font-size="8.5" font-weight="700">21.0M</text>
+          <text x="210" y="62" text-anchor="middle" fill="#B42318" font-size="8.5" font-weight="700">21.8M</text>
+          <text x="498" y="53" text-anchor="middle" fill="#B42318" font-size="9" font-weight="700">22.7M</text>
+
+          <!-- Avg Price Line (3.5..4.8 -> y 210..80) -->
+          <polyline fill="none" stroke="#A1CE39" stroke-width="2.6"
+            points="66,195 90,178 114,184 138,183 162,146 186,98 210,92 234,107 258,92 282,153 306,190 330,180 354,182 378,202 402,182 426,181 450,151 474,102 498,91"/>
+          <circle cx="210" cy="92" r="3.5" fill="#051C2C" stroke="#A1CE39" stroke-width="1.5"/>
+          <circle cx="498" cy="91" r="3.5" fill="#051C2C" stroke="#A1CE39" stroke-width="1.5"/>
+          <text x="512" y="94" fill="#0C7A43" font-size="9" font-weight="700">4.73元</text>
+
+          <!-- X-axis Labels -->
+          <text x="66"  y="296" text-anchor="middle" fill="#64748B" font-size="8.5">114/01</text>
+          <text x="162" y="296" text-anchor="middle" fill="#B42318" font-size="8.5" font-weight="700">05*</text>
+          <text x="210" y="296" text-anchor="middle" fill="#B42318" font-size="8.5" font-weight="700">07*</text>
+          <text x="282" y="296" text-anchor="middle" fill="#64748B" font-size="8.5">10</text>
+          <text x="354" y="296" text-anchor="middle" fill="#64748B" font-size="8.5">115/01</text>
+          <text x="450" y="296" text-anchor="middle" fill="#64748B" font-size="8.5">05</text>
+          <text x="498" y="296" text-anchor="middle" fill="#B42318" font-size="8.5" font-weight="700">07*</text>
+
+          <!-- Legend -->
+          <rect x="56" y="316" width="10" height="10" fill="#B42318"/>
+          <text x="72" y="325" fill="#3F4B5B" font-size="9.5">發生超約罰款月份（合計 32.07 萬）</text>
+          <rect x="242" y="316" width="10" height="10" fill="#1D3B60"/>
+          <text x="258" y="325" fill="#3F4B5B" font-size="9.5">夏月高價月份</text>
+          <line x1="340" y1="321" x2="360" y2="321" stroke="#A1CE39" stroke-width="2.6"/>
+          <text x="366" y="325" fill="#3F4B5B" font-size="9.5">平均電價 (元/kWh)</text>
+        </svg>
+      </div>
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 4｜院區能源流向結構與儲能價值對應（招標文件 P.86）</div>
+        <svg viewBox="0 0 460 220" class="slide-svg">
+          <!-- Horizontal Stacked Bar + Breakdown -->
+          <text x="16" y="24" fill="#051C2C" font-size="11.5" font-weight="700">全院耗能設備占比（契約容量 8,300 kW）</text>
+          <!-- Bar total width = 428 -->
+          <rect x="16" y="36" width="231" height="36" fill="#051C2C"/>
+          <text x="131" y="58" text-anchor="middle" fill="#FFFFFF" font-size="11.5" font-weight="700">空調系統 54.0%</text>
+
+          <rect x="247" y="36" width="75" height="36" fill="#548ABF"/>
+          <text x="284" y="58" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700">動力 17.6%</text>
+
+          <rect x="322" y="36" width="68" height="36" fill="#A1CE39"/>
+          <text x="356" y="58" text-anchor="middle" fill="#051C2C" font-size="10.5" font-weight="700">照明 15.8%</text>
+
+          <rect x="390" y="36" width="54" height="36" fill="#94A3B8"/>
+          <text x="417" y="58" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="700">12.6%</text>
+
+          <!-- 3 Insight Boxes below -->
+          <rect x="16" y="92" width="428" height="36" rx="2" fill="#F6F8FB" stroke="#D4DCE6"/>
+          <rect x="16" y="92" width="4" height="36" fill="#051C2C"/>
+          <text x="28" y="108" fill="#051C2C" font-size="10.5" font-weight="700">① 空調佔比逾半（54.0%）→ 典型白晝高尖峰負載</text>
+          <text x="28" y="122" fill="#64748B" font-size="9.5">每日 10:00–17:00 與 16:00–22:00 尖峰價差套利確定性極高，全院底載足以完全吸收放電。</text>
+
+          <rect x="16" y="136" width="428" height="36" rx="2" fill="#F6F8FB" stroke="#D4DCE6"/>
+          <rect x="16" y="136" width="4" height="36" fill="#548ABF"/>
+          <text x="28" y="152" fill="#051C2C" font-size="10.5" font-weight="700">② 動力（17.6%）含冰水、給水、污水與電梯</text>
+          <text x="28" y="166" fill="#64748B" font-size="9.5">馬達啟動瞬間突波電流高，BESS 孤島供電（≥2hr）之 PCS 須具備高過載耐受與構網能力。</text>
+
+          <rect x="16" y="180" width="428" height="36" rx="2" fill="#FEF3F2" stroke="#F1C2BE"/>
+          <rect x="16" y="180" width="4" height="36" fill="#B42318"/>
+          <text x="28" y="196" fill="#B42318" font-size="10.5" font-weight="700">③ 契約收益公式缺漏「超約＋降約」須透過釋疑補齊</text>
+          <text x="28" y="210" fill="#7F1D1D" font-size="9.5">114/05–07 超約罰款 31.4 萬元；若不納入公式，廠商幫醫院省下超約與基本電費卻無分成。</text>
+        </svg>
+        <div class="mini-kpi-bar">
+          <div><small>19 個月總度數</small><b>74,358,400 kWh</b></div>
+          <div><small>19 個月總電費</small><b>NT$ 3.065 億</b></div>
+          <div><small>平均電價</small><b>4.12 元/度</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 5: SUBSTATION 1 SLD & BESS TIE-IN ==================== -->
+<section class="slide" data-slide="5" data-title="電力系統｜總 1 變電站單線圖與併網" data-note="【工程實況】我們直接還原招標文件第 88 頁之『總 1 變電站電力單線圖』：高榮由台電兩條 22.8kV 專線（MOF1/MOF2）受電，經 TR1/TR2 雙主變壓器降壓為 11.4kV，並設有高壓聯絡開關 TIE-H 與 11.4kV 聯絡開關 TIE-L，下游分接急診（MGCBF-1/2）、#M11、#M12、#MP 與高壓電容器。【併網策略】建議於 11.4kV 匯流排引接 BESS，並於責任分界點（MOF1/MOF2）加裝高速 32R 防逆送電驛與光纖直連 EMS，確保零逆送且停電時安全隔離供電普通迴路 ≥2 小時。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 04 · ELECTRICAL SINGLE-LINE DIAGRAM (PDF P.88 RECONSTRUCTION)</div>
+      <h2 class="s-title">總 1 變電站採 22.8kV 雙饋線轉 11.4kV 雙母線架構，BESS 引接須同步佈建高速防逆送與孤島隔離</h2>
+    </div>
+    <div class="s-grid-2-wide">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 5｜總 1 變電站電力單線圖還原與 BESS 11.4kV 併網設計（依招標文件 P.88 繪製）</div>
+        <svg viewBox="0 0 640 365" class="slide-svg">
+          <!-- Title badge -->
+          <text x="16" y="22" fill="#051C2C" font-size="11" font-weight="700">既有系統：台電 22.8kV 雙饋線 → 總 1 變電站</text>
+          <text x="415" y="22" fill="#0C7A43" font-size="11" font-weight="700">新增工程：BESS 11.4kV 引接與保護</text>
+
+          <!-- Feeder 1 & 2 -->
+          <line x1="120" y1="34" x2="120" y2="210" stroke="#051C2C" stroke-width="2.2"/>
+          <line x1="290" y1="34" x2="290" y2="210" stroke="#051C2C" stroke-width="2.2"/>
+          <text x="120" y="42" text-anchor="middle" fill="#1D3B60" font-size="10" font-weight="700" dy="-10">第一饋線 (22.8kV)</text>
+          <text x="290" y="42" text-anchor="middle" fill="#1D3B60" font-size="10" font-weight="700" dy="-10">第二饋線 (22.8kV)</text>
+
+          <!-- MOF1 & MOF2 -->
+          <rect x="98" y="48" width="44" height="20" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.5"/>
+          <text x="120" y="62" text-anchor="middle" fill="#051C2C" font-size="9.5" font-weight="700">MOF1</text>
+          <rect x="268" y="48" width="44" height="20" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.5"/>
+          <text x="290" y="62" text-anchor="middle" fill="#051C2C" font-size="9.5" font-weight="700">MOF2</text>
+
+          <!-- Anti-Reverse 32R sensor callout -->
+          <rect x="160" y="46" width="90" height="24" rx="2" fill="#FEF3F2" stroke="#B42318" stroke-width="1.2"/>
+          <text x="205" y="61" text-anchor="middle" fill="#B42318" font-size="9" font-weight="700">32R 防逆送量測</text>
+          <line x1="142" y1="58" x2="160" y2="58" stroke="#B42318" stroke-width="1.2" stroke-dasharray="3,2"/>
+          <line x1="250" y1="58" x2="268" y2="58" stroke="#B42318" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+          <!-- MGCB1, MGCB2, TIE-H -->
+          <rect x="102" y="84" width="36" height="18" fill="#EBF3FA" stroke="#1D3B60" stroke-width="1.3"/>
+          <text x="120" y="96" text-anchor="middle" fill="#051C2C" font-size="8.5" font-weight="700">MGCB1</text>
+          <rect x="272" y="84" width="36" height="18" fill="#EBF3FA" stroke="#1D3B60" stroke-width="1.3"/>
+          <text x="290" y="96" text-anchor="middle" fill="#051C2C" font-size="8.5" font-weight="700">MGCB2</text>
+          <line x1="120" y1="114" x2="290" y2="114" stroke="#051C2C" stroke-width="1.8"/>
+          <rect x="182" y="105" width="46" height="18" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.3"/>
+          <text x="205" y="117" text-anchor="middle" fill="#051C2C" font-size="8.5" font-weight="700">TIE-H</text>
+
+          <!-- TR1 & TR2 (22.8kV / 11.4kV) -->
+          <circle cx="120" cy="146" r="11" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.5"/>
+          <circle cx="120" cy="161" r="11" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.5"/>
+          <text x="78" y="156" fill="#051C2C" font-size="9.5" font-weight="700">TR1</text>
+          <text x="136" y="156" fill="#64748B" font-size="8.5">22.8/11.4kV</text>
+
+          <circle cx="290" cy="146" r="11" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.5"/>
+          <circle cx="290" cy="161" r="11" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.5"/>
+          <text x="252" y="156" fill="#051C2C" font-size="9.5" font-weight="700">TR2</text>
+          <text x="306" y="156" fill="#64748B" font-size="8.5">22.8/11.4kV</text>
+
+          <!-- GCB1 & GCB2 -->
+          <rect x="104" y="182" width="32" height="16" fill="#EBF3FA" stroke="#1D3B60" stroke-width="1.2"/>
+          <text x="120" y="193" text-anchor="middle" fill="#051C2C" font-size="8.5" font-weight="700">GCB1</text>
+          <rect x="274" y="182" width="32" height="16" fill="#EBF3FA" stroke="#1D3B60" stroke-width="1.2"/>
+          <text x="290" y="193" text-anchor="middle" fill="#051C2C" font-size="8.5" font-weight="700">GCB2</text>
+
+          <!-- 11.4kV Main Bus -->
+          <line x1="26" y1="210" x2="430" y2="210" stroke="#051C2C" stroke-width="3.5"/>
+          <rect x="182" y="201" width="46" height="18" fill="#FFFFFF" stroke="#051C2C" stroke-width="1.5"/>
+          <text x="205" y="213" text-anchor="middle" fill="#051C2C" font-size="8.5" font-weight="700">TIE-L</text>
+          <text x="26" y="203" fill="#051C2C" font-size="9" font-weight="700">11.4kV 主匯流排</text>
+
+          <!-- 6 Existing Outgoing Feeders -->
+          <g stroke="#051C2C" stroke-width="1.5">
+            <line x1="42"  y1="210" x2="42"  y2="292"/>
+            <line x1="100" y1="210" x2="100" y2="292"/>
+            <line x1="158" y1="210" x2="158" y2="292"/>
+            <line x1="252" y1="210" x2="252" y2="292"/>
+            <line x1="312" y1="210" x2="312" y2="292"/>
+            <line x1="372" y1="210" x2="372" y2="292"/>
+          </g>
+          <g fill="#FFFFFF" stroke="#051C2C" stroke-width="1.2" font-size="8" text-anchor="middle">
+            <rect x="27"  y="242" width="30" height="16"/><text x="42"  y="253" stroke="none" fill="#051C2C">GCB3</text>
+            <rect x="85"  y="242" width="30" height="16"/><text x="100" y="253" stroke="none" fill="#051C2C">GCB4</text>
+            <rect x="143" y="242" width="30" height="16"/><text x="158" y="253" stroke="none" fill="#051C2C">GCB6</text>
+            <rect x="297" y="242" width="30" height="16"/><text x="312" y="253" stroke="none" fill="#051C2C">SC</text>
+            <rect x="357" y="242" width="30" height="16"/><text x="372" y="253" stroke="none" fill="#051C2C">GCB5</text>
+          </g>
+          <!-- Feeder Labels -->
+          <g font-size="9" text-anchor="middle" font-weight="700">
+            <text x="42"  y="308" fill="#051C2C">#M11</text>
+            <text x="100" y="308" fill="#B42318">MGCBF-2</text><text x="100" y="320" fill="#B42318" font-size="8.5">急診</text>
+            <text x="158" y="308" fill="#051C2C">#MP</text>
+            <text x="252" y="308" fill="#051C2C">#M12</text>
+            <text x="312" y="308" fill="#64748B">高壓</text><text x="312" y="320" fill="#64748B" font-size="8.5">電容器</text>
+            <text x="372" y="308" fill="#B42318">MGCBF-1</text><text x="372" y="320" fill="#B42318" font-size="8.5">急診</text>
+          </g>
+
+          <!-- NEW BESS TIE-IN ZONE (Right Side) -->
+          <rect x="414" y="34" width="214" height="316" rx="4" fill="#EFF8DF" fill-opacity="0.55" stroke="#0C7A43" stroke-width="1.8" stroke-dasharray="5,3"/>
+          <!-- Tie line from 11.4kV bus -->
+          <line x1="430" y1="210" x2="520" y2="210" stroke="#0C7A43" stroke-width="3"/>
+          <rect x="444" y="198" width="56" height="24" rx="2" fill="#0C7A43"/>
+          <text x="472" y="213" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="700">新增 VCB</text>
+
+          <!-- Step-up Transformer -->
+          <line x1="520" y1="210" x2="520" y2="165" stroke="#0C7A43" stroke-width="2.5"/>
+          <rect x="466" y="128" width="108" height="38" rx="3" fill="#FFFFFF" stroke="#0C7A43" stroke-width="1.6"/>
+          <text x="520" y="144" text-anchor="middle" fill="#051C2C" font-size="9.5" font-weight="700">儲能升壓變壓器</text>
+          <text x="520" y="158" text-anchor="middle" fill="#0C7A43" font-size="8.5">0.69kV / 11.4kV</text>
+
+          <!-- PCS + Battery -->
+          <line x1="520" y1="128" x2="520" y2="104" stroke="#0C7A43" stroke-width="2.5"/>
+          <rect x="442" y="54" width="156" height="50" rx="3" fill="#051C2C"/>
+          <text x="520" y="75" text-anchor="middle" fill="#A1CE39" font-size="10.5" font-weight="700">雙向 PCS + LFP 電池貨櫃</text>
+          <text x="520" y="92" text-anchor="middle" fill="#FFFFFF" font-size="9">構網/孤島切換 · RTE ≥ 85%</text>
+
+          <!-- EMS & Fiber Feedback -->
+          <rect x="434" y="248" width="174" height="84" rx="3" fill="#FFFFFF" stroke="#1D3B60" stroke-width="1.4"/>
+          <text x="521" y="268" text-anchor="middle" fill="#1D3B60" font-size="10" font-weight="700">非陸製 EMS ＋ 保護協調</text>
+          <text x="444" y="286" fill="#3F4B5B" font-size="9">• 光纖直連 MOF1/2 32R 電驛</text>
+          <text x="444" y="301" fill="#3F4B5B" font-size="9">• 停電自動解聯 → 普通電源 ≥2hr</text>
+          <text x="444" y="316" fill="#3F4B5B" font-size="9">• 保留最低 SOC 備援優先權</text>
+        </svg>
+      </div>
+      <div class="s-points">
+        <div class="pt-item">
+          <div class="pt-num">A</div>
+          <div>
+            <h4>精準掌握既有架構：22.8kV 雙饋線轉 11.4kV</h4>
+            <p>總 1 變電站採高可靠度雙饋線（MOF1/MOF2）與雙主變（TR1/TR2），經 TIE-H / TIE-L 互為備援，急診迴路（MGCBF-1/2）分別掛載於左右母線。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">B</div>
+          <div>
+            <h4>控制優先權：安全與防逆送 ＞ 備援 ＞ 削峰套利</h4>
+            <p>依需求書 P.92，EMS 控制層級必須硬體化鎖定：於責任分界點設定防逆送裕度，通訊中斷即刻降載停機；平時調度嚴禁低於最低備援 SOC。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">C</div>
+          <div>
+            <h4>高壓停電介面：須於契約鎖定至少 2 次計畫性停電</h4>
+            <p>既有 11.4kV 盤體增設 VCB 引接與保護電驛整定測試，必涉短時停電切換；已於條款修正第 12 項要求院方配合至少 2 次（每次 4–8 小時）停電窗口。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 6: 660m2 SITE PLAN & FIRE SAFETY ==================== -->
+<section class="slide" data-slide="6" data-title="場址配置｜660 m² 消防與土建設計" data-note="【空間挑戰】污水處理場可評估面積僅約 660 m²（約 30m × 22m），且緊鄰運作中之污水處理槽體與院區建物。【合規設計】必須完全符合內政部 114 年 11 月 3 日最新修正《提升儲能系統消防安全管理指引》與標檢局戶外案場確證規範，包含 3 公尺以上安全間距、2 小時防火時效防爆牆、防洪墊高 RC 基礎及污水廠維修通道留設。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 05 · 660 m² SITE LAYOUT &amp; NFPA / MOI FIRE DEFENSE</div>
+      <h2 class="s-title">污水處理場 660 m² 空間緊湊，須導入防火防爆牆、3m 安全間距與抗沉陷墊高基礎以過關消防審查</h2>
+    </div>
+    <div class="s-grid-2">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 6｜污水處理場 660 m²（約 30m × 22m）BESS 平面配置與消防間距圖（SVG）</div>
+        <svg viewBox="0 0 560 350" class="slide-svg">
+          <!-- Outer Site Frame (30m x 22m) -->
+          <rect x="24" y="28" width="512" height="294" fill="#F8FAFC" stroke="#051C2C" stroke-width="2"/>
+          <text x="280" y="19" text-anchor="middle" fill="#051C2C" font-size="11" font-weight="700">← 基地總寬約 30.0 m（總面積約 660 m²）→</text>
+          <text x="14" y="175" text-anchor="middle" fill="#051C2C" font-size="10.5" font-weight="700" transform="rotate(-90 14 175)">← 基地縱深約 22.0 m →</text>
+
+          <!-- Firewall (Top & Left facing hospital/sewage plant) -->
+          <rect x="30" y="34" width="500" height="12" fill="#B42318"/>
+          <text x="280" y="43" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="700">2 小時防火時效 RC 防火防爆牆（高 ≥ 4.0m，面向院區醫療大樓與既有設施）</text>
+
+          <!-- 3m Setback Zone -->
+          <rect x="36" y="48" width="488" height="28" fill="#FEF3F2" stroke="#F1C2BE" stroke-dasharray="4,2"/>
+          <text x="280" y="66" text-anchor="middle" fill="#B42318" font-size="9.5" font-weight="700">消防安全退縮間距 ≥ 3.0 m（符合內政部 114/11/03 儲能消防指引）</text>
+
+          <!-- BESS Containers (4x 20ft Liquid-cooled Cabinets on Elevated RC Pads) -->
+          <g>
+            <!-- Row 1 -->
+            <rect x="52" y="88" width="136" height="54" rx="2" fill="#051C2C" stroke="#548ABF" stroke-width="2"/>
+            <text x="120" y="112" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700">20ft 液冷儲能櫃 #1</text>
+            <text x="120" y="128" text-anchor="middle" fill="#A1CE39" font-size="9">LFP 5.0 MWh · 墊高 RC 基礎</text>
+
+            <rect x="212" y="88" width="136" height="54" rx="2" fill="#051C2C" stroke="#548ABF" stroke-width="2"/>
+            <text x="280" y="112" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700">20ft 液冷儲能櫃 #2</text>
+            <text x="280" y="128" text-anchor="middle" fill="#A1CE39" font-size="9">LFP 5.0 MWh · 墊高 RC 基礎</text>
+
+            <!-- Row 2 -->
+            <rect x="52" y="166" width="136" height="54" rx="2" fill="#051C2C" stroke="#548ABF" stroke-width="2"/>
+            <text x="120" y="190" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700">20ft 液冷儲能櫃 #3</text>
+            <text x="120" y="206" text-anchor="middle" fill="#A1CE39" font-size="9">LFP 5.0 MWh · 墊高 RC 基礎</text>
+
+            <rect x="212" y="166" width="136" height="54" rx="2" fill="#051C2C" stroke="#548ABF" stroke-width="2"/>
+            <text x="280" y="190" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700">20ft 液冷儲能櫃 #4</text>
+            <text x="280" y="206" text-anchor="middle" fill="#A1CE39" font-size="9">LFP 5.0 MWh · 墊高 RC 基礎</text>
+          </g>
+
+          <!-- Cabinet Spacing Dimension -->
+          <line x1="188" y1="115" x2="212" y2="115" stroke="#C26B0A" stroke-width="1.8"/>
+          <text x="200" y="157" text-anchor="middle" fill="#C26B0A" font-size="8.5" font-weight="700">間距 ≥1.5m</text>
+
+          <!-- PCS & Transformer Skid + Control Room (Right Side) -->
+          <rect x="376" y="88" width="142" height="68" rx="2" fill="#1D3B60" stroke="#548ABF" stroke-width="1.8"/>
+          <text x="447" y="114" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700">PCS ＋ 升壓變壓器</text>
+          <text x="447" y="131" text-anchor="middle" fill="#EBF3FA" font-size="9">雙向變流 + 11.4kV 盤體</text>
+          <text x="447" y="146" text-anchor="middle" fill="#A1CE39" font-size="8.5">防油堤 + 氣體滅火</text>
+
+          <rect x="376" y="170" width="142" height="50" rx="2" fill="#EBF3FA" stroke="#548ABF" stroke-width="1.5"/>
+          <text x="447" y="192" text-anchor="middle" fill="#051C2C" font-size="10" font-weight="700">控制與 EMS 監控室</text>
+          <text x="447" y="208" text-anchor="middle" fill="#3F4B5B" font-size="8.5">非陸製主控 · 獨立空調</text>
+
+          <!-- Fire Hydrant & Maintenance Road (Bottom) -->
+          <rect x="36" y="242" width="488" height="44" rx="2" fill="#EFF8DF" stroke="#0C7A43" stroke-width="1.4" stroke-dasharray="6,3"/>
+          <text x="280" y="262" text-anchor="middle" fill="#0C7A43" font-size="10.5" font-weight="700">污水處理場操作維修通行廊道 ＋ 消防車救災動線（寬 ≥ 4.0 m）</text>
+          <text x="280" y="278" text-anchor="middle" fill="#3F4B5B" font-size="9">設置戶外消防栓 ×2、蓄水冷卻噴淋、防爆排風、緊急停止按鈕（EPO）</text>
+
+          <!-- Bottom Legend -->
+          <text x="36" y="308" fill="#64748B" font-size="9">※ 實際儲能容量（MWh）與貨櫃數將依細部設計之普通電源 2 小時負載清單與污水廠地下槽體承載力最終定案。</text>
+        </svg>
+      </div>
+      <div class="s-points">
+        <div class="pt-item">
+          <div class="pt-num">01</div>
+          <div>
+            <h4>高標準消防防禦：緊扣 114/11/03 內政部最新指引</h4>
+            <p>醫院屬高敏感場所，配置三層主動消防（氣體偵測＋全氟己酮/細水霧＋大量水霧冷卻）與被動阻隔（4m 高 2 小時防火牆），並嚴格禁止於院區進行真實熱失控點火測試（採模擬訊號驗證）。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">02</div>
+          <div>
+            <h4>土建結構防禦：防洪墊高、環氧樹脂與抗拔樁評估</h4>
+            <p>依需求書 P.93，基礎須採鋼筋混凝土墊高、水泥粉光與耐候環氧樹脂漆；且因污水場地層下方可能存在既有蓄水槽與管溝，須於釋疑階段取得鑽探與地下管網套疊圖。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">03</div>
+          <div>
+            <h4>不影響污水場運作＋期滿土建留用條款</h4>
+            <p>預留 4 公尺污水槽清淤與維護車道；並透過條款修正第 08 項爭取 12/20 年期滿後「地上拆除、地下 RC 基礎無償留用」，省下數百萬元敲除費。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 7: 81.70% GAME THEORY PRICING ==================== -->
+<section class="slide" data-slide="7" data-title="定價博弈｜81.70% 黃金出價密碼" data-note="【評選密碼】這是本案最具含金量的財務發現。依據評選須知第 144 頁：廠商收益分享比率上限 85.7% 給基本分 12 分，每降低 0.5% 加 1 分，最高 20 分封頂。【數學最優解】85.7% 減去 8 個級距（4.0%）恰好等於 81.70%，直接拿下 20 分滿分！若誤出 80% 或 78%，分數一分都不會增加，卻平白讓出數千萬元 12 年淨利！">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 06 · BIDDING GAME THEORY &amp; OPTIMAL PRICING</div>
+      <h2 class="s-title">評選分數於 81.70% 達 20 分滿分封頂；低於此線純損毛利，81.70% 為唯一柏拉圖最優出價</h2>
+    </div>
+    <div class="s-grid-2">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 7｜收益分享比率（%）vs 評選得分（分）階梯函數與毛利流失區（SVG）</div>
+        <svg viewBox="0 0 560 350" class="slide-svg">
+          <!-- Axes -->
+          <line x1="60" y1="280" x2="520" y2="280" stroke="#051C2C" stroke-width="1.6"/>
+          <line x1="60" y1="40"  x2="60"  y2="280" stroke="#051C2C" stroke-width="1.6"/>
+
+          <!-- Grid lines -->
+          <line x1="60" y1="220" x2="520" y2="220" stroke="#E8EDF3"/>
+          <line x1="60" y1="160" x2="520" y2="160" stroke="#E8EDF3"/>
+          <line x1="60" y1="100" x2="520" y2="100" stroke="#E8EDF3"/>
+          <line x1="60" y1="60"  x2="520" y2="60"  stroke="#A1CE39" stroke-dasharray="4,3"/>
+
+          <!-- Y-axis Score labels: 10..20 (y=280 is 10, y=60 is 20 -> 22px per pt) -->
+          <text x="52" y="284" text-anchor="end" fill="#64748B" font-size="9.5">10分</text>
+          <text x="52" y="240" text-anchor="end" fill="#64748B" font-size="9.5">12分</text>
+          <text x="52" y="196" text-anchor="end" fill="#64748B" font-size="9.5">14分</text>
+          <text x="52" y="152" text-anchor="end" fill="#64748B" font-size="9.5">16分</text>
+          <text x="52" y="108" text-anchor="end" fill="#64748B" font-size="9.5">18分</text>
+          <text x="52" y="64"  text-anchor="end" fill="#0C7A43" font-size="10" font-weight="700">20分</text>
+
+          <!-- Value-Destruction Zone (Right of 81.70%: x=364..520) -->
+          <rect x="364" y="42" width="156" height="238" fill="#FEF3F2" opacity="0.8"/>
+          <text x="442" y="116" text-anchor="middle" fill="#B42318" font-size="11" font-weight="700">純利潤流失禁區</text>
+          <text x="442" y="134" text-anchor="middle" fill="#7F1D1D" font-size="9.5">分數已封頂（20分）</text>
+          <text x="442" y="150" text-anchor="middle" fill="#7F1D1D" font-size="9.5">每多降 1% 損失</text>
+          <text x="442" y="168" text-anchor="middle" fill="#B42318" font-size="12" font-weight="700">NT$ 511 萬 / 12年</text>
+
+          <!-- Step Curve (X from 85.7% at x=84 to 79.7% at x=504 -> 35px per 0.5%) -->
+          <polyline fill="none" stroke="#051C2C" stroke-width="3"
+            points="84,236 119,236 119,214 154,214 154,192 189,192 189,170 224,170 224,148 259,148 259,126 294,126 294,104 329,104 329,82 364,82 364,60 512,60"/>
+
+          <!-- Optimal Point Marker at 81.70% (x=364, y=60) -->
+          <line x1="364" y1="60" x2="364" y2="280" stroke="#0C7A43" stroke-width="1.8" stroke-dasharray="5,3"/>
+          <circle cx="364" cy="60" r="7" fill="#A1CE39" stroke="#051C2C" stroke-width="2.5"/>
+          <rect x="218" y="34" width="138" height="38" rx="3" fill="#051C2C"/>
+          <text x="287" y="50" text-anchor="middle" fill="#A1CE39" font-size="10.5" font-weight="700">★ 黃金最優點 81.70%</text>
+          <text x="287" y="64" text-anchor="middle" fill="#FFFFFF" font-size="9">恰拿 20/20 滿分 · 零溢讓</text>
+
+          <!-- Base Point Marker at 85.70% (x=84, y=236) -->
+          <circle cx="84" cy="236" r="5" fill="#548ABF" stroke="#051C2C" stroke-width="1.5"/>
+          <text x="88" y="256" fill="#1D3B60" font-size="9.5" font-weight="700">上限 85.7% (12分)</text>
+
+          <!-- X-axis labels -->
+          <text x="84"  y="296" text-anchor="middle" fill="#64748B" font-size="9">85.7%</text>
+          <text x="154" y="296" text-anchor="middle" fill="#64748B" font-size="9">84.7%</text>
+          <text x="224" y="296" text-anchor="middle" fill="#64748B" font-size="9">83.7%</text>
+          <text x="294" y="296" text-anchor="middle" fill="#64748B" font-size="9">82.7%</text>
+          <text x="364" y="296" text-anchor="middle" fill="#0C7A43" font-size="10" font-weight="700">81.70%</text>
+          <text x="434" y="296" text-anchor="middle" fill="#B42318" font-size="9">80.7%</text>
+          <text x="504" y="296" text-anchor="middle" fill="#B42318" font-size="9">79.7%</text>
+          <text x="290" y="320" text-anchor="middle" fill="#051C2C" font-size="10.5" font-weight="700">廠商承諾收益分享比率（% 越低醫院分得越多）</text>
+        </svg>
+      </div>
+      <div class="s-points">
+        <div class="kpis-mini">
+          <div class="km"><strong style="color:#0C7A43">81.70%</strong><span>唯一最優出價</span></div>
+          <div class="km"><strong>20 / 20</strong><span>價格項滿分</span></div>
+          <div class="km"><strong>4.176 億</strong><span>12 年預估營收</span></div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">01</div>
+          <div>
+            <h4>12 年營收比較：讓利 4.0% 換取 +8 分絕對優勢</h4>
+            <p>以月均效益 355 萬元估算，上限 85.7% 對應 12 年預算 4.381 億元；報價 81.70% 對應 12 年營收 4.176 億元（僅讓利 2,045 萬），卻直接拉開與保守投標者高達 8 分的總分差距。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">02</div>
+          <div>
+            <h4>同分決勝戰場轉移至「技術與履約能力（80 分）」</h4>
+            <p>預期主要競爭對手亦將識破 81.70% 滿分門檻並齊出同價。價格項打平後，勝負完全取決於另外 80 分的技術規劃、消防安全實績、防逆送控制與醫院韌性簡報表現。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">03</div>
+          <div>
+            <h4>使用本平台「81.70% 收益試算」動態壓力測試</h4>
+            <p>點選上方導覽列 <button class="btn-inline" onclick="switchView('calc')">81.70% 收益試算 →</button>，可即時調整電價漲幅、CAPEX 與 Y10 電芯置換費用，檢核 IRR 與回收年限。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 8: 20-YEAR LIFECYCLE & AUGMENTATION ==================== -->
+<section class="slide" data-slide="8" data-title="財務模型｜20 年全生命週期與延壽" data-note="【長週期視角】本案真正價值在於 12 年基本約加上第 13–16 年、第 17–20 年兩次後續擴充，總值上看 7.30 億元。【關鍵盲點】招標文件要求第 13 年續約時 RTE 仍須 ≥85%，但鋰電池經過 12 年每日循環必然面臨電芯衰退。我們必須在財務模型中預提第 9–11 年的電池抽換（Augmentation）資本支出，並在條款釋疑第 07 項爭取合法抽換機制。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 07 · 20-YEAR LIFECYCLE CASHFLOW &amp; BATTERY AUGMENTATION</div>
+      <h2 class="s-title">善用第 9–11 年電芯延壽置換，可順利鎖定第 13–20 年 2.92 億元高毛利擴充合約</h2>
+    </div>
+    <div class="s-grid-2">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 8｜20 年期分階段合約規模與電池 RTE 效率曲線（SVG）</div>
+        <svg viewBox="0 0 560 350" class="slide-svg">
+          <!-- Stage Backgrounds -->
+          <rect x="56"  y="38" width="276" height="236" fill="#EBF3FA" opacity="0.55"/>
+          <rect x="336" y="38" width="92"  height="236" fill="#EFF8DF" opacity="0.7"/>
+          <rect x="432" y="38" width="92"  height="236" fill="#F6F8FB" opacity="0.9"/>
+
+          <text x="194" y="56" text-anchor="middle" fill="#1D3B60" font-size="10.5" font-weight="700">基準合約期（Y1–Y12）</text>
+          <text x="194" y="70" text-anchor="middle" fill="#051C2C" font-size="11" font-weight="700">預算 4.38 億（81.7%→4.18億）</text>
+
+          <text x="382" y="56" text-anchor="middle" fill="#0C7A43" font-size="10" font-weight="700">擴充一 (Y13–16)</text>
+          <text x="382" y="70" text-anchor="middle" fill="#0C7A43" font-size="10.5" font-weight="700">+1.46 億元</text>
+
+          <text x="478" y="56" text-anchor="middle" fill="#3F4B5B" font-size="10" font-weight="700">擴充二 (Y17–20)</text>
+          <text x="478" y="70" text-anchor="middle" fill="#051C2C" font-size="10.5" font-weight="700">+1.46 億元</text>
+
+          <!-- Axes -->
+          <line x1="56" y1="274" x2="528" y2="274" stroke="#051C2C" stroke-width="1.5"/>
+          <line x1="56" y1="38"  x2="56"  y2="274" stroke="#051C2C" stroke-width="1.5"/>
+
+          <!-- RTE Threshold Lines -->
+          <!-- 90% = y:100, 85% = y:145, 80% = y:190, 75% = y:235 -->
+          <line x1="56" y1="145" x2="430" y2="145" stroke="#B42318" stroke-width="1.4" stroke-dasharray="4,3"/>
+          <text x="50" y="149" text-anchor="end" fill="#B42318" font-size="9.5" font-weight="700">85%</text>
+          <line x1="430" y1="190" x2="526" y2="190" stroke="#C26B0A" stroke-width="1.4" stroke-dasharray="4,3"/>
+          <text x="50" y="194" text-anchor="end" fill="#C26B0A" font-size="9.5" font-weight="700">80%</text>
+          <text x="50" y="104" text-anchor="end" fill="#64748B" font-size="9">90%</text>
+          <text x="50" y="239" text-anchor="end" fill="#64748B" font-size="9">75%</text>
+
+          <!-- Natural Degradation Curve WITHOUT Augmentation (Dashed Red) -->
+          <path d="M 68 106 Q 220 140 334 188 L 516 248" fill="none" stroke="#B42318" stroke-width="1.8" stroke-dasharray="5,4"/>
+          <text x="438" y="242" fill="#B42318" font-size="9" font-weight="600">未置換：自然衰減失格</text>
+
+          <!-- Curve WITH Year 10 Augmentation (Solid Navy/Lime) -->
+          <path d="M 68 106 Q 180 128 286 154 L 296 108 Q 380 126 430 140 Q 480 156 516 176" fill="none" stroke="#051C2C" stroke-width="3"/>
+          <circle cx="291" cy="131" r="6" fill="#A1CE39" stroke="#051C2C" stroke-width="2"/>
+
+          <!-- Augmentation Callout -->
+          <rect x="190" y="178" width="134" height="54" rx="3" fill="#051C2C"/>
+          <text x="257" y="196" text-anchor="middle" fill="#A1CE39" font-size="10" font-weight="700">Y9–Y11 電芯延壽置換</text>
+          <text x="257" y="211" text-anchor="middle" fill="#FFFFFF" font-size="9">拉升 RTE 回到 89%+</text>
+          <text x="257" y="224" text-anchor="middle" fill="#C5D3E0" font-size="8.5">解鎖 Y13–20 2.92 億擴充</text>
+          <line x1="291" y1="138" x2="275" y2="178" stroke="#051C2C" stroke-width="1.5"/>
+
+          <!-- X-axis Year Labels -->
+          <text x="68"  y="290" text-anchor="middle" fill="#64748B" font-size="9">Y1</text>
+          <text x="160" y="290" text-anchor="middle" fill="#64748B" font-size="9">Y5</text>
+          <text x="286" y="290" text-anchor="middle" fill="#0C7A43" font-size="9.5" font-weight="700">Y10(置換)</text>
+          <text x="334" y="290" text-anchor="middle" fill="#051C2C" font-size="9" font-weight="700">Y12</text>
+          <text x="430" y="290" text-anchor="middle" fill="#051C2C" font-size="9" font-weight="700">Y16</text>
+          <text x="516" y="290" text-anchor="middle" fill="#051C2C" font-size="9" font-weight="700">Y20</text>
+
+          <text x="56" y="322" fill="#3F4B5B" font-size="9.5">註：Y13–Y20 期間前期土建、高壓引接、PCS 均已折舊攤提完畢，僅需維運與部分電芯更新，淨利率將大幅躍升。</text>
+        </svg>
+      </div>
+      <div class="s-points">
+        <div class="pt-item">
+          <div class="pt-num">01</div>
+          <div>
+            <h4>財務結構關鍵：前 12 年收回資本，後 8 年收割高淨利</h4>
+            <p>土建基礎、防火牆、11.4kV 變壓器與併網工程壽命可達 20 年以上；一旦跨越第 12 年，第 13–20 年總計 2.92 億元擴充合約將成為極高現金流回報期。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">02</div>
+          <div>
+            <h4>電價上行期權：高榮電價調漲直接放大 ESCO 分潤</h4>
+            <p>過去 19 個月高榮平均電價已從 3.59 元攀升至 4.73 元；未來台電夏月尖離峰價差若持續拉大，實績分成制將賦予進金生天然的抗通膨收益上行空間。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">03</div>
+          <div>
+            <h4>條款鎖定延壽權：避免續約門檻變成「看得到吃不到」</h4>
+            <p>原契約要求第 13 年續約維持 RTE ≥ 85% 卻未定義翻新程序；透過釋疑第 07 項明訂第 8–11 年自費抽換電芯免罰，徹底打通 20 年收益閉環。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 9: 15-ITEM RISK MATRIX ==================== -->
+<section class="slide" data-slide="9" data-title="風險排雷｜15 大招標條款修正矩陣" data-note="【法務排雷】我們逐頁審查 152 頁招標文件，揪出 15 項高風險條款與筆誤。【紅區致命項】包含：工期 240 vs 300 天牴觸、逾期違約金未填導致日罰 43.8 萬元、防逆送與電力交易收益衝突、收益公式漏列超約與降約節費、以及污水廠地質圖資缺漏。這 15 項均已整理為正式對照表與採購法第 41 條釋疑公文函稿。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 08 · TENDER RISK MATRIX &amp; CLAUSE REVISION PRIORITIES</div>
+      <h2 class="s-title">原招標文件潛藏 15 項條款瑕疵，其中 7 項屬高衝擊致命風險，須於等標期內全數發函修正</h2>
+    </div>
+    <div class="s-grid-2">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 9｜招標風險矩陣（財務/履約衝擊度 vs 發生機率，標註條款修正編號）</div>
+        <svg viewBox="0 0 560 350" class="slide-svg">
+          <!-- 2x2 Quadrant Grid: x 68..528 (mid 298), y 32..282 (mid 157) -->
+          <!-- Top-Right: CRITICAL (Red) -->
+          <rect x="298" y="32" width="230" height="125" fill="#FEF3F2" stroke="#F1C2BE"/>
+          <text x="518" y="50" text-anchor="end" fill="#B42318" font-size="10" font-weight="700">紅區：致命風險（必須釋疑修約）</text>
+          <!-- Top-Left: HIGH IMPACT (Amber) -->
+          <rect x="68" y="32" width="230" height="125" fill="#FEF9E7" stroke="#F5CBA7"/>
+          <text x="78" y="50" fill="#C26B0A" font-size="10" font-weight="700">橘區：重大條款（須明確判準）</text>
+          <!-- Bottom-Right: MEDIUM (Blue) -->
+          <rect x="298" y="157" width="230" height="125" fill="#EBF3FA" stroke="#D4DCE6"/>
+          <text x="518" y="272" text-anchor="end" fill="#1D3B60" font-size="10" font-weight="700">藍區：營運摩擦（合約管理優化）</text>
+          <!-- Bottom-Left: LOW (Gray) -->
+          <rect x="68" y="157" width="230" height="125" fill="#F6F8FB" stroke="#E8EDF3"/>
+          <text x="78" y="272" fill="#64748B" font-size="10" font-weight="700">灰區：勘誤與程序釐清</text>
+
+          <!-- Axes -->
+          <line x1="68" y1="282" x2="528" y2="282" stroke="#051C2C" stroke-width="1.6"/>
+          <line x1="68" y1="32"  x2="68"  y2="282" stroke="#051C2C" stroke-width="1.6"/>
+          <text x="298" y="306" text-anchor="middle" fill="#051C2C" font-size="10.5" font-weight="700">發生機率（低 → 高）</text>
+          <text x="24"  y="157" text-anchor="middle" fill="#051C2C" font-size="10.5" font-weight="700" transform="rotate(-90 24 157)">財務與履約衝擊度（低 → 高）</text>
+
+          <!-- Risk Bubbles -->
+          <!-- Red Zone -->
+          <circle cx="478" cy="74" r="16" fill="#B42318"/><text x="478" y="78" text-anchor="middle" fill="#FFF" font-size="10" font-weight="700">#02</text>
+          <text x="478" y="102" text-anchor="middle" fill="#7F1D1D" font-size="8.5" font-weight="700">工期矛盾240/300天</text>
+
+          <circle cx="388" cy="70" r="16" fill="#B42318"/><text x="388" y="74" text-anchor="middle" fill="#FFF" font-size="10" font-weight="700">#03</text>
+          <text x="388" y="98" text-anchor="middle" fill="#7F1D1D" font-size="8.5" font-weight="700">日罰43.8萬</text>
+
+          <circle cx="340" cy="120" r="14" fill="#B42318"/><text x="340" y="124" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="700">#05</text>
+          <text x="340" y="145" text-anchor="middle" fill="#7F1D1D" font-size="8.5" font-weight="700">收益公式漏項</text>
+
+          <circle cx="426" cy="126" r="14" fill="#B42318"/><text x="426" y="130" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="700">#04</text>
+          <text x="426" y="150" text-anchor="middle" fill="#7F1D1D" font-size="8.5" font-weight="700">防逆送衝突</text>
+
+          <circle cx="492" cy="128" r="13" fill="#B42318"/><text x="492" y="132" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">#09</text>
+          <text x="492" y="150" text-anchor="middle" fill="#7F1D1D" font-size="8">缺地質圖</text>
+
+          <!-- Amber Zone -->
+          <circle cx="242" cy="78" r="14" fill="#C26B0A"/><text x="242" y="82" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="700">#07</text>
+          <text x="242" y="103" text-anchor="middle" fill="#7D4E00" font-size="8.5" font-weight="700">Y13電芯置換</text>
+
+          <circle cx="154" cy="96" r="14" fill="#C26B0A"/><text x="154" y="100" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="700">#10</text>
+          <text x="154" y="121" text-anchor="middle" fill="#7D4E00" font-size="8.5" font-weight="700">排陸BMS邊界</text>
+
+          <circle cx="220" cy="132" r="12" fill="#C26B0A"/><text x="220" y="136" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">#06</text>
+          <text x="255" y="136" fill="#7D4E00" font-size="8.5">RTE測試條件</text>
+
+          <!-- Blue Zone -->
+          <circle cx="355" cy="196" r="12" fill="#1D3B60"/><text x="355" y="200" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">#12</text>
+          <text x="355" y="220" text-anchor="middle" fill="#1D3B60" font-size="8.5">停電配合</text>
+
+          <circle cx="424" cy="196" r="12" fill="#1D3B60"/><text x="424" y="200" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">#14</text>
+          <text x="424" y="220" text-anchor="middle" fill="#1D3B60" font-size="8.5">撥款時效</text>
+
+          <circle cx="486" cy="212" r="12" fill="#1D3B60"/><text x="486" y="216" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">#08</text>
+          <text x="486" y="236" text-anchor="middle" fill="#1D3B60" font-size="8.5">期滿復原</text>
+
+          <!-- Gray Zone -->
+          <circle cx="126" cy="202" r="11" fill="#64748B"/><text x="126" y="206" text-anchor="middle" fill="#FFF" font-size="8.5" font-weight="700">#01</text>
+          <text x="126" y="224" text-anchor="middle" fill="#64748B" font-size="8">案號筆誤</text>
+          <circle cx="188" cy="202" r="11" fill="#64748B"/><text x="188" y="206" text-anchor="middle" fill="#FFF" font-size="8.5" font-weight="700">#11</text>
+          <text x="188" y="224" text-anchor="middle" fill="#64748B" font-size="8">評分級距</text>
+          <circle cx="246" cy="216" r="11" fill="#64748B"/><text x="246" y="220" text-anchor="middle" fill="#FFF" font-size="8.5" font-weight="700">#13/15</text>
+          <text x="246" y="238" text-anchor="middle" fill="#64748B" font-size="8">保險/查核</text>
+        </svg>
+      </div>
+      <div class="s-points">
+        <div class="pt-item">
+          <div class="pt-num" style="background:#B42318">TOP 1</div>
+          <div>
+            <h4>消除 43.8 萬/日天價罰則與工期矛盾（#02、#03）</h4>
+            <p>原契約首頁 240 天與第七條 300 天牴觸，且違約金空白預設為總價 1‰。須修正為統一 300 天、扣除外審時間、並改按「未完工硬體建置額」計罰。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num" style="background:#B42318">TOP 2</div>
+          <div>
+            <h4>釐清防逆送收益邊界與公式補完（#04、#05）</h4>
+            <p>明定防逆送下之電力交易結算口徑，並將「超約附加費節省」與「調降契約容量基本電費節省」補入公式，避免實質節能卻無法分成。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num" style="background:#1D3B60">ACTION</div>
+          <div>
+            <h4>一鍵檢視完整 15 項對照與發函公文稿</h4>
+            <p>本平台已完整建置 <button class="btn-inline" onclick="switchView('revisions')">15 大條款修正對照表 →</button> 與 <button class="btn-inline" onclick="switchView('letter')">採購法第 41 條釋疑公文函稿 →</button>，可直接複製發函。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 10: 300-DAY CPM TIMELINE ==================== -->
+<section class="slide" data-slide="10" data-title="工期管控｜300 日曆天關鍵要徑 CPM" data-note="【時程管理】戶外儲能最容易延誤的不是現場安裝，而是『台電內線併聯審查、消防局設計審查、標檢局案場確證』三大公權力審查。【關鍵做法】決標 D+1 立即啟動三軌並行前置送審，並於 D+180 安排總 1 變電站計畫性停電引接，確保 D+300 準時取得標檢局確證並完成 RTE 85% 驗收商轉。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 09 · 300-DAY CRITICAL PATH METHOD (CPM) SCHEDULE</div>
+      <h2 class="s-title">以「三軌並行外審」壓縮行政等待期，搭配 2 次計畫性停電窗口，確保 300 日曆天準時商轉</h2>
+    </div>
+    <div class="s-visual-card" style="margin-bottom:16px">
+      <div class="card-cap">圖表 10｜決標後 300 日曆天統包工程甘特圖與關鍵要徑（SVG）</div>
+      <svg viewBox="0 0 980 295" class="slide-svg">
+        <!-- Header Timeline Months M1..M10 (x 230..950 -> 72px per month / 30 days) -->
+        <rect x="230" y="14" width="720" height="28" fill="#051C2C"/>
+        <text x="16" y="33" fill="#051C2C" font-size="11.5" font-weight="700">核心工作包 / 關鍵里程碑</text>
+        <g fill="#FFFFFF" font-size="10.5" font-weight="700" text-anchor="middle">
+          <text x="266" y="32">M1 (D30)</text><text x="338" y="32">M2 (D60)</text>
+          <text x="410" y="32">M3 (D90)</text><text x="482" y="32">M4 (D120)</text>
+          <text x="554" y="32">M5 (D150)</text><text x="626" y="32">M6 (D180)</text>
+          <text x="698" y="32">M7 (D210)</text><text x="770" y="32">M8 (D240)</text>
+          <text x="842" y="32">M9 (D270)</text><text x="914" y="32">M10 (D300)</text>
+        </g>
+        <!-- Vertical Grid Lines -->
+        <g stroke="#E8EDF3" stroke-width="1">
+          <line x1="302" y1="42" x2="302" y2="265"/><line x1="374" y1="42" x2="374" y2="265"/>
+          <line x1="446" y1="42" x2="446" y2="265"/><line x1="518" y1="42" x2="518" y2="265"/>
+          <line x1="590" y1="42" x2="590" y2="265"/><line x1="662" y1="42" x2="662" y2="265"/>
+          <line x1="734" y1="42" x2="734" y2="265"/><line x1="806" y1="42" x2="806" y2="265"/>
+          <line x1="878" y1="42" x2="878" y2="265"/><line x1="950" y1="42" x2="950" y2="265"/>
+        </g>
+
+        <!-- Row 1: Site Survey & Detailed Design -->
+        <rect x="0" y="42" width="950" height="32" fill="#F8FAFC"/>
+        <text x="16" y="62" fill="#051C2C" font-size="11" font-weight="600">1. 地質探勘、細部設計與保護協調</text>
+        <rect x="234" y="50" width="136" height="16" rx="2" fill="#1D3B60"/>
+        <text x="302" y="61" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">D1–D60 院方核定圖說</text>
+
+        <!-- Row 2: 3-Track External Reviews (Critical Path!) -->
+        <text x="16" y="94" fill="#B42318" font-size="11" font-weight="700">2. 台電併聯 / 消防 / 標檢局文件審查</text>
+        <rect x="280" y="82" width="285" height="16" rx="2" fill="#B42318"/>
+        <text x="422" y="93" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">★ 關鍵要徑：三軌並行送審（申請扣除審查待機期）</text>
+
+        <!-- Row 3: Long-lead Equipment Procurement -->
+        <rect x="0" y="106" width="950" height="32" fill="#F8FAFC"/>
+        <text x="16" y="126" fill="#051C2C" font-size="11" font-weight="600">3. 非陸製 PCS / 液冷電池櫃採購船運</text>
+        <rect x="270" y="114" width="290" height="16" rx="2" fill="#548ABF"/>
+        <text x="415" y="125" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">D15 下訂鎖產能 → D140 抵港報關檢驗</text>
+
+        <!-- Row 4: Civil Foundation & Firewall -->
+        <text x="16" y="158" fill="#051C2C" font-size="11" font-weight="600">4. 污水場墊高基礎、防火牆與管溝</text>
+        <rect x="446" y="146" width="180" height="16" rx="2" fill="#1D3B60"/>
+        <text x="536" y="157" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">D90–D165 RC 養護 + 環氧地坪</text>
+
+        <!-- Row 5: Rigging & Substation 1 Tie-in -->
+        <rect x="0" y="170" width="950" height="32" fill="#F8FAFC"/>
+        <text x="16" y="190" fill="#051C2C" font-size="11" font-weight="600">5. 設備吊裝與總 1 變電站高壓引接</text>
+        <rect x="590" y="178" width="160" height="16" rx="2" fill="#0C7A43"/>
+        <text x="670" y="189" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">D150–D215（含 2 次計畫停電）</text>
+
+        <!-- Row 6: BSMI Field Validation & Fire Inspection -->
+        <text x="16" y="222" fill="#B42318" font-size="11" font-weight="700">6. 標檢局案場確證 ＋ 消防竣工查驗</text>
+        <rect x="734" y="210" width="128" height="16" rx="2" fill="#B42318"/>
+        <text x="798" y="221" text-anchor="middle" fill="#FFF" font-size="9" font-weight="700">D210–D265 現場取證</text>
+
+        <!-- Row 7: RTE 85% + 2hr Islanding SAT & COD -->
+        <rect x="0" y="234" width="950" height="32" fill="#EFF8DF"/>
+        <text x="16" y="254" fill="#0C7A43" font-size="11" font-weight="700">7. RTE≥85%、防逆送、2hr 備援驗收商轉</text>
+        <rect x="842" y="242" width="104" height="16" rx="2" fill="#A1CE39" stroke="#051C2C" stroke-width="1"/>
+        <text x="894" y="253" text-anchor="middle" fill="#051C2C" font-size="9" font-weight="700">D265–D300 商轉</text>
+
+        <!-- Footer Legend -->
+        <rect x="234" y="274" width="12" height="10" fill="#B42318"/><text x="252" y="283" fill="#3F4B5B" font-size="9.5">關鍵要徑（Critical Path）</text>
+        <rect x="410" y="274" width="12" height="10" fill="#1D3B60"/><text x="428" y="283" fill="#3F4B5B" font-size="9.5">設計與土建工程</text>
+        <rect x="540" y="274" width="12" height="10" fill="#0C7A43"/><text x="558" y="283" fill="#3F4B5B" font-size="9.5">機電併網與停電切換</text>
+        <rect x="700" y="274" width="12" height="10" fill="#A1CE39" stroke="#051C2C"/><text x="718" y="283" fill="#3F4B5B" font-size="9.5">最終驗收與正式計費</text>
+      </svg>
+    </div>
+    <div class="kpis-3">
+      <div class="k3"><b>外審風險隔離</b><span>依條款修正 #02，將台電、消防、標檢局審查待機天數明文排除於 300 天工期之外。</span></div>
+      <div class="k3"><b>人員查核前置</b><span>決標後 14 天內一次提報全體施工與維運人員忠誠查核名冊，縮短院區進場等待。</span></div>
+      <div class="k3"><b>夜間/假日吊裝</b><span>避開門診尖峰時段，經大中一路進行低噪音夜間吊裝，落實醫療友善工地管理。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 11: CYBERSECURITY & 24/7 O&M SLA ==================== -->
+<section class="slide" data-slide="11" data-title="資安與維運｜非陸製架構與 2 小時 SLA" data-note="【資安底線】高雄榮總屬於國家關鍵基礎設施，對資通訊設備採取嚴格的「全面非陸製」規範。【邊界釐清】我們在架構設計上將所有具備連網、通訊與控制功能的 Master BMS、EMS、PCS 與工業交換器 100% 採用台/美/歐/日品牌，並透過實體單向隔離閘道與院方監控介接；同時以進金生南區維運中心支撐 24/7 全天候通報與 2 小時到場搶修承諾。">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 10 · ZERO-TRUST CYBERSECURITY &amp; 24/7 O&amp;M SLA</div>
+      <h2 class="s-title">建置 100% 非陸製資通訊控制層與單向隔離架構，並以南區維運基地兌現 2 小時極速到場 SLA</h2>
+    </div>
+    <div class="s-grid-2">
+      <div class="s-visual-card">
+        <div class="card-cap">圖表 11｜非陸製資安隔離分層架構圖（符合附記特別聲明第六條）</div>
+        <svg viewBox="0 0 560 350" class="slide-svg">
+          <!-- Layer 1: Hospital & Taipower Cloud -->
+          <rect x="20" y="18" width="520" height="66" rx="3" fill="#EBF3FA" stroke="#548ABF" stroke-width="1.4"/>
+          <text x="34" y="38" fill="#1D3B60" font-size="10.5" font-weight="700">LAYER 1 · 外部與院區監控介接層（加密 VPN / 單向唯讀）</text>
+          <rect x="34"  y="46" width="150" height="28" rx="2" fill="#FFFFFF" stroke="#548ABF"/><text x="109" y="64" text-anchor="middle" fill="#051C2C" font-size="9.5" font-weight="700">高榮中央監控室（唯讀）</text>
+          <rect x="205" y="46" width="150" height="28" rx="2" fill="#FFFFFF" stroke="#548ABF"/><text x="280" y="64" text-anchor="middle" fill="#051C2C" font-size="9.5" font-weight="700">台電電力交易 / 調度端</text>
+          <rect x="376" y="46" width="150" height="28" rx="2" fill="#051C2C"/><text x="451" y="64" text-anchor="middle" fill="#A1CE39" font-size="9.5" font-weight="700">進金生 24/7 戰情中心</text>
+
+          <!-- Firewall Bar -->
+          <rect x="20" y="96" width="520" height="24" rx="2" fill="#B42318"/>
+          <text x="280" y="112" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="700">🔒 工控防火牆 / 零信任隔離閘道（IEC 62443 · 嚴禁大陸廠牌與遠端後門）</text>
+
+          <!-- Layer 2: Control & Power Electronics (Strict Non-PRC) -->
+          <rect x="20" y="132" width="520" height="96" rx="3" fill="#051C2C"/>
+          <text x="34" y="153" fill="#A1CE39" font-size="10.5" font-weight="700">LAYER 2 · 案場核心控制與變流層（100% 非陸製：台 / 美 / 歐 / 日品牌）</text>
+          <rect x="34"  y="164" width="152" height="50" rx="2" fill="#1D3B60" stroke="#A1CE39"/>
+          <text x="110" y="185" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="700">本地 EMS 控制器</text>
+          <text x="110" y="201" text-anchor="middle" fill="#C5D3E0" font-size="8.5">防逆送 + 備援 SOC 鎖定</text>
+
+          <rect x="204" y="164" width="152" height="50" rx="2" fill="#1D3B60" stroke="#A1CE39"/>
+          <text x="280" y="185" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="700">Master BMS 主控</text>
+          <text x="280" y="201" text-anchor="middle" fill="#C5D3E0" font-size="8.5">非陸製 MCU · 原產地證明</text>
+
+          <rect x="374" y="164" width="152" height="50" rx="2" fill="#1D3B60" stroke="#A1CE39"/>
+          <text x="450" y="185" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="700">雙向 PCS 變流器</text>
+          <text x="450" y="201" text-anchor="middle" fill="#C5D3E0" font-size="8.5">台達 / 歐美日大廠認證</text>
+
+          <!-- Layer 3: Battery Cell & Passive Sampling -->
+          <rect x="20" y="242" width="520" height="92" rx="3" fill="#EFF8DF" stroke="#0C7A43" stroke-width="1.5"/>
+          <text x="34" y="263" fill="#0C7A43" font-size="10.5" font-weight="700">LAYER 3 · 電池電芯本體與被動感測層（依釋疑 #10 明確資安邊界）</text>
+          <text x="34" y="284" fill="#051C2C" font-size="10">• 電芯（LFP Cell）本體與模組內部類比電壓/溫度採樣板（CSC/Slave），不具對外連網通訊功能</text>
+          <text x="34" y="302" fill="#051C2C" font-size="10">• 實體獨立消防連鎖迴路（煙感、可燃氣體、EPO 緊急停止），不依賴外部網路即可獨立切斷保護</text>
+          <text x="34" y="320" fill="#0C7A43" font-size="9.5" font-weight="700">✓ 隨貨檢附全套非陸製產地切結書、設備清單（BOM）與資安檢測報告</text>
+        </svg>
+      </div>
+      <div class="s-points">
+        <div class="kpis-mini">
+          <div class="km"><strong>24 / 7</strong><span>全年監控通報</span></div>
+          <div class="km"><strong style="color:#0C7A43">≤ 2 小時</strong><span>工程師到場時效</span></div>
+          <div class="km"><strong>≤ 24 小時</strong><span>根因與修復報告</span></div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">01</div>
+          <div>
+            <h4>進金生南區維運優勢：高雄在地即時響應</h4>
+            <p>依需求書 P.95，故障通知起 2 小時內須抵達現場。進金生深耕南台灣光儲維運，可由高雄在地認證電氣技師與儲能維運團隊常駐支援，完全覆蓋 2 小時 SLA。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">02</div>
+          <div>
+            <h4>標準化預防性維護（PM）與每月運轉月報</h4>
+            <p>每月執行現場巡檢（BMS、PCS、液冷溫控、消防偵測、防逆送測試），自動產出「月度運轉、異常追蹤與節費結算報告」，透明對接高榮工務室審核。</p>
+          </div>
+        </div>
+        <div class="pt-item">
+          <div class="pt-num">03</div>
+          <div>
+            <h4>資安零漏洞：完整合規文件包</h4>
+            <p>針對醫院關鍵基礎設施稽核要求，投標服務建議書即內附「非陸製資通訊設備清冊」與「資安防護計畫」，成為評選委員最放心的加分亮點。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 12: 5-PILLAR WINNING ROADMAP ==================== -->
+<section class="slide" data-slide="12" data-title="行動藍圖｜投標必勝五維 30 天作戰計畫" data-note="【總結與下一步】為了確保進金生能源拿下高雄榮總這座 7.3 億元級別的指標案場，我們規劃了未來 30 天的五維作戰計畫。【第一優先】明天即由法務與業務團隊發出採購法第 41 條釋疑函並預約污水場與總 1 變電站現場勘查；同步於 W2 完成非陸製設備鎖價與 81.70% 財務模型定案，W4 完成高階評選模擬簡報，全速搶攻決標！">
+  <div class="slide-inner">
+    <div class="s-head">
+      <div class="exhibit">EXHIBIT 11 · 30-DAY WINNING EXECUTION ROADMAP</div>
+      <h2 class="s-title">未來 30 天啟動五維必勝作戰計畫：以釋疑排雷開局、81.70% 鎖價定錨、醫療韌性簡報致勝</h2>
+    </div>
+    <div class="s-visual-card" style="margin-bottom:16px">
+      <div class="card-cap">圖表 12｜投標前 30 天五維作戰藍圖（SVG）</div>
+      <svg viewBox="0 0 980 285" class="slide-svg">
+        <!-- 5 Chevron / Pillar Cards -->
+        <!-- Pillar 1 -->
+        <rect x="10" y="18" width="182" height="252" rx="3" fill="#F6F8FB" stroke="#D4DCE6" stroke-width="1.3"/>
+        <rect x="10" y="18" width="182" height="44" fill="#B42318"/>
+        <text x="101" y="37" text-anchor="middle" fill="#FECACA" font-size="9.5" font-weight="700">WEEK 1 · 立即啟動</text>
+        <text x="101" y="54" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">① 採購法 41 條釋疑</text>
+        <text x="22" y="84"  fill="#051C2C" font-size="10.5" font-weight="700">• 遞交 15 項修約函稿</text>
+        <text x="22" y="104" fill="#3F4B5B" font-size="9.5">統一 300 天工期＋扣外審</text>
+        <text x="22" y="124" fill="#051C2C" font-size="10.5" font-weight="700">• 鎖定罰則與收益公式</text>
+        <text x="22" y="144" fill="#3F4B5B" font-size="9.5">消除日罰 43.8 萬地雷</text>
+        <text x="22" y="164" fill="#051C2C" font-size="10.5" font-weight="700">• 申請補發地質圖資</text>
+        <text x="22" y="184" fill="#3F4B5B" font-size="9.5">污水場地下水槽套疊圖</text>
+        <rect x="22" y="230" width="158" height="26" rx="2" fill="#FEF3F2"/>
+        <text x="101" y="247" text-anchor="middle" fill="#B42318" font-size="9.5" font-weight="700">權責：法務 ＋ 業務部</text>
+
+        <!-- Pillar 2 -->
+        <rect x="204" y="18" width="182" height="252" rx="3" fill="#F6F8FB" stroke="#D4DCE6" stroke-width="1.3"/>
+        <rect x="204" y="18" width="182" height="44" fill="#1D3B60"/>
+        <text x="295" y="37" text-anchor="middle" fill="#9FB6CC" font-size="9.5" font-weight="700">WEEK 1–2 · 工程現勘</text>
+        <text x="295" y="54" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">② 場址與變電站踏勘</text>
+        <text x="216" y="84"  fill="#051C2C" font-size="10.5" font-weight="700">• 污水場 660m² 實測</text>
+        <text x="216" y="104" fill="#3F4B5B" font-size="9.5">確認消防退縮與吊裝路徑</text>
+        <text x="216" y="124" fill="#051C2C" font-size="10.5" font-weight="700">• 總 1 變電站盤體檢視</text>
+        <text x="216" y="144" fill="#3F4B5B" font-size="9.5">11.4kV 備用盤與管溝長度</text>
+        <text x="216" y="164" fill="#051C2C" font-size="10.5" font-weight="700">• 取得 15 分鐘需量檔</text>
+        <text x="216" y="184" fill="#3F4B5B" font-size="9.5">精算普通電源 2hr 負載</text>
+        <rect x="216" y="230" width="158" height="26" rx="2" fill="#EBF3FA"/>
+        <text x="295" y="247" text-anchor="middle" fill="#1D3B60" font-size="9.5" font-weight="700">權責：電機 ＋ 土建技師</text>
+
+        <!-- Pillar 3 -->
+        <rect x="398" y="18" width="182" height="252" rx="3" fill="#F6F8FB" stroke="#D4DCE6" stroke-width="1.3"/>
+        <rect x="398" y="18" width="182" height="44" fill="#051C2C"/>
+        <text x="489" y="37" text-anchor="middle" fill="#A1CE39" font-size="9.5" font-weight="700">WEEK 2 · 商務鎖價</text>
+        <text x="489" y="54" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">③ 81.70% 財務定錨</text>
+        <text x="410" y="84"  fill="#051C2C" font-size="10.5" font-weight="700">• 非陸製供應鏈詢報價</text>
+        <text x="410" y="104" fill="#3F4B5B" font-size="9.5">液冷電池櫃、PCS、EMS</text>
+        <text x="410" y="124" fill="#051C2C" font-size="10.5" font-weight="700">• 專案融資與 IRR 核定</text>
+        <text x="410" y="144" fill="#3F4B5B" font-size="9.5">納入 Y10 電芯延壽預算</text>
+        <text x="410" y="164" fill="#051C2C" font-size="10.5" font-weight="700">• 確認 81.70% 投標書</text>
+        <text x="410" y="184" fill="#3F4B5B" font-size="9.5">滿分 20 分不溢讓底線</text>
+        <rect x="410" y="230" width="158" height="26" rx="2" fill="#EFF8DF"/>
+        <text x="489" y="247" text-anchor="middle" fill="#0C7A43" font-size="9.5" font-weight="700">權責：財務 ＋ 採購部</text>
+
+        <!-- Pillar 4 -->
+        <rect x="592" y="18" width="182" height="252" rx="3" fill="#F6F8FB" stroke="#D4DCE6" stroke-width="1.3"/>
+        <rect x="592" y="18" width="182" height="44" fill="#548ABF"/>
+        <text x="683" y="37" text-anchor="middle" fill="#EBF3FA" font-size="9.5" font-weight="700">WEEK 3 · 企劃完稿</text>
+        <text x="683" y="54" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">④ 服務建議書與消防</text>
+        <text x="604" y="84"  fill="#051C2C" font-size="10.5" font-weight="700">• 80 分技術項全拿設計</text>
+        <text x="604" y="104" fill="#3F4B5B" font-size="9.5">防逆送、保護協調、單線圖</text>
+        <text x="604" y="124" fill="#051C2C" font-size="10.5" font-weight="700">• 消防與資安專章強化</text>
+        <text x="604" y="144" fill="#3F4B5B" font-size="9.5">114/11/03 指引＋非陸證明</text>
+        <text x="604" y="164" fill="#051C2C" font-size="10.5" font-weight="700">• 實績與團隊陣容背書</text>
+        <text x="604" y="184" fill="#3F4B5B" font-size="9.5">掛載 6692 上市能源實績</text>
+        <rect x="604" y="230" width="158" height="26" rx="2" fill="#EBF3FA"/>
+        <text x="683" y="247" text-anchor="middle" fill="#1D3B60" font-size="9.5" font-weight="700">權責：專案統籌團隊</text>
+
+        <!-- Pillar 5 -->
+        <rect x="786" y="18" width="184" height="252" rx="3" fill="#EFF8DF" stroke="#0C7A43" stroke-width="1.6"/>
+        <rect x="786" y="18" width="184" height="44" fill="#0C7A43"/>
+        <text x="878" y="37" text-anchor="middle" fill="#DCFCE7" font-size="9.5" font-weight="700">WEEK 4 · 評選奪標</text>
+        <text x="878" y="54" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">⑤ 評選簡報與 Q&amp;A</text>
+        <text x="798" y="84"  fill="#051C2C" font-size="10.5" font-weight="700">• 鎖定評委三大關切</text>
+        <text x="798" y="104" fill="#3F4B5B" font-size="9.5">消防安全、不停電切換、資安</text>
+        <text x="798" y="124" fill="#051C2C" font-size="10.5" font-weight="700">• 3D 案場與即時儀表板</text>
+        <text x="798" y="144" fill="#3F4B5B" font-size="9.5">視覺化展現污水廠配置安全</text>
+        <text x="798" y="164" fill="#051C2C" font-size="10.5" font-weight="700">• 模擬答辯紅隊演練</text>
+        <text x="798" y="184" fill="#3F4B5B" font-size="9.5">確保高分奪得最有利標</text>
+        <rect x="798" y="230" width="160" height="26" rx="2" fill="#051C2C"/>
+        <text x="878" y="247" text-anchor="middle" fill="#A1CE39" font-size="9.5" font-weight="700">目標：第一順位決標</text>
+      </svg>
+    </div>
+    <div class="exec-cta">
+      <div>
+        <b>ACMEPOINT 進金生能源｜表後儲能投標決策平台</b>
+        <span>本簡報所有數據均核對自《ENG-1150058 招標文件》152 頁原文，支援全螢幕簡報、衛星地圖檢視與一鍵匯出公文。</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn-pri" onclick="switchView('map')">檢視案場衛星地圖</button>
+        <button class="btn-sec" onclick="switchView('letter')">複製釋疑公文函稿</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+      </div>
+    </div>
+
+    <div class="notes-bar" id="notes-bar">
+      <b>講者備忘錄（Slide <span id="note-num">01</span>）：</b>
+      <span id="note-text"></span>
+    </div>
+
+    <div class="thumb-strip" id="thumb-strip"></div>
+  </div>
+
+  <!-- ==================== VIEW 2: FULL INTERACTIVE SITE MAP ==================== -->
+  <div id="view-map" hidden>
+    <div class="exhibit">SITE LOCATION INTELLIGENCE · KAOHSIUNG VGHKS</div>
+    <h1 class="title">高雄榮民總醫院案場地理定位與空間配置圖</h1>
+    <p class="sub">整合 OpenStreetMap 街道圖與 Esri 高解析衛星影像，精準標示高雄市左營區大中一路 386 號院區、預定儲能設置區（污水處理場 660 m²）、總 1 變電站高壓引接點與吊裝動線。</p>
+
+    <div class="kpis">
+      <div class="kpi"><strong>22.6777°N, 120.3227°E</strong><span>院區 WGS84 中心座標</span></div>
+      <div class="kpi"><strong>660 m²</strong><span>污水處理場預定儲能面積</span></div>
+      <div class="kpi"><strong>8,300 kW</strong><span>總 1 變電站契約容量</span></div>
+      <div class="kpi"><strong>22.8 / 11.4 kV</strong><span>雙饋線主受電電壓架構</span></div>
+    </div>
+
+    <div class="map-layout">
+      <div>
+        <div id="full-map"></div>
+      </div>
+      <div class="map-side">
+        <div class="info-box">
+          <h3>案場基礎空間與電力參數</h3>
+          <dl class="info-dl">
+            <dt>機關地址</dt><dd>813414 高雄市左營區大中一路 386 號</dd>
+            <dt>台電電號</dt><dd><code>11-44-7700-10-9</code></dd>
+            <dt>預定設置地</dt><dd>院區污水處理場區域（約 660 m²）</dd>
+            <dt>高壓引接點</dt><dd>總 1 變電站（11.4kV 匯流排）</dd>
+            <dt>聯外交通</dt><dd>緊鄰國道 1 號 / 國道 10 號鼎金系統、大中一路</dd>
+            <dt>現勘重點</dt><dd>地下蓄水槽結構載重、電纜管溝路徑、消防退縮 3m</dd>
+          </dl>
+        </div>
+        <div class="info-box">
+          <h3>快速定位院區關鍵點位（點擊飛移）</h3>
+          <button class="pin-btn" onclick="flyToPoint(22.6777, 120.3227, 17)">
+            <span><i class="pin-dot" style="background:#051C2C"></i>高雄榮民總醫院主院區中心</span><span>17x</span>
+          </button>
+          <button class="pin-btn" onclick="flyToPoint(22.6766, 120.3239, 18)">
+            <span><i class="pin-dot" style="background:#0C7A43"></i>★ 預定儲能區：污水處理場後勤區（660 m²）</span><span>18x</span>
+          </button>
+          <button class="pin-btn" onclick="flyToPoint(22.6773, 120.3233, 18)">
+            <span><i class="pin-dot" style="background:#B42318"></i>★ 高壓引接點：總 1 變電站（22.8/11.4kV）</span><span>18x</span>
+          </button>
+          <button class="pin-btn" onclick="flyToPoint(22.6786, 120.3222, 18)">
+            <span><i class="pin-dot" style="background:#548ABF"></i>大中一路主入口 / 重車吊裝進場幹道</span><span>18x</span>
+          </button>
+          <p style="font-size:11.5px;color:var(--mute);margin:10px 0 0">※ 註：院區內污水處理場與總 1 變電站確切施工邊界，須依招標文件 P.90 規定以現場會勘與機關補發之套疊圖為準。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== VIEW 3: 15-ITEM TENDER REVISIONS ==================== -->
+  <div id="view-revisions" hidden>
+    <div class="exhibit">TENDER AUDIT &amp; LEGAL DEFENSE · 15 CLAUSE REVISIONS</div>
+    <h1 class="title">原招標文件（ENG-1150058）15 大關鍵細節修正對照表</h1>
+    <p class="sub">逐頁檢視 152 頁招標文件之筆誤、日數矛盾、違約金漏洞與法規衝突，依《政府採購法》第 41 條提出紅字修訂條文。</p>
+
+    <div class="filters">
+      <label>關鍵字檢索（條款、頁碼、關鍵字）
+        <input type="text" id="rev-search" placeholder="例如：300日、43.8萬、防逆送、RTE、污水..." oninput="renderRevisions()">
+      </label>
+      <label>風險類別篩選
+        <select id="rev-cat" onchange="renderRevisions()">
+          <option value="">全部類別（15 項）</option>
+          <option value="工期與審查">工期與審查</option>
+          <option value="財務與罰則">財務與罰則</option>
+          <option value="技術與運轉">技術與運轉</option>
+          <option value="工程與場址">工程與場址</option>
+          <option value="資安與合規">資安與合規</option>
+          <option value="行政與契約">行政與契約</option>
+        </select>
+      </label>
+      <label>風險等級篩選
+        <select id="rev-sev" onchange="renderRevisions()">
+          <option value="">全部等級</option>
+          <option value="高">高風險（致命項）</option>
+          <option value="中">中風險</option>
+          <option value="低">低風險</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:48px">編號</th>
+            <th style="width:92px">類別 / 等級</th>
+            <th style="width:160px">原文件出處</th>
+            <th style="width:26%">原招標條文（現狀瑕疵）</th>
+            <th style="width:32%">建議修正後條文</th>
+            <th>法理依據與效益</th>
+          </tr>
+        </thead>
+        <tbody id="rev-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==================== VIEW 4: FORMAL CLARIFICATION LETTER ==================== -->
+  <div id="view-letter" hidden>
+    <div class="exhibit">GOVERNMENT PROCUREMENT ACT ART. 41 · OFFICIAL DRAFT</div>
+    <h1 class="title">投標廠商正式釋疑申請函（公文草案）</h1>
+    <p class="sub">依《政府採購法》第 41 條第 1 項及施行細則第 43 條撰擬，可直接複製套印公司文號函送高雄榮民總醫院。</p>
+
+    <div class="letter-wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <b style="font:600 16px var(--serif);color:var(--navy)">進金生能源服務股份有限公司　函（稿）</b>
+        <div style="display:flex;gap:10px">
+          <button class="deck-btn active" onclick="copyLetter()" id="btn-copy-letter">一鍵複製公文全文</button>
+          <button class="deck-btn" onclick="window.print()">列印公文</button>
+        </div>
+      </div>
+      <pre class="letter-pre" id="letter-content">進金生能源服務股份有限公司　函（稿）
 
 受文者：高雄榮民總醫院
-發文日期：中華民國115年○月○日
-發文字號：進能字第11500○○○○號
+發文日期：中華民國 115 年 ○ 月 ○ 日
+發文字號：進能字第 11500○○○○ 號
 速別：最速件
 密等及解密條件或保密期限：普通
-附件：招標文件條款疑義與修正建議對照表一份
+附件：如文（招標文件條款疑義與修正建議對照表一份）
 
-主旨：貴院辦理「表後儲能系統建置及節能技術服務」（案號：ENG-1150058）採購案，本公司就招標文件內容存有疑義事項，特依政府採購法第41條第1項及同法施行細則第43條規定，檢送疑義說明與修正建議對照表，敬請　查照並惠予書面釋疑更正。
+主旨：貴院辦理「表後儲能系統建置及節能技術服務」（案號：ENG-1150058）採購案，本公司就招標文件內容存有疑義事項，特依政府採購法第 41 條第 1 項及同法施行細則第 43 條規定，檢送疑義說明與修正建議對照表，敬請　查照並惠予書面釋疑更正。
 
 說明：
-一、依政府採購法第41條第1項、政府採購法施行細則第43條暨本採購案投標須知第20點規定辦理。
+一、依政府採購法第 41 條第 1 項、政府採購法施行細則第 43 條暨本採購案投標須知第 20 點規定辦理。
 二、貴院本採購案為提升全院能源韌性與節能效益之指標性巨額採購專案，本公司深感感佩並積極備標。惟經詳研全卷招標文件，發現部分條款內容存有未盡周延、數據矛盾及執行疑義，為使本採購案符合公平合理原則並利後續順利推動履約，謹提請釋疑要點如下：
-  (一) 契約編號筆誤：招標投標及契約文件第3頁決標簽約欄誤植為「ENG-1140043」，建請更正為本案案號「ENG-1150058」。
-  (二) 履約工期矛盾：契約首頁載明「240日曆天完工」，惟契約第七條載明「300日內設置完成」，兩者牴觸。考量本案須經台電內線併聯審查、消防局設計審查及標準檢驗局案場驗證等法定程序，建請統一載明工期為決標次日起「300日曆天」，並明定非可歸責於廠商之外審時間得核實扣除工期。
-  (三) 遲延履約違約金計罰標準：契約第十三條未載明每日違約金比率，依法將按全案契約總價（4.38億元）之1‰計罰（每日高達43.8萬元），顯失衡平。建請修正為按「未完成建置容量部分之建置金額」計罰。
+  (一) 契約編號筆誤：招標投標及契約文件第 3 頁決標簽約欄誤植為「ENG-1140043」，建請更正為本案案號「ENG-1150058」。
+  (二) 履約工期矛盾：契約首頁載明「240 日曆天完工」，惟契約第七條載明「300 日內設置完成」，兩者牴觸。考量本案須經台電內線併聯審查、消防局設計審查及標準檢驗局案場驗證等法定程序，建請統一載明工期為決標次日起「300 日曆天」，並明定非可歸責於廠商之外審時間得核實扣除工期。
+  (三) 遲延履約違約金計罰標準：契約第十三條未載明每日違約金比率，依法將按全案契約總價（4.38 億元）之 1‰ 計罰（每日高達 43.8 萬元），顯失衡平。建請修正為按「未完成建置容量部分之建置金額」計罰。
   (四) 防逆送運轉與收益定義：需求書規定「正常併網嚴禁逆送電」，建請釐清電力交易平台輔助服務收益於防逆送限制下之具體核算機制。
   (五) 收益公式完整性：契約第八條第二十四款削峰填谷公式漏列「超約附加費節省」與「調降契約容量基本電費節省」，建請惠予納入以真實反映節能貢獻。
   (六) 地質與地下管網圖資：建請補發污水處理場預定地之地下管網結構圖與土壤鑽探數據，以利基礎安全設計。
-三、檢附「招標文件條款疑義與修正建議對照表」一份如附件，敬請　貴院卓參並辦理補充釋疑及必要之更正公告，俾利廠商完善投標規劃，共創優質儲能示範案場。
+  (七) 後續擴充電芯置換與資安邊界：建請增訂第 8–11 年自費電芯延壽置換機制，並釋明排陸條款中電池模組內部類比採樣從控單元之認定邊界。
+三、檢附「招標文件條款疑義與修正建議對照表（15 項）」一份如附件，敬請　貴院卓參並辦理補充釋疑及必要之更正公告，俾利廠商完善投標規劃，共創優質醫療儲能示範案場。
 
 正本：高雄榮民總醫院
-副本：國軍退除役官兵輔導委員會、本公司業務部、法務室
-
-進金生能源服務股份有限公司
-負責人：○○○
-      </div>
-
+副本：進金生能源服務股份有限公司業務推廣部、法務智財室</pre>
     </div>
-  </main>
+  </div>
 
-  <!-- Interactive Calculator Modal -->
-  <div id="calc-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
-      <button onclick="toggleModal('calc-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
+  <!-- ==================== VIEW 5: 81.70% BIDDING & FINANCIAL SIMULATOR ==================== -->
+  <div id="view-calc" hidden>
+    <div class="exhibit">FINANCIAL MODELING &amp; GAME THEORY · 81.70% OPTIMAL BID</div>
+    <h1 class="title">81.70% 黃金出價博弈與 12/20 年 ESCO 收益試算器</h1>
+    <p class="sub">依據評選須知（上限 85.7% 給 12 分，每降 0.5% 加 1 分，最高 20 分）即時試算不同投標比率對評選分數、12 年總營收與投資回收期之影響。</p>
 
-      <div class="flex items-center gap-2 mb-4">
-        <div class="p-2 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-500/30">
-          <i data-lucide="trending-up" class="w-5 h-5"></i>
+    <div class="calc-grid">
+      <div class="calc-card">
+        <h3 style="margin:0 0 16px;font:600 17px var(--serif);color:var(--navy)">參數設定</h3>
+        <div class="calc-row">
+          <label><span>廠商承諾收益分享比率（上限 85.70%）</span><b id="v-share">81.70%</b></label>
+          <input type="range" id="in-share" min="78.0" max="85.7" step="0.1" value="81.7" oninput="calcSim()">
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--mute)">
+            <span>78.0%（溢讓虧損）</span><span style="color:var(--acme-emerald);font-weight:700">★ 81.70% 滿分線</span><span>85.7%（上限）</span>
+          </div>
         </div>
-        <div>
-          <h3 class="text-lg font-bold text-slate-100">收益分享比率評分與營收試算器</h3>
-          <p class="text-xs text-slate-400">招標上限 85.7%，每降 0.5% 加 1 分，最高 20 分</p>
+        <div class="calc-row">
+          <label><span>預估案場月均總節電＋輔助收益（萬元/月）</span><b id="v-rev">355 萬元</b></label>
+          <input type="range" id="in-rev" min="250" max="450" step="5" value="355" oninput="calcSim()">
+        </div>
+        <div class="calc-row">
+          <label><span>初期儲能系統建置總投資 CAPEX（億元）</span><b id="v-capex">2.10 億元</b></label>
+          <input type="range" id="in-capex" min="1.40" max="3.00" step="0.05" value="2.10" oninput="calcSim()">
+        </div>
+        <div class="calc-row">
+          <label><span>年維運保險費率 OPEX（佔年營收 %）</span><b id="v-opex">12%</b></label>
+          <input type="range" id="in-opex" min="6" max="20" step="1" value="12" oninput="calcSim()">
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="deck-btn active" onclick="setShare(81.7)">一鍵鎖定 81.70% 滿分</button>
+          <button class="deck-btn" onclick="setShare(85.7)">對照上限 85.70%</button>
+          <button class="deck-btn" onclick="setShare(80.0)">測試過度讓利 80.0%</button>
         </div>
       </div>
 
-      <div class="space-y-4 text-sm">
-        <div>
-          <div class="flex justify-between items-center mb-1">
-            <label class="text-slate-300 font-semibold">廠商投標收益分享比率 (%)</label>
-            <span id="calc-pct-label" class="text-amber-400 font-bold text-base font-mono">81.70%</span>
+      <div class="calc-card">
+        <h3 style="margin:0 0 16px;font:600 17px var(--serif);color:var(--navy)">試算結果（McKinsey 決策儀表）</h3>
+        <div class="calc-res">
+          <div class="cr-box hi">
+            <small>評選價格項得分（滿分 20 分）</small>
+            <strong id="r-score">20 / 20 分</strong>
           </div>
-          <input id="calc-slider" type="range" min="75" max="85.7" step="0.1" value="81.7" oninput="updateCalculator(this.value)" class="w-full accent-amber-500 h-2 bg-slate-700 rounded-lg cursor-pointer">
-          <div class="flex justify-between text-[11px] text-slate-400 mt-1">
-            <span>75.0% (過度讓利)</span>
-            <span class="text-emerald-400 font-bold">81.7% (最佳滿分點)</span>
-            <span>85.7% (基準上限)</span>
+          <div class="cr-box">
+            <small>廠商 12 年（144 月）累計總營收</small>
+            <strong id="r-rev12">4.176 億元</strong>
           </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3 pt-2">
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-            <span class="text-xs text-slate-400">評選項目四得分</span>
-            <div id="calc-score" class="text-2xl font-black text-emerald-400 mt-1">20 / 20 分</div>
-            <span id="calc-score-sub" class="text-[11px] text-emerald-500">★ 獲得滿分最高評價</span>
+          <div class="cr-box">
+            <small>預估簡單回收年限（扣 OPEX）</small>
+            <strong id="r-payback">6.9 年</strong>
           </div>
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-            <span class="text-xs text-slate-400">預估每月可得收益</span>
-            <div id="calc-monthly" class="text-2xl font-black text-amber-400 mt-1">290.0 萬元</div>
-            <span class="text-[11px] text-slate-400">以月效益 355 萬計算</span>
+          <div class="cr-box">
+            <small>20 年含兩次擴充預估總營收</small>
+            <strong id="r-rev20">6.960 億元</strong>
           </div>
         </div>
-
-        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
-          <div class="flex justify-between">
-            <span class="text-slate-400 text-xs">12 年 (144 個月) 累計總收益：</span>
-            <span id="calc-total" class="font-bold text-slate-200 font-mono">4.17 億元</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-slate-400 text-xs">20 年全生命週期總收益：</span>
-            <span id="calc-life" class="font-bold text-slate-200 font-mono">6.96 億元</span>
-          </div>
-          <div class="flex justify-between border-t border-slate-800 pt-2">
-            <span class="text-slate-400 text-xs">相較 85.7% 減少拆分比例：</span>
-            <span id="calc-diff" class="text-rose-400 font-semibold text-xs font-mono">-4.00% (-1,704萬元)</span>
-          </div>
-        </div>
-
-        <div class="p-3 bg-amber-950/40 border border-amber-500/30 rounded-lg text-xs text-amber-200 leading-relaxed">
-          <strong>顧問洞察：</strong> 報價 81.70% 恰好降 4.0%，取得 8 點級距加分穩拿滿分 20 分。低於 81.70% 分數不再增加，白白損失合約收益；高於 81.70% 則每 0.5% 失 1 分，極易在序位法遭到淘汰！
-        </div>
+        <div id="r-advice" style="margin-top:16px;padding:12px 14px;background:#EFF8DF;border-left:4px solid var(--acme-emerald);font-size:13px;color:var(--navy)"></div>
       </div>
     </div>
   </div>
 
-  <!-- Image Lightbox Modal -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 cursor-zoom-out" onclick="closeLightbox()">
-    <div class="max-w-5xl max-h-[90vh] w-full flex flex-col items-center justify-center relative">
-      <img id="lightbox-img" src="" alt="放大圖片" class="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl border border-slate-700">
-      <p class="text-xs text-slate-400 mt-2">點擊任意處關閉放大檢視</p>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-slate-950 border-t border-slate-800/80 px-6 py-4 text-center text-xs text-slate-400">
-    <div class="flex flex-wrap items-center justify-center gap-4">
-      <span>進金生能源服務股份有限公司 (6692)</span>
-      <span>•</span>
-      <span>高雄榮民總醫院 表後儲能系統建置及節能技術服務 (ENG-1150058)</span>
-      <span>•</span>
-      <span>8 種無雜訊顧問版型 × 15大條款修正對照</span>
-    </div>
+  <footer class="foot">
+    <span>ACMEPOINT 進金生能源服務股份有限公司（6692）｜高雄榮民總醫院表後儲能案（ENG-1150058）決策平台</span>
+    <span>Design System aligned with ACMEPOINT × McKinsey Executive Standard</span>
   </footer>
+</main>
 
-  <!-- Scripts -->
-  <script>
-    // 12 Slides Data
-    const slidesData = [
-      {
-        num: 1,
-        tag: "PROJECT OVERVIEW ｜ 決策旗艦報告",
-        archetype: "McKinsey Deep Navy ｜ 封面頁",
-        badgeColor: "bg-blue-950/80 text-blue-400 border-blue-500/30",
-        actionTitle: "高雄榮民總醫院「表後儲能系統建置及節能技術服務」",
-        subTitle: "採購案號：ENG-1150058 ｜ 4.38 億元巨額採購案決策分析與投標必勝攻略",
-        img: "assets/images/slide_01_cover_campus.jpg",
-        bullets: [
-          { bold: "標案性質：", text: "巨額勞務採購（限制性招標，公開評選準用最有利標，序位法決標）" },
-          { bold: "金額規模：", text: "本期預算 4.38 億元（12年），含兩次擴充總採購金額上看 7.30 億元" },
-          { bold: "商業模式：", text: "純 ESCO / BOO（廠商全額投資建置與維運，按月實際效益分成）" },
-          { bold: "核心要求：", text: "中斷供電供應普通電源≧2小時、充放電效率≧85%、嚴格防逆送" }
-        ],
-        notes: "【採用版型】：封面頁 ｜ 視覺風格：McKinsey Deep Navy\n① 本頁結論：高雄榮總表後儲能案為 4.38 億之巨額純 ESCO 標案，投標決勝在於控制工期與醫療供電安全。\n② 補充說明：本報告提供招標重點摘要、15項條款細節修正對照，以及確保奪標的五維準備方案。\n③ 下一頁轉場：首先呈現全案的核心決策總覽。"
-      },
-      {
-        num: 2,
-        tag: "EXECUTIVE SUMMARY ｜ 決策架構總覽",
-        archetype: "McKinsey Deep Navy ｜ 版型 3：結合論法 (Combined Tree)",
-        badgeColor: "bg-blue-950/80 text-blue-400 border-blue-500/30",
-        actionTitle: "「純 ESCO 全額出資」結合「醫療級 2 小時備援」與「81.7% 定價博弈」，鎖定 4.38 億案場",
-        subTitle: "三大核心前提同時成立，推導出進金生能源必勝奪標之頂層策略",
-        img: "assets/images/slide_02_bess_overview.jpg",
-        bullets: [
-          { bold: "商業支柱：", text: "純 ESCO 效益分成模式，廠商承擔全部 CAPEX，依每月實際收益支付" },
-          { bold: "技術支柱：", text: "污水場 660m² 防腐防汛、普通電源 2 小時孤島供電、全非陸製資通訊" },
-          { bold: "博弈支柱：", text: "收益分享比率鎖定 81.70% 奪滿分 20 分，兼顧評選第 1 與營收最大化" },
-          { bold: "實績門檻：", text: "特定電力供應業電業執照 ＋ 5年內單次 1.75 億或累計 4.38 億實績" }
-        ],
-        notes: "【採用版型】：版型 3：結合論法 ｜ 視覺風格：McKinsey Deep Navy\n① 本頁結論：三大支柱必須同時到位才能確保拿下此巨額案場。\n② 補充說明：商業模式需耐受無保底風險，工程需克服污水場腐蝕，定價須精準卡位滿分。\n③ 下一頁轉場：接著檢視招標文件所載的合約採購規模與擴充機制。"
-      },
-      {
-        num: 3,
-        tag: "SCALE & EXPANSION ｜ 採購規模與擴充",
-        archetype: "Accenture Core Purple ｜ 版型 1：一對一論法 (One-to-One)",
-        badgeColor: "bg-purple-950/80 text-purple-400 border-purple-500/30",
-        actionTitle: "本期預算 4.38 億元加上兩次續約擴充，全生命週期採購總規模上看 7.30 億元",
-        subTitle: "單一強力核心指標：本案為橫跨 20 年之長生命週期巨額能源技術服務",
-        img: "assets/images/slide_03_contract_scale.jpg",
-        bullets: [
-          { bold: "本期 12 年 (144 個月)：", text: "預算上限 4億3,809萬8,400 元（每月預估 355 萬 × 85.7%）" },
-          { bold: "第 1 次續約 (第 13~16 年)：", text: "增購上限 1億4,603萬2,800 元（續約門檻：RTE ≧ 85%）" },
-          { bold: "第 2 次續約 (第 17~20 年)：", text: "增購上限 1億4,603萬2,800 元（續約門檻：RTE ≧ 80%）" },
-          { bold: "全案總額：", text: "本期加擴充合計達 7億3,016萬4,000 元；履約保證金 400 萬元" }
-        ],
-        notes: "【採用版型】：版型 1：一對一論法 ｜ 視覺風格：Accenture Core Purple\n① 本頁結論：這是一檔長達 20 年、總額高達 7.3 億元的巨額技術服務合約。\n② 補充說明：第 13 年仍要求 85% 效率，投標團隊必須在中期編列電芯置換 CAPEX。\n③ 下一頁轉場：接下來剖析合約明訂的商業模式與計價公式。"
-      },
-      {
-        num: 4,
-        tag: "BUSINESS MODEL ｜ 商業模式與計價",
-        archetype: "McKinsey Deep Navy ｜ 版型 5：麥肯錫論法 (McKinsey Matrix)",
-        badgeColor: "bg-blue-950/80 text-blue-400 border-blue-500/30",
-        actionTitle: "「零期初工程款 ＋ 每月實際收益拆分」，廠商承擔全額 CAPEX 與回收風險",
-        subTitle: "沿著生命週期流程，診斷契約計價機制與廠商財務護欄",
-        img: "assets/images/slide_04_revenue_ems.jpg",
-        bullets: [
-          { bold: "建置階段：", text: "廠商全額自費出資設備、土建、消防與併聯引接，院方無期初工程款" },
-          { bold: "運轉調度：", text: "EMS 實施尖離峰削峰填谷，嚴格落實防逆送保護，維持 ≧ 85% RTE" },
-          { bold: "收益公式：", text: "（尖峰電價×供電量）－（離峰電價×充電量）＋ 輔助服務／需量反應收益" },
-          { bold: "風險對策：", text: "無保底機制（No Take-or-Pay），需藉由高榮白天大基載確保放電全額吸收" }
-        ],
-        notes: "【採用版型】：版型 5：麥肯錫論法 ｜ 視覺風格：McKinsey Deep Navy\n① 本頁結論：合約是純 ESCO 模式，廠商承擔所有投資與運轉責任，按實際效益分成。\n② 補充說明：每月款項需經書面驗收，計量電錶必須具備經濟部標檢局檢定合格。\n③ 下一頁轉場：要支撐此效益，必須深入高榮院區的真實用電結構。"
-      },
-      {
-        num: 5,
-        tag: "LOAD & CAPACITY ｜ 用電分析與容量",
-        archetype: "BCG Forest Green ｜ 版型 1：一對一論法 (One-to-One)",
-        badgeColor: "bg-emerald-950/80 text-emerald-400 border-emerald-500/30",
-        actionTitle: "契約容量 8,300 kW 搭配夏月超約特性，精算 3~4 MW / 8~10 MWh 為最佳化投標容量",
-        subTitle: "以高榮 19 個月實測用電大數據，反推最佳經濟效益與用地平衡點",
-        img: "assets/images/slide_05_load_capacity.jpg",
-        bullets: [
-          { bold: "用電總量：", text: "114/01~115/07 用電 7,435 萬度，電費 3.06 億元，平均單價 4.12 元/度" },
-          { bold: "負載分佈：", text: "空調設備佔 54.0%、動力設備佔 17.6%、照明佔 15.8%，夏季下午極度吃重" },
-          { bold: "超約痛點：", text: "114 年 5~7 月連續產生超約附加費（累計逾 31 萬元），削峰急迫性極高" },
-          { bold: "最佳配置：", text: "3~4 MW / 8~10 MWh 系統可平抑夏月尖峰，日放電 1.2 萬度，直逼效益目標" }
-        ],
-        notes: "【採用版型】：版型 1：一對一論法 ｜ 視覺風格：BCG Forest Green\n① 本頁結論：高榮用電基載大且夏月空調尖峰明顯，3~4 MW 儲能最具經濟削峰效益。\n② 補充說明：污水處理場 660 m² 土地面積亦剛好可容納約 2~3 座 40 呎集裝箱儲能櫃。\n③ 下一頁轉場：然而，污水場現場環境十分嚴苛，工程防護必須做足。"
-      },
-      {
-        num: 6,
-        tag: "SITE CONDITIONS ｜ 場址與工程防護",
-        archetype: "McKinsey Deep Navy ｜ 版型 6：對立論法 (Opposition)",
-        badgeColor: "bg-blue-950/80 text-blue-400 border-blue-500/30",
-        actionTitle: "污水處理場 660 m² 硫化氫腐蝕環境，全面導入 C5-M 重防腐與基礎防汛抬高工程",
-        subTitle: "針對污水廠嚴酷環境挑戰，逐項提出對應之重工業級工程防護對策",
-        img: "assets/images/slide_06_sewage_civil.jpg",
-        bullets: [
-          { bold: "化學腐蝕 vs. C5-M 塗裝：", text: "污水場高濃度 H2S 與 NH3 氣體 ➔ 貨櫃外殼 C5-M 海洋重防腐，空調加裝化學吸附濾網" },
-          { bold: "地下管溝 vs. 筏式微型樁：", text: "場址地下密布大型集水槽與管線 ➔ 採用淺層筏式基礎搭配微型抗拔樁，避開管溝" },
-          { bold: "防汛積水 vs. 基座墊高：", text: "高雄夏季常有強降雨積淹水疑慮 ➔ 混凝土設備基座墊高 800~1200mm，配置雙迴路排水" },
-          { bold: "動線維持 vs. 模組化佈局：", text: "契約規定維持污水廠維修通行 ➔ 預留 4 米法定應急救援通道，滿足消防指引要求" }
-        ],
-        notes: "【採用版型】：版型 6：對立論法 ｜ 視覺風格：McKinsey Deep Navy\n① 本頁結論：污水場是高腐蝕與受限空間，非一般空地，防腐與防汛設計是審標硬指標。\n② 補充說明：若未在企劃書提出 C5-M 防腐與基座墊高，將被工務室委員重扣分數。\n③ 下一頁轉場：除土建外，醫院最重視的核心功能是市電斷電時的電力救援切換。"
-      },
-      {
-        num: 7,
-        tag: "RESILIENCE & MICROGRID ｜ 醫療供電韌性",
-        archetype: "Accenture Core Purple ｜ 版型 4：連鎖論法 (Chain / Flow)",
-        badgeColor: "bg-purple-950/80 text-purple-400 border-purple-500/30",
-        actionTitle: "市電中斷瞬時切換孤島，確保普通電源 2 小時續航並與柴油發電機防衝擊協同",
-        subTitle: "端到端展示台電斷電時之毫秒級自動切換與發電機互鎖時序流程",
-        img: "assets/images/slide_07_resilience_switch.jpg",
-        bullets: [
-          { bold: "市電中斷 ➔ 瞬時解聯：", text: "台電電網斷電時，高壓斷路器 200ms 快速脫扣，形成孤島隔離" },
-          { bold: "電網形成 ➔ 普通電源 2 小時：", text: "PCS 轉為 VF 電壓源模式，維持全院照明、電梯、空調等普通電源" },
-          { bold: "平時調度 ➔ 最低 SOC 護欄：", text: "EMS 平時調度鎖定最低備援荷電量 ≧ 30%，保證隨時有 2 小時電量" },
-          { bold: "發電機協同 ➔ 防反充保護：", text: "儲能系統與既設柴發並聯時增設逆功率防護電驛，防止發電機反充跳脫" }
-        ],
-        notes: "【採用版型】：版型 4：連鎖論法 ｜ 視覺風格：Accenture Core Purple\n① 本頁結論：微電網孤島切換與防發電機逆功率反充是醫療韌性技術關鍵。\n② 補充說明：重症 ICU 與手術室有專屬 UPS 支撐，儲能專責普通電源備援至少 2 小時。\n③ 下一頁轉場：看似完整的方案背後，招標文件實則存在 6 大潛在疑慮與 15 項細節衝突。"
-      },
-      {
-        num: 8,
-        tag: "RISK DIAGNOSIS ｜ 招標文件風險診斷",
-        archetype: "BCG Forest Green ｜ 版型 8：BCG 2×2 矩陣 (BCG 2x2 Matrix)",
-        badgeColor: "bg-emerald-950/80 text-emerald-400 border-emerald-500/30",
-        actionTitle: "影響度 × 發生機率象限診斷：防逆送限制、工期衝突與每日 43.8 萬罰金為致命痛點",
-        subTitle: "以四象限策略矩陣，深度診斷招標文件中的 6 大潛在法律、營運與工程風險",
-        img: "assets/images/slide_08_risk_fire_matrix.jpg",
-        bullets: [
-          { bold: "第一象限（致命衝擊 × 高機率）：", text: "① 240/300 天工期衝突 ＋ 違約金 1‰ 每日高達 43.8 萬元；② 防逆送限制阻礙電力交易" },
-          { bold: "第二象限（重大衝擊 × 中機率）：", text: "③ 純實際收益分成無保底；④ 附記條款排陸，需釐清模組從控採樣與主控 BMS 界限" },
-          { bold: "第三象限（長期必然 × 中等衝擊）：", text: "⑤ 第 13 年需達 85% RTE，需在中期第 8~11 年規劃電芯置換（Augmentation）" },
-          { bold: "第四象限（合約退場 × 中等衝擊）：", text: "⑥ 期滿回復原狀應爭取保留地下混凝土基礎與管溝，避免敲除破壞污水廠地坪" }
-        ],
-        notes: "【採用版型】：版型 8：BCG 2×2 矩陣 ｜ 視覺風格：BCG Forest Green\n① 本頁結論：工期矛盾、每日43.8萬違約金與防逆送限制是投標團隊的三大致命風險。\n② 補充說明：必須透過投標前正式釋疑公文與建議書避險設計，化解這 15 大細節疑慮。\n③ 下一頁轉場：其中最急迫的法律衝突，是招標文件中寫死的工期矛盾與外部審查期程。"
-      },
-      {
-        num: 9,
-        tag: "TIMELINE ANALYSIS ｜ 工期矛盾與關鍵路徑",
-        archetype: "Accenture Core Purple ｜ 版型 4：連鎖論法 (Chain / Flow)",
-        badgeColor: "bg-purple-950/80 text-purple-400 border-purple-500/30",
-        actionTitle: "台電審查與標檢局案場確證需 6~9 個月，240 天工期無容錯空間需立即啟動釋疑",
-        subTitle: "對比契約文件條款矛盾，展開關鍵路徑 (CPM) 揭露潛在違約風險",
-        img: "assets/images/slide_09_timeline_conflict.jpg",
-        bullets: [
-          { bold: "文件條款直接矛盾：", text: "契約首頁載明 240 日曆天完工，但契約第 7 條卻載明決標起 300 日內設置" },
-          { bold: "關鍵路徑 CPM 耗時 280 天：", text: "台電內線審查 (60-90天) ＋ 消防審查 (45天) ＋ 標檢局確證 (60天) ＋ 設備交期與試車 (90天)" },
-          { bold: "行政審查不可控：", text: "台電與標檢局審查屬於外部公權力，240 天工期若遇審查延宕，每日遭罰千分之一 (43.8萬元)" },
-          { bold: "法律行動建議：", text: "於等標期內依採購法正式行文請求機關「釋疑」，爭取以 300 天為準且扣除外審時間" }
-        ],
-        notes: "【採用版型】：版型 4：連鎖論法 ｜ 視覺風格：Accenture Core Purple\n① 本頁結論：240 天與 300 天的矛盾關係到每日數十萬的違約金，必須於投標前發文釋疑。\n② 補充說明：建議釋疑要求「台電外審及標檢局文件審查期間，非可歸責廠商者，應不計入工期」。\n③ 下一頁轉場：在價格評選上，招標文件藏有一個精確的博弈滿分密碼。"
-      },
-      {
-        num: 10,
-        tag: "PRICING STRATEGY ｜ 收益分享比率博弈",
-        archetype: "BCG Forest Green ｜ 版型 8：BCG 決策矩陣",
-        badgeColor: "bg-emerald-950/80 text-emerald-400 border-emerald-500/30",
-        actionTitle: "評選公式鎖定降至 81.70% 奪下 20 分滿分，兼顧評審高分與長期 12 年營收最大化",
-        subTitle: "剖析評選須知評分公式，推導出奪標機率與財務收益的最佳平衡點",
-        img: "assets/images/slide_10_pricing_gametheory.jpg",
-        bullets: [
-          { bold: "評分規則：", text: "廠商承諾比率上限 85.7%（得基本分 12 分），每降 0.5% 加 1 分，最高 20 分" },
-          { bold: "報價 85.70%：", text: "僅得 12 分 ➔ 痛失 8 分關鍵評選分，排名必定大幅落後對手" },
-          { bold: "報價 81.70% (黃金出價)：", text: "降 4.0% 穩拿 20 分滿分！保留 81.7% 高收益，獲利最大化" },
-          { bold: "報價 80.00% 或更低：", text: "仍得 20 分（分數封頂不累加），白白損失未來 12 年數百萬拆分利潤" }
-        ],
-        notes: "【採用版型】：版型 8：BCG 決策矩陣 ｜ 視覺風格：BCG Forest Green\n① 本頁結論：投標標價清單上收益分享比率精確填寫 81.70%，是唯一能拿滿分又保留最多利潤的解。\n② 補充說明：多降無益（上限 20 分），少降失分，這是純數學博弈。\n③ 下一頁轉場：結合技術、價格與法規，我們制定了五維必勝投標藍圖。"
-      },
-      {
-        num: 11,
-        tag: "EXECUTION BLUEPRINT ｜ 投標必勝五維藍圖",
-        archetype: "McKinsey Deep Navy ｜ 版型 5：麥肯錫論法 (McKinsey Matrix)",
-        badgeColor: "bg-blue-950/80 text-blue-400 border-blue-500/30",
-        actionTitle: "資格組隊、技術客製、資安脫陸、合約釋疑與評選攻防之端到端落地方案",
-        subTitle: "五大維度環環相扣，構築無可挑剔的投標服務建議書與評選實力",
-        img: "assets/images/slide_11_five_pillars.jpg",
-        bullets: [
-          { bold: "維度一（資格與團隊）：", text: "能源技術代表領軍，結盟特定電力電業執照＋甲級承裝，協議書完成公證" },
-          { bold: "維度二（定價與財務）：", text: "精準鎖定 81.70% 收益分享，建立 144 個月現金流模型與電芯更換折現" },
-          { bold: "維度三（技術與工程）：", text: "污水場 C5-M 防腐、基座抬高 1 米、總 1 變電站無縫孤島控制與發電機互鎖" },
-          { bold: "維度四（資安與安全）：", text: "非陸製供應鏈（台達/士林/西門子）穿透切結、NFPA 855 消防、標檢局 MOU" },
-          { bold: "維度五（簡報與詢答）：", text: "聚焦院方「醫療零跳電」與專家「保護協調與防逆送」，進行 3D 兵棋推演" }
-        ],
-        notes: "【採用版型】：版型 5：麥肯錫論法 ｜ 視覺風格：McKinsey Deep Navy\n① 本頁結論：五大維度無死角覆蓋，直接對應評選委員評分表各項子項指標。\n② 補充說明：特別檢附電機技師與高級能管員證照，直取履約能力 15 分高分。\n③ 下一頁轉場：最後，轉化為具體的下一步時程行動清單。"
-      },
-      {
-        num: 12,
-        tag: "ACTION ROADMAP ｜ 關鍵行動與時程管制",
-        archetype: "Accenture Core Purple ｜ 版型 2：並列論法 (Parallel)",
-        badgeColor: "bg-purple-950/80 text-purple-400 border-purple-500/30",
-        actionTitle: "立即啟動「釋疑公文、公證協議、標檢局 MOU」三大作戰支柱，確保 100% 奪標",
-        subTitle: "倒數計時推進，將全案投標準備轉化為立即可落地執行的實體行動",
-        img: "assets/images/slide_12_partnership_nextsteps.jpg",
-        bullets: [
-          { bold: "作戰支柱 1（合約法律防禦）：", text: "Day 1~3 正式行文機關辦理招標文件釋疑，釐清 240/300 天工期衝突與防逆送電力交易認列" },
-          { bold: "作戰支柱 2（團隊執照鎖定）：", text: "Day 4~7 簽署共同投標協議書並赴公證處認證，備妥特定電力執照、技師證照與 1.75 億元實績證明" },
-          { bold: "作戰支柱 3（技術藍圖與評選演練）：", text: "Day 8~14 完成 C5-M 污水場配置圖、簽署標檢局驗證機構 MOU、編印 15 份建議書並實兵推演" }
-        ],
-        notes: "【採用版型】：版型 2：並列論法 ｜ 視覺風格：Accenture Core Purple\n① 本頁結論：分秒必爭，三大作戰支柱並行推進，奪取高雄榮總指標性醫療級儲能案。\n② 補充說明：進金生能源具備完整電力工程實績與綠能統包實力，有信心打造全台標竿。\n③ 簡報結束：感謝聆聽，敬請評審長官指教！"
-      }
-    ];
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
 
-    // 15 Revisions Data
-    const revisionsData = [
-      {
-        id: 1,
-        cat: "legal",
-        catName: "契約案號",
-        badgeColor: "bg-blue-950 text-blue-400 border-blue-500/30",
-        loc: "招標投標及契約文件 第 3 頁 第一條",
-        title: "決標簽約欄誤植舊案契約編號",
-        orig: "一、契約編號：ENG-1140043",
-        rev: "一、契約編號：ENG-1150058",
-        reason: "全份招標文件案號皆為 ENG-1150058，第 3 頁誤植為 ENG-1140043 屬明顯筆誤，應予更正避免履約標的與編號不一致之法律爭議。"
-      },
-      {
-        id: 2,
-        cat: "legal",
-        catName: "履約工期",
-        badgeColor: "bg-rose-950 text-rose-400 border-rose-500/30",
-        loc: "第 3 頁 vs 第 38 頁 第七條",
-        title: "完工工期 240 日曆天 vs 300 日曆天嚴重矛盾",
-        orig: "第 3 頁：自決標次日起 240 日完成建置；第 38 頁第七條：廠商於決標之日起 300 日內需完成設置容量。",
-        rev: "統一修正為：「廠商應自決標次日起 300 日曆天內完成設備建置、現場安全驗證及性能驗收測試。但涉及台電公司內線審查、消防局審查及標準檢驗局案場驗證之文件審查期間（非可歸責於廠商者），經檢具佐證資料核實扣除，不計入履約工期。」",
-        reason: "消除 240 天與 300 天衝突；戶外儲能案場外審曠日廢時（6~9個月），增列外審扣除工期但書，避免不可抗力導致鉅額違約金。"
-      },
-      {
-        id: 3,
-        cat: "legal",
-        catName: "違約罰則",
-        badgeColor: "bg-rose-950 text-rose-400 border-rose-500/30",
-        loc: "第 56 頁 第十三條 第一款",
-        title: "每日逾期違約金比率空白，預設 1‰ 每日高達 43.8 萬元過苛",
-        orig: "每日依契約價金總額 ‰(未載明者為 1‰)計算逾期違約金...（空白未填，以 4.38 億元計算每日罰 43.8 萬元）",
-        rev: "修正為：「逾期違約金，以日為單位，按逾期日數，每日依未完成設置容量占承諾設置容量之比例，換算該部分工程建置預估金額之 1‰ 計算；逾期違約金總額以該未完成部分建置金額之 10% 為上限。」",
-        reason: "純 ESCO 模式由廠商全額出資，若以 12 年總收益 4.38 億元作為每日 1‰ 罰款基準，10天罰滿 438 萬元，顯失公平合理原則。"
-      },
-      {
-        id: 4,
-        cat: "commercial",
-        catName: "收益定義",
-        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
-        loc: "第 31 頁 vs 第 86/91 頁",
-        title: "防逆送保護限制與電力交易輔助服務收益衝突",
-        orig: "第 31 頁列入電力交易與市場參與收益；但第 86/91 頁明定正常併網嚴禁向台電電網逆送電力。",
-        rev: "第 31 頁增訂：「電力交易或市場參與收益，於本院嚴格防逆送運轉條件下，指儲能系統配合台電調度以『減少本院電網受電需量』或『於院內負載吸收範圍內放電』所取得之輔助服務、需量反應或容量收益；若後續台電審查核准部分時段逆送，依核定結果辦理。」",
-        reason: "明確定義防逆送限制下電力交易之落實機制，避免日後因無法向台電電網逆送電而產生輔助服務履約爭議與計價糾紛。"
-      },
-      {
-        id: 5,
-        cat: "commercial",
-        catName: "計算公式",
-        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
-        loc: "第 49 頁 第八條 第二十四款",
-        title: "削峰填谷公式漏列「超約附加費節省」與「調降契約容量基本電費」",
-        orig: "依每日尖峰或半尖峰電價×雙方責任分界點供電量減掉每日離峰電價×雙方責任分界點用電量。",
-        rev: "修正擴充公式為：「每月實際效益總額 E_total = E_電價差 + E_超約節省 + E_容量節省 + E_市場參與。其中 E_超約節省為當月因儲能削峰避免之超約附加費節省額；E_容量節省為使本院調降契約容量節省之基本電費。」",
-        reason: "高榮夏月超約附加費達 31 萬元，儲能抑低超約與降低契約容量是醫院最直接的利益，應明文納入收益公式，真實反映節能貢獻。"
-      },
-      {
-        id: 6,
-        cat: "technical",
-        catName: "性能驗證",
-        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
-        loc: "第 86 頁、第 93 頁",
-        title: "充放電效率 RTE 85% 缺少環境溫度、C-rate 與輔助耗電判定規範",
-        orig: "全案充放電循環效率（RTE）應達 85% 以上。RTE＝放電輸出電量÷充電輸入電量×100%。（未明定測試條件）",
-        rev: "增訂測試基準：「充放電循環效率（RTE）驗收測試，應依 CNS 62933-2-1 及標檢局規範，於環境溫度 25±5°C 下，以額定功率 0.5C 充放電倍率進行 AC 端至 AC 端量測；儲能空調自耗電計入方式依核定測試計畫辦理，容許量測誤差為 ±1.5%。」",
-        reason: "避免因極端高溫空調全載運轉或非額定倍率充放電導致 RTE 爭議，明訂國際標準與環境條件，確保驗收標準具備客觀科學性。"
-      },
-      {
-        id: 7,
-        cat: "commercial",
-        catName: "續約擴充",
-        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
-        loc: "第 18 頁 第 62 點、第 40 頁",
-        title: "第 13~20 年後續擴充門檻未明訂電芯置換（Augmentation）機制",
-        orig: "第 13~16 年續約 RTE 仍須 85% 以上。電池運轉 12 年必衰退，無電芯置換條款無法達標。",
-        rev: "第七條之一增訂：「廠商為維持長年期性能並滿足後續擴充 RTE 85% 要求，得於營運期第 8 至 11 年間自費提出『儲能系統電池模組抽換與延壽計畫（Augmentation Plan）』，經機關審查同意後實施，更換作業期間之停機不計罰則。」",
-        reason: "明確賦予廠商於合約中期進行電芯翻新之合法性與程序，確保 12~20 年全生命週期皆能維持高效率運轉，醫院與廠商雙贏。"
-      },
-      {
-        id: 8,
-        cat: "technical",
-        catName: "退場回復",
-        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
-        loc: "第 40 頁 第七條之一 第四款",
-        title: "期滿回復原狀要求過於籠統，若敲除地下混凝土基座將破壞污水廠地坪",
-        orig: "廠商將建置範圍內之儲能系統設備拆除、清運、處理完畢，並將建置地點回復原狀...",
-        rev: "第七條之一增訂：「本契約回復原狀指拆除清運地上儲能集裝箱、變流器、變壓器及配電箱；其地下鋼筋混凝土基座、管溝及暗管等土建基礎，若經機關評估無妨礙後續使用者，得經機關同意保留現況無償返還，廠商無需敲除地下基礎。」",
-        reason: "避免期滿無謂破壞污水廠地坪與地下集水槽結構，節省數百萬土建敲除清運費用，落實綠色循環與公共安全。"
-      },
-      {
-        id: 9,
-        cat: "technical",
-        catName: "工程地質",
-        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
-        loc: "第 90 頁 第二條 第一款",
-        title: "污水處理場 660 m² 欠缺地下管網結構圖與土壤鑽探數據",
-        orig: "本院提供污水處理場區域作為設置地點，面積約 660 平方公尺...未提供地下管網結構圖與地質報告。",
-        rev: "補充招標附件：「機關於招標文件補附『污水處理場現況地下管網與水槽結構套疊圖』及『基地土壤鑽探報告書』；廠商細部設計時若因不可預見之地下既有暗管障礙需調整基礎型式，得向機關申請設計變更及工期展延。」",
-        reason: "儲能櫃重達數十噸，若無地下結構圖資，投標廠商無法精確評估微型樁、管溝避讓與地質沉陷風險。"
-      },
-      {
-        id: 10,
-        cat: "legal",
-        catName: "資安排陸",
-        badgeColor: "bg-blue-950 text-blue-400 border-blue-500/30",
-        loc: "第 79 頁 特別聲明 第六條",
-        title: "排陸條款中「不具通訊功能電池」與「模組內部採樣板」界限需釐清",
-        orig: "不允許使用大陸地區製造或大陸廠牌之零組件，不具備通訊功能之電池除外。營運商不得使用大陸廠牌資通訊產品...",
-        rev: "第六條第三項增訂：「所稱『不具備通訊功能之電池』，係指電芯（Cell）本體及僅具備模組內部電壓/溫度類比採樣之從控單元（CSC/Slave BMS）；具備連網傳輸、遠端控制之主控單元（Master BMS）、EMS 伺服器、PCS 及網通交換機，嚴禁大陸廠牌與產地。」",
-        reason: "符合國際鋰電大廠製造架構，避免驗收時因模組內部微型採樣板之產地認定爭議導致卡關，同時 100% 確保資通訊安全。"
-      },
-      {
-        id: 11,
-        cat: "commercial",
-        catName: "評選公式",
-        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
-        loc: "第 144 頁、第 146 頁 評選須知",
-        title: "收益分享比率評分級距澄清，確認 81.70% 滿分封頂原則",
-        orig: "廠商承諾收益分享比率上限 85.7%。基本分為 12 分，每降 0.5% 給 1 分，最高評分 20 分。（未達 0.5% 級距不給分）",
-        rev: "評選說明補充：「評分以 85.70% 為基準：每降 0.50% 加 1 分，降至 81.70% 即達滿分 20 分；投標比率若低於 81.70%（例如 80.00%），得分均以最高 20 分計，不另加分亦不扣分；比率填寫至小數點後兩位，級距未滿 0.50% 之餘數不計分。」",
-        reason: "杜絕評選委員對公式解釋不一之爭議，使全體投標廠商在公平透明之數學規則下競標。"
-      },
-      {
-        id: 12,
-        cat: "technical",
-        catName: "停電協調",
-        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
-        loc: "第 90 頁、第 94 頁",
-        title: "總1變電站高壓引接未載明醫院配合停電時數與責任",
-        orig: "廠商應負責管路電纜開關施工...影響院區供電作業，應事先提出計畫並經本院核准。（未明定院方配合義務）",
-        rev: "需求書增訂：「為配合總 1 變電站高壓引接盤體施工、保護協調測試及併網送電，機關同意配合排定計畫性停電作業至少 2 次（每次連續 4~8 小時），由廠商於預定停電日前 30 日提出停電備援計畫，經核准後實施；非可歸責廠商之停電推遲，工期相應順延。」",
-        reason: "醫院高壓停電極度敏感，明文化停電配合原則，可保障統包工程引接施工時程，避免驗收切換卡關。"
-      },
-      {
-        id: 13,
-        cat: "legal",
-        catName: "保險條件",
-        badgeColor: "bg-blue-950 text-blue-400 border-blue-500/30",
-        loc: "第 51 頁 第十條",
-        title: "商業綜合責任險 2 萬元自負額不符國內高壓電力產險實務",
-        orig: "商業綜合責任險廠商每一事故自負額上限：2 萬元。（財損保額達 2,000 萬元，2 萬元自負額產險市場難以承保）",
-        rev: "修正為：「商業綜合責任險廠商每一事故自負額上限：新臺幣 10 萬元，或損失金額之 10%（取其高者）。」",
-        reason: "符合國內大型產險公司對高壓電池儲能設施之標準承保條件，降低不合理保費支出。"
-      },
-      {
-        id: 14,
-        cat: "commercial",
-        catName: "審查時效",
-        badgeColor: "bg-amber-950 text-amber-400 border-amber-500/30",
-        loc: "第 32 頁、第 49 頁、第 55 頁",
-        title: "未明定機關每月收益審核天數與爭議款項分流撥付機制",
-        orig: "機關於收到廠商提供每月收益明細表及證明文件後計算價金...（未明訂審查天數）",
-        rev: "第五條增訂：「廠商於次月 10 日前提報上月收益明細表及電錶數據，機關應於 10 工作天內完成審查確認。若部分項目有疑義，機關應先就無爭議部分於 15 工作天內辦理撥付；有爭議部分限期 15 日內協商釐清，不得全案暫停給付。」",
-        reason: "保障 ESCO 廠商 144 個月按月收款穩定性，避免單一計量微小爭議凍結全額技術服務費。"
-      },
-      {
-        id: 15,
-        cat: "technical",
-        catName: "人員查核",
-        badgeColor: "bg-emerald-950 text-emerald-400 border-emerald-500/30",
-        loc: "第 47~48 頁、第 78 頁",
-        title: "關鍵基礎設施派駐人員適任性查核未訂定機關審查回覆時限",
-        orig: "履約人員進場前，應配合機關要求辦理適任性查核經機關審核同意後始得進場...（無審核時效規定）",
-        rev: "附記特別聲明增訂：「廠商提報派駐及施工人員適任性與忠誠查核名冊後，機關應於 7 工作天內完成查核並書面通知結果；逾期未通知且無具體國安疑慮者，得先行核發臨時施工證進場施作。」",
-        reason: "落實關鍵基礎設施人員管制之同時，確保醫院行政審核具備合理時效性，防止現場工期受阻。"
-      }
-    ];
+const REVISIONS = [
+  {
+    id: "01", cat: "行政與契約", severity: "中",
+    loc: "招標投標及契約文件 P.3 第一條",
+    orig: "一、契約編號：ENG-1140043（封面與投標須知均為 ENG-1150058，此處殘留舊案編號）",
+    rev: "一、契約編號：ENG-1150058",
+    reason: "【勘誤修正】消除決標簽約頁編號筆誤，確保履約契約編號一致性與合法性。"
+  },
+  {
+    id: "02", cat: "工期與審查", severity: "高",
+    loc: "契約首頁 P.3 vs 第七條 P.38",
+    orig: "P.3 載明決標次日起 240 日完工；P.38 第七條載明決標之日起 300 日內完成設置（相差 60 天，相互牴觸）。",
+    rev: "統一為決標次日起「300 日曆天內」完成建置與驗收；但涉及台電內線併聯審查、消防主管機關審查及標檢局認可案場驗證之文件審查期間（非可歸責廠商者），核實扣除不計工期。",
+    reason: "【重大時程修正】三大外部公權力審查實務耗時 6–9 個月，增訂外審扣除工期但書可防範不可抗力違約。"
+  },
+  {
+    id: "03", cat: "財務與罰則", severity: "高",
+    loc: "採購契約範本 P.56 第十三條第一款",
+    orig: "逾期違約金每日依契約價金總額 ‰（空白未填，依法預設 1‰，以 4.38 億計每日罰款高達 43.8 萬元）。",
+    rev: "逾期違約金每日依「未完成設置容量占承諾容量比例換算之工程建置預估金額」1‰ 計算；總額以該未完成部分建置金額之 10% 為上限。",
+    reason: "【法律風險修正】純 ESCO 模式由廠商全額出資，以 12 年總收益 4.38 億計罰顯失衡平，應改按未完工硬體建置額計罰。"
+  },
+  {
+    id: "04", cat: "技術與運轉", severity: "高",
+    loc: "契約第三條 P.31 vs 需求書 P.86、P.91",
+    orig: "P.31 收益含電力交易與備轉容量；惟 P.86/91 規定正常併網「不得向台電電網逆送電力」，兩者產生實務衝突。",
+    rev: "明確定義：於嚴格防逆送條件下，電力交易或備轉收益係指配合台電調度「減少院區受電需量」或「於院內負載吸收範圍內放電」所取得之輔助服務或容量收益。",
+    reason: "【營運邊界釐清】避免日後因無法逆送電力至台電電網，導致輔助服務履約爭議與計價扣款。"
+  },
+  {
+    id: "05", cat: "財務與罰則", severity: "高",
+    loc: "採購契約 P.49 第八條第二十四款",
+    orig: "削峰填谷電費節省僅計算（尖峰電價×放電量 − 離峰電價×充電量），漏列超約附加費節省與調降契約容量節省。",
+    rev: "擴充收益公式 E_total = E_arbitrage（價差套利）+ E_penalty（削峰避免之超約附加費節省）+ E_demand（調降經常契約容量基本電費節省）+ E_market（需量反應與電力交易收益）。",
+    reason: "【財務計量完善】需求書表 1-1 載明高榮 114–115 年超約附加費達 32.07 萬元，納入公式方能真實反映節費貢獻。"
+  },
+  {
+    id: "06", cat: "技術與運轉", severity: "中",
+    loc: "需求說明書 P.86、P.93",
+    orig: "全案充放電循環效率（RTE）應達 85% 以上，惟未明定測試環境溫度、充放電倍率（C-rate）及空調輔耗電計入方式。",
+    rev: "依 CNS 62933-2-1 及標檢局案場驗證規範，於環境溫度 25±5°C、額定功率 0.5C 進行 AC-to-AC 量測；空調與 BMS 輔耗電依核定測試計畫辦理，容許量測誤差 ±1.5%。",
+    reason: "【驗收判準明確化】避免夏日極端高溫空調全載運轉導致驗收爭議，建立客觀科學檢驗基準。"
+  },
+  {
+    id: "07", cat: "財務與罰則", severity: "高",
+    loc: "投標須知 P.18 第 62 點、契約 P.40",
+    orig: "第 13–16 年擴充 1.46 億要求 RTE≥85%；第 17–20 年擴充 1.46 億要求 RTE≥80%，但未賦予中途更換電芯機制。",
+    rev: "契約第七條之一增訂：廠商得於營運期第 8–11 年間自費提報「電池模組抽換與延壽計畫（Augmentation Plan）」，經機關核定後實施，更換停機期間不計罰則。",
+    reason: "【長生命週期保障】鋰電池經 12 年運轉必然衰退，合法化中期電芯翻新程序可確保 20 年總值 7.3 億元合約雙贏。"
+  },
+  {
+    id: "08", cat: "工程與場址", severity: "中",
+    loc: "契約第七條之一第四款 P.40",
+    orig: "合約期滿廠商須將設備拆除清運，並將建置地點「回復原狀」（強制敲除污水場地下 RC 基礎將破壞槽體且耗資數百萬）。",
+    rev: "明定回復原狀係指拆除地上儲能貨櫃、PCS、變壓器與配電盤；地下鋼筋混凝土筏基與電纜管溝經機關評估無妨礙者，得書面同意保留現況無償返還。",
+    reason: "【資產保護與節約】避免期滿無謂破壞污水處理場地坪結構，省去數百萬土建拆除與清運成本。"
+  },
+  {
+    id: "09", cat: "工程與場址", severity: "高",
+    loc: "需求說明書 P.90 第二條第一款",
+    orig: "提供污水處理場區域約 660 m² 作為預定設置地點，但未提供地下蓄水槽結構圖、管線套疊圖及土壤鑽探數據。",
+    rev: "機關補附「污水處理場現況地下管網與水槽結構套疊圖」及「基地土壤鑽探報告書」；細部設計若遇不可預見地下暗管障礙，得辦理設計變更及展延工期。",
+    reason: "【工程風險避險】數十噸儲能貨櫃須精算承載力與抗拔設計，欠缺圖資將引發沉陷或擊穿地下水槽風險。"
+  },
+  {
+    id: "10", cat: "資安與合規", severity: "高",
+    loc: "附記條款特別聲明 P.79 第六條",
+    orig: "禁止大陸製造或廠牌零組件，「不具備通訊功能之電池除外」；惟現代鋰電模組皆內建類比採樣晶片，認定恐生爭議。",
+    rev: "釋明「不具備通訊功能之電池」指電芯（Cell）本體及僅具內部電壓/溫度類比採樣之從控單元（CSC/Slave BMS）；Master BMS、EMS、PCS 與網通設備嚴格禁用陸製產品。",
+    reason: "【資安合規精確化】接軌國際大廠模組架構，消除驗收交貨卡關風險，同時 100% 守護醫院資通訊控制安全。"
+  },
+  {
+    id: "11", cat: "行政與契約", severity: "中",
+    loc: "評選須知 P.144、P.146",
+    orig: "收益分享比率上限 85.7% 給 12 分，每降 0.5% 給 1 分，最高 20 分（未達 0.5% 不給分），小數點與滿分封頂計算需明確。",
+    rev: "明確載明 85.70% 得 12 分，每降 0.50% 加 1 分，降至 81.70% 即達滿分 20 分；低於 81.70% 均以 20 分計，不另加分，未滿 0.50% 餘數不予計分。",
+    reason: "【評選博弈防弊】消除評委計算差異，確立 81.70% 滿分邊界，確保公開透明競標。"
+  },
+  {
+    id: "12", cat: "工程與場址", severity: "中",
+    loc: "需求說明書 P.90、P.94",
+    orig: "廠商負責高壓引接施工，影響供電作業須經核准，但未明定院方配合計畫性停電之權責與時數。",
+    rev: "增訂院方配合條款：為配合總 1 變電站高壓引接盤施工與保護協調測試，機關同意排定計畫性停電至少 2 次（每次連續 4–8 小時），廠商於 30 日前提報備援計畫；院方推遲停電工期順延。",
+    reason: "【介面協調保障】醫院高壓停電極為敏感，明文化停電配合機制可防止驗收併網無限期卡關。"
+  },
+  {
+    id: "13", cat: "財務與罰則", severity: "低",
+    loc: "採購契約 P.51 第十條",
+    orig: "商業綜合責任險廠商每一事故自負額上限僅新臺幣 2 萬元（儲能高壓保額達 2,000 萬，2 萬元自負額產險市場極難承保）。",
+    rev: "修正自負額上限為「新臺幣 10 萬元，或損失金額之 10%（取其高者）」。",
+    reason: "【保險實務接軌】符合國內大型產險公司對高壓電池儲能設施之標準承保條件，避免異常高昂保費。"
+  },
+  {
+    id: "14", cat: "財務與罰則", severity: "中",
+    loc: "契約 P.32、P.49、P.55",
+    orig: "未明定機關審核每月收益明細表之工作天數，亦無爭議款項之分離撥付機制。",
+    rev: "廠商次月 10 日前提報數據，機關應於 10 工作天內審查確認；若有部分疑義，無爭議部分應於 15 工作天內先行撥付，爭議部分限期 15 日協商，不得全案凍結給付。",
+    reason: "【現金流護欄】保障 ESCO 廠商 144 個月穩定收款，避免微小計量爭議凍結全額技術服務費。"
+  },
+  {
+    id: "15", cat: "資安與合規", severity: "低",
+    loc: "契約 P.47–48、特別聲明 P.78",
+    orig: "進場施工人員須事先通過適任性及忠誠查核，但未明定機關回覆審查結果之期限。",
+    rev: "廠商提報施工人員查核名冊後，機關應於 7 工作天內完成查核並書面通知；逾期未通知且無具體國安疑慮者，得先核發臨時施工證進場施作。",
+    reason: "【施工進度防延誤】兼顧關鍵基礎設施人員安全管制與醫院行政審查效率。"
+  }
+];
 
-    let currentSlide = 0;
 
-    // View Switching Logic
-    function switchView(viewName) {
-      document.getElementById("view-slides").classList.add("hidden");
-      document.getElementById("view-revisions").classList.add("hidden");
-      document.getElementById("view-letter").classList.add("hidden");
+// ==================== VIEW SWITCHING ====================
+let fullMapInit = false;
+let fullMap = null;
+let slideMap = null;
 
-      document.getElementById("tab-btn-slides").className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700";
-      document.getElementById("tab-btn-revisions").className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700";
-      document.getElementById("tab-btn-letter").className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition border border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700";
+function switchView(name) {
+  ['slides','map','revisions','letter','calc'].forEach(v => {
+    document.getElementById('view-' + v).hidden = (v !== name);
+    const btn = document.getElementById('tab-' + v);
+    if (v === name) btn.setAttribute('aria-current', 'page');
+    else btn.removeAttribute('aria-current');
+  });
+  if (name === 'map') {
+    setTimeout(() => {
+      if (!fullMapInit) initFullMap();
+      else fullMap.invalidateSize();
+    }, 80);
+  }
+  if (name === 'slides' && currentSlide === 3 && slideMap) {
+    setTimeout(() => slideMap.invalidateSize(), 80);
+  }
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
 
-      if (viewName === "slides") {
-        document.getElementById("view-slides").classList.remove("hidden");
-        document.getElementById("tab-btn-slides").className = "px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs sm:text-sm font-bold flex items-center gap-1.5 transition";
-      } else if (viewName === "revisions") {
-        document.getElementById("view-revisions").classList.remove("hidden");
-        document.getElementById("tab-btn-revisions").className = "px-3 py-1.5 rounded-lg bg-rose-600 text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 transition shadow-md shadow-rose-600/30";
-      } else if (viewName === "letter") {
-        document.getElementById("view-letter").classList.remove("hidden");
-        document.getElementById("tab-btn-letter").className = "px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 transition shadow-md shadow-blue-600/30";
-      }
-    }
+// ==================== 12-SLIDE DECK ENGINE ====================
+const slides = Array.from(document.querySelectorAll('.slide'));
+let currentSlide = 1;
+let scrollMode = false;
 
-    // Render Revisions
-    function renderRevisions(filter = "all") {
-      const container = document.getElementById("revisions-list");
-      container.innerHTML = "";
+function buildThumbs() {
+  const strip = document.getElementById('thumb-strip');
+  strip.innerHTML = slides.map((s, idx) => {
+    const n = idx + 1;
+    const t = s.dataset.title || ('Slide ' + n);
+    return `<button class="thumb ${n===1?'active':''}" data-n="${n}" onclick="goSlide(${n})">
+      <small>SLIDE ${String(n).padStart(2,'0')}</small>
+      <span>${t}</span>
+    </button>`;
+  }).join('');
+}
 
-      const filtered = filter === "all" ? revisionsData : revisionsData.filter(d => d.cat === filter);
+function goSlide(n) {
+  if (n < 1) n = 1;
+  if (n > slides.length) n = slides.length;
+  currentSlide = n;
+  slides.forEach((s, i) => s.classList.toggle('active', i + 1 === n));
+  document.querySelectorAll('.thumb').forEach((t, i) => t.classList.toggle('active', i + 1 === n));
+  document.getElementById('slide-counter').textContent = `${String(n).padStart(2,'0')} / ${slides.length}`;
+  document.getElementById('slide-title-ind').textContent = slides[n-1].dataset.title || '';
+  document.getElementById('note-num').textContent = String(n).padStart(2,'0');
+  document.getElementById('note-text').textContent = slides[n-1].dataset.note || '';
+  document.getElementById('btn-prev').disabled = (n === 1);
+  document.getElementById('btn-next').disabled = (n === slides.length);
+  if (n === 3) {
+    setTimeout(() => {
+      if (!slideMap) initSlideMap();
+      else slideMap.invalidateSize();
+    }, 80);
+  }
+}
 
-      filtered.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-xl p-5 sm:p-6 transition shadow-lg";
-        div.innerHTML = `
-          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800/80 mb-4">
-            <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center font-bold font-mono text-amber-400 text-xs">
-                ${String(item.id).padStart(2, '0')}
-              </span>
-              <span class="px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider ${item.badgeColor}">
-                ${item.catName}
-              </span>
-              <h3 class="text-base font-bold text-slate-100">${item.title}</h3>
-            </div>
-            <span class="text-xs font-mono text-slate-400 flex items-center gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-500"></i>
-              ${item.loc}
-            </span>
-          </div>
+function stepSlide(delta) { goSlide(currentSlide + delta); }
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-red-950/20 border border-red-500/20 rounded-lg p-3.5">
-              <span class="text-[11px] font-bold uppercase tracking-wider text-rose-400 flex items-center gap-1 mb-1.5">
-                <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
-                原招標文件條文（現狀疑義）
-              </span>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                ${item.orig}
-              </p>
-            </div>
+function toggleNotes() {
+  const nb = document.getElementById('notes-bar');
+  const btn = document.getElementById('btn-notes');
+  nb.hidden = !nb.hidden;
+  btn.classList.toggle('active', !nb.hidden);
+}
 
-            <div class="bg-emerald-950/20 border border-emerald-500/20 rounded-lg p-3.5">
-              <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1 mb-1.5">
-                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-                建議修正後條文（紅字修訂內容）
-              </span>
-              <p class="text-xs sm:text-sm text-emerald-200 leading-relaxed font-sans font-medium">
-                ${item.rev}
-              </p>
-            </div>
-          </div>
+function toggleScrollMode() {
+  scrollMode = !scrollMode;
+  const stage = document.getElementById('deck-stage');
+  const btn = document.getElementById('btn-mode');
+  stage.classList.toggle('scroll-mode', scrollMode);
+  btn.classList.toggle('active', scrollMode);
+  btn.textContent = scrollMode ? '單頁簡報模式' : '全頁捲動瀏覽';
+  if (scrollMode) {
+    setTimeout(() => {
+      if (!slideMap) initSlideMap();
+      else slideMap.invalidateSize();
+    }, 100);
+  }
+}
 
-          <div class="mt-3.5 pt-3 border-t border-slate-800/60 flex items-start gap-2">
-            <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              <strong class="text-slate-200">修正理由與效益：</strong>${item.reason}
-            </p>
-          </div>
-        `;
-        container.appendChild(div);
-      });
+document.addEventListener('keydown', e => {
+  if (document.getElementById('view-slides').hidden || scrollMode) return;
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') stepSlide(1);
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') stepSlide(-1);
+});
 
-      lucide.createIcons();
-    }
+// ==================== LEAFLET MAPS (SLIDE 3 & FULL VIEW) ====================
+function addCampusMarkers(mapObj) {
+  const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '&copy; OpenStreetMap'
+  });
+  const sat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 19, attribution: '&copy; Esri Satellite'
+  });
+  osm.addTo(mapObj);
+  L.control.layers({"街道地圖 (OSM)": osm, "高解析衛星圖 (Esri)": sat}, null, {position:'topright'}).addTo(mapObj);
 
-    function filterRevisions(cat) {
-      document.querySelectorAll(".rev-filter-btn").forEach(b => {
-        b.className = "rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-        if (b.dataset.filter === cat) {
-          b.className = "rev-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition";
-        }
-      });
-      renderRevisions(cat);
-    }
+  // Campus rough polygon
+  L.polygon([
+    [22.6791, 120.3208], [22.6791, 120.3248],
+    [22.6761, 120.3248], [22.6761, 120.3208]
+  ], {color:'#051C2C', weight:2, dashArray:'6,4', fillColor:'#548ABF', fillOpacity:0.08}).addTo(mapObj);
 
-    // Copy Official Letter
-    function copyLetter() {
-      const text = document.getElementById("letter-content").innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById("copy-btn-text");
-        btn.textContent = "已成功複製公文！";
-        setTimeout(() => {
-          btn.textContent = "複製公文全文";
-        }, 2000);
-      });
-    }
+  // BESS Cable Route Schematic
+  L.polyline([[22.6766, 120.3239], [22.6773, 120.3233]], {
+    color:'#B42318', weight:3.5, dashArray:'6,4'
+  }).addTo(mapObj).bindPopup('<b>11.4kV 地下電纜引接廊道</b><br>污水處理場 BESS → 總 1 變電站');
 
-    // Render Single Slide
-    function renderSlide(index) {
-      if (index < 0) index = 0;
-      if (index >= slidesData.length) index = slidesData.length - 1;
-      currentSlide = index;
-
-      const slide = slidesData[currentSlide];
-
-      const badge = document.getElementById("slide-archetype-badge");
-      badge.textContent = `${slide.tag} ｜ ${slide.archetype}`;
-      badge.className = `px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider ${slide.badgeColor}`;
-
-      document.getElementById("slide-counter-badge").textContent = `${String(slide.num).padStart(2, '0')} / 12`;
-      document.getElementById("slide-action-title").textContent = slide.actionTitle;
-      document.getElementById("slide-sub-title").textContent = slide.subTitle;
-      document.getElementById("slide-img").src = slide.img;
-
-      const container = document.getElementById("slide-evidence-container");
-      container.innerHTML = "";
-      slide.bullets.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "p-3.5 bg-slate-900/90 rounded-lg border border-slate-800/80 hover:border-slate-700 transition flex items-start gap-2.5";
-        div.innerHTML = `
-          <div class="w-2 h-2 rounded-full bg-amber-400 mt-2 shrink-0"></div>
-          <div class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-            <span class="font-bold text-amber-300">${item.bold}</span>
-            <span class="text-slate-300">${item.text}</span>
-          </div>
-        `;
-        container.appendChild(div);
-      });
-
-      document.getElementById("notes-content").textContent = slide.notes;
-
-      renderDots();
-      renderThumbnails();
-    }
-
-    function renderDots() {
-      const container = document.getElementById("slide-dots");
-      container.innerHTML = "";
-      slidesData.forEach((_, i) => {
-        const dot = document.createElement("button");
-        dot.className = `w-2 h-2 rounded-full transition-all ${i === currentSlide ? 'bg-amber-400 w-6' : 'bg-slate-700 hover:bg-slate-500'}`;
-        dot.onclick = () => renderSlide(i);
-        container.appendChild(dot);
-      });
-    }
-
-    function renderThumbnails() {
-      const container = document.getElementById("thumbnails-container");
-      container.innerHTML = "";
-      slidesData.forEach((s, i) => {
-        const thumb = document.createElement("div");
-        thumb.className = `cursor-pointer rounded-lg border p-1 text-center transition flex flex-col items-center justify-center ${i === currentSlide ? 'border-amber-400 bg-amber-950/40 shadow-md shadow-amber-500/10' : 'border-slate-800 bg-slate-900/60 hover:border-slate-600'}`;
-        thumb.onclick = () => renderSlide(i);
-        thumb.innerHTML = `
-          <div class="text-[10px] font-mono font-bold ${i === currentSlide ? 'text-amber-400' : 'text-slate-400'}">P.${String(s.num).padStart(2, '0')}</div>
-          <div class="text-[9px] truncate max-w-[80px] text-slate-300 mt-0.5">${s.tag.split(' ｜ ')[0]}</div>
-        `;
-        container.appendChild(thumb);
-      });
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) renderSlide(currentSlide - 1);
-    }
-
-    function nextSlide() {
-      if (currentSlide < slidesData.length - 1) renderSlide(currentSlide + 1);
-    }
-
-    function toggleModal(id) {
-      const modal = document.getElementById(id);
-      modal.classList.toggle("hidden");
-    }
-
-    function openLightbox(src) {
-      document.getElementById("lightbox-img").src = src;
-      document.getElementById("lightbox-modal").classList.remove("hidden");
-    }
-
-    function closeLightbox() {
-      document.getElementById("lightbox-modal").classList.add("hidden");
-    }
-
-    // Keyboard navigation
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") {
-        if (!document.getElementById("view-slides").classList.contains("hidden")) {
-          nextSlide();
-        }
-      } else if (e.key === "ArrowLeft" || e.key === "PageUp") {
-        if (!document.getElementById("view-slides").classList.contains("hidden")) {
-          prevSlide();
-        }
-      } else if (e.key === "Escape") {
-        closeLightbox();
-        document.getElementById("calc-modal").classList.add("hidden");
-      }
+  const mk = (lat, lng, color, title, desc) => {
+    const icon = L.divIcon({
+      className:'',
+      html:`<div style="width:16px;height:16px;border-radius:50%;background:${color};border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.45)"></div>`,
+      iconSize:[16,16], iconAnchor:[8,8]
     });
+    return L.marker([lat, lng], {icon}).addTo(mapObj).bindPopup(`<b>${title}</b><br><span style="font-size:12px;color:#3F4B5B">${desc}</span>`);
+  };
 
-    // Calculator function
-    function updateCalculator(val) {
-      val = parseFloat(val);
-      document.getElementById("calc-pct-label").textContent = val.toFixed(2) + "%";
+  mk(22.6777, 120.3227, '#051C2C', '高雄榮民總醫院（院區中心）', '高雄市左營區大中一路 386 號<br>契約容量：8,300 kW · 電號 11-44-7700-10-9');
+  const bessPin = mk(22.6766, 120.3239, '#0C7A43', '★ 儲能預定地：污水處理場區域', '可評估面積約 660 m²（後勤區）<br>須核實地下水槽結構與 3m 消防間距');
+  mk(22.6773, 120.3233, '#B42318', '★ 高壓引接點：總 1 變電站', '22.8kV 雙饋線轉 11.4kV 主匯流排<br>設 32R 防逆送保護與 2hr 孤島切換');
+  mk(22.6786, 120.3222, '#548ABF', '大中一路主入口 / 吊裝幹道', '緊鄰國道 1 號與 10 號鼎金系統交流道');
+  return bessPin;
+}
 
-      const diff = 85.7 - val;
-      const steps = Math.floor((diff + 0.0001) / 0.5);
-      let score = 12 + steps;
-      if (score > 20) score = 20;
-      if (score < 12) score = 12;
+function initSlideMap() {
+  slideMap = L.map('slide-map', {center:[22.6774, 120.3229], zoom:16});
+  const pin = addCampusMarkers(slideMap);
+  pin.openPopup();
+}
 
-      const scoreEl = document.getElementById("calc-score");
-      const scoreSubEl = document.getElementById("calc-score-sub");
-      scoreEl.textContent = `${score} / 20 分`;
+function initFullMap() {
+  fullMap = L.map('full-map', {center:[22.6775, 120.3229], zoom:17});
+  const pin = addCampusMarkers(fullMap);
+  pin.openPopup();
+  fullMapInit = true;
+}
 
-      if (score === 20) {
-        scoreSubEl.textContent = "★ 獲得滿分最高評價 (極限最佳解)";
-        scoreSubEl.className = "text-[11px] text-emerald-400 font-semibold";
-      } else if (score >= 16) {
-        scoreSubEl.textContent = "✔ 良好競爭力，但仍落後滿分 " + (20 - score) + " 分";
-        scoreSubEl.className = "text-[11px] text-amber-400";
-      } else {
-        scoreSubEl.textContent = "⚠ 嚴重落後滿分 " + (20 - score) + " 分，極高淘汰風險";
-        scoreSubEl.className = "text-[11px] text-rose-400";
-      }
+function flyToPoint(lat, lng, z) {
+  if (fullMap) fullMap.flyTo([lat, lng], z, {duration:0.8});
+}
 
-      const monthlyRev = 3550000 * (val / 100);
-      document.getElementById("calc-monthly").textContent = (monthlyRev / 10000).toFixed(1) + " 萬元";
+// ==================== REVISIONS TABLE ====================
+function renderRevisions() {
+  const q = (document.getElementById('rev-search').value || '').trim().toLowerCase();
+  const cat = document.getElementById('rev-cat').value;
+  const sev = document.getElementById('rev-sev').value;
+  const rows = REVISIONS.filter(r => {
+    if (cat && r.cat !== cat) return false;
+    if (sev && r.severity !== sev) return false;
+    if (q && !(r.id + r.cat + r.loc + r.orig + r.rev + r.reason).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  document.getElementById('rev-tbody').innerHTML = rows.map(r => `
+    <tr>
+      <td><b>#${r.id}</b></td>
+      <td><div style="font-weight:600;color:var(--navy);margin-bottom:4px">${r.cat}</div><span class="sev sev-${r.severity}">${r.severity}風險</span></td>
+      <td style="font-size:12px;color:var(--ink-2)">${r.loc}</td>
+      <td class="orig-text">${r.orig}</td>
+      <td class="rev-text">${r.rev}</td>
+      <td style="font-size:12.5px;color:var(--ink-2)">${r.reason}</td>
+    </tr>
+  `).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--mute);padding:24px">查無符合條件之條款項目</td></tr>';
+}
 
-      const total12yr = monthlyRev * 144;
-      document.getElementById("calc-total").textContent = (total12yr / 100000000).toFixed(2) + " 億元";
+// ==================== COPY LETTER ====================
+function copyLetter() {
+  const txt = document.getElementById('letter-content').textContent;
+  navigator.clipboard.writeText(txt).then(() => {
+    const b = document.getElementById('btn-copy-letter');
+    b.textContent = '✓ 已複製公文全文';
+    setTimeout(() => b.textContent = '一鍵複製公文全文', 2200);
+  });
+}
 
-      const total20yr = monthlyRev * 240;
-      document.getElementById("calc-life").textContent = (total20yr / 100000000).toFixed(2) + " 億元";
+// ==================== 81.70% FINANCIAL SIMULATOR ====================
+function setShare(v) {
+  document.getElementById('in-share').value = v;
+  calcSim();
+}
+function calcSim() {
+  const share = parseFloat(document.getElementById('in-share').value);
+  const revM = parseFloat(document.getElementById('in-rev').value); // 萬元/月
+  const capex = parseFloat(document.getElementById('in-capex').value); // 億元
+  const opexPct = parseFloat(document.getElementById('in-opex').value) / 100;
 
-      const baseMonthly = 3550000 * (85.7 / 100);
-      const totalBase = baseMonthly * 144;
-      const lost12yr = total12yr - totalBase;
-      const pctDiff = val - 85.7;
+  document.getElementById('v-share').textContent = share.toFixed(2) + '%';
+  document.getElementById('v-rev').textContent = revM + ' 萬元';
+  document.getElementById('v-capex').textContent = capex.toFixed(2) + ' 億元';
+  document.getElementById('v-opex').textContent = Math.round(opexPct * 100) + '%';
 
-      document.getElementById("calc-diff").textContent = `${pctDiff.toFixed(2)}% (${(lost12yr / 10000).toFixed(0)}萬元)`;
-    }
+  // Score calculation: base 12 at 85.7%, +1 per full 0.5% drop, max 20
+  const drop = Math.max(0, 85.70 - share + 1e-6);
+  const steps = Math.floor(drop / 0.50);
+  const score = Math.min(20, 12 + steps);
 
-    // Initialize
-    window.addEventListener("DOMContentLoaded", () => {
-      lucide.createIcons();
-      renderSlide(0);
-      renderRevisions("all");
-      updateCalculator(81.7);
-    });
-  </script>
+  const rev12 = (revM * 144 * (share / 100)) / 10000; // 億元
+  const rev20 = (revM * 240 * (share / 100)) / 10000; // 億元
+  const annualNet = (revM * 12 * (share / 100) * (1 - opexPct)) / 10000; // 億元/年
+  const payback = capex / Math.max(0.01, annualNet);
+
+  document.getElementById('r-score').textContent = `${score} / 20 分`;
+  document.getElementById('r-rev12').textContent = `${rev12.toFixed(3)} 億元`;
+  document.getElementById('r-payback').textContent = `${payback.toFixed(1)} 年`;
+  document.getElementById('r-rev20').textContent = `${rev20.toFixed(3)} 億元`;
+
+  const adv = document.getElementById('r-advice');
+  if (Math.abs(share - 81.7) < 0.05) {
+    adv.style.background = '#EFF8DF'; adv.style.borderLeftColor = '#0C7A43';
+    adv.innerHTML = '<b>★ 最佳黃金出價區間（81.70%）</b>：剛好取得價格項 <b>20/20 滿分</b>，且無任何無謂讓利！12 年累計營收 ' + rev12.toFixed(3) + ' 億元，預估 ' + payback.toFixed(1) + ' 年收回 CAPEX。';
+  } else if (share < 81.7) {
+    const waste = (revM * 144 * ((81.7 - share) / 100));
+    adv.style.background = '#FEF3F2'; adv.style.borderLeftColor = '#B42318';
+    adv.innerHTML = '<b>⚠ 警告：過度讓利（低於 81.70%）</b>：分數已於 20 分封頂，多降比率 <b>零加分</b>，12 年將白白流失 <b>NT$ ' + Math.round(waste).toLocaleString() + ' 萬元</b> 純利！';
+  } else {
+    adv.style.background = '#FEF9E7'; adv.style.borderLeftColor = '#C26B0A';
+    adv.innerHTML = '<b>提示：尚未取得價格滿分（目前 ' + score + '/20 分）</b>：若競爭對手出價 81.70%，本案將於價格項落後 <b>' + (20 - score) + ' 分</b>，須靠技術項大幅超前才有機會翻盤。';
+  }
+}
+
+// Initialize on load
+buildThumbs();
+goSlide(1);
+renderRevisions();
+calcSim();
+</script>
 </body>
 </html>
